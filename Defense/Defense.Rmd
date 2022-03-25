@@ -5,7 +5,10 @@ author:
 - "Advisors: Andy Kazama, Ph.D., Tom Costello, M.A., Shauna Bowes, M.A."
 - Personality Research Lab 
 - Emory Department of Psychology
-output: xaringan::moon_reader
+output: 
+  xaringan::moon_reader: 
+    nature:
+      countdown: 60000
 ---
 
 ```{r setup, include=FALSE}
@@ -75,11 +78,12 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 
 ```
 
-## Results
+## Psychopathy 
 
-```{r, echo = FALSE}
-countdown(minutes = 1, seconds = 30, top = 0, font_size = "0.7em", play_sound = FALSE)
-```
+de Brito et al. (2020)
+---
+
+## Results
 
 .center[
 ```{r, echo = FALSE}
@@ -96,12 +100,7 @@ ggscatterstats(data=combined_dat,
 
 ## Results 
 
-```{r, echo = FALSE}
-countdown(minutes = 1, seconds = 30, top = 0, font_size = "0.7em", play_sound = FALSE)
-```
-
-.pull-left[
-```{r, echo = FALSE}
+```{r, echo = FALSE, fig.width = 17}
 vQuart = quantile(combined_dat$FERT_Score_2, c(0:4/4))
 
 # classify values
@@ -166,12 +165,14 @@ tert_plot <- ggplot(data=dk.data.tert, aes(x=Tertile, y=Prpt, group=Measure)) +
   scale_color_manual(values = c("#CAB2D6", "#6A3D9A"), labels = c("Actual", "Estimate")) + 
   labs(y = "Average Proportion of Correct Responses", x = "Tercile")
 
-cowplot::plot_grid(quart_plot, tert_plot, nrow=2)
+cowplot::plot_grid(quart_plot, tert_plot, nrow=1)
 ```
-]
 
-.pull-right[
-```{r, echo = FALSE}
+---
+
+## Results
+
+```{r, echo = FALSE, fig.width = 17}
 
 fert_plot_1 <- ggplot(combined_dat, aes(x=FERT_Score_2, y=FERT_CorrectEstimate)) + 
   geom_point() +
@@ -193,7 +194,188 @@ fert_plot_2 <- ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) +
   guides(colour = guide_legend(override.aes = list(alpha = 0))) +
   theme_classic() 
 
-cowplot::plot_grid(fert_plot_1, fert_plot_2, nrow=2)
+cowplot::plot_grid(fert_plot_1, fert_plot_2, nrow=1)
+```
+
+---
+
+## Results 
+
+![S1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S1.png)
+
+---
+
+## Results 
+
+.center[
+```{r, echo = FALSE}
+m1 <- lm(IPD_Score ~ Stroop * AffectiveFeedback, data = combined_dat)
+
+m2 <- lm(IPD_Score ~ Stroop + AffectiveFeedback, data = combined_dat)
+
+m1.emm <- emmeans(m1, specs = c("AffectiveFeedback", "Stroop"))  
+
+# bar-plot with 2nd factor different color
+pd <- position_dodge(0.7)
+gg1_1 <- ggbarplot(x="AffectiveFeedback",
+                 y="IPD_Score",
+                 fill="Stroop",
+                 data=combined_dat,
+                 add=c("mean_ci"),
+                 position=pd) +
+  geom_point(aes(fill=Stroop), 
+             color="black", 
+             position=position_jitterdodge(jitter.width=0.2), 
+             show.legend=FALSE, 
+             alpha=0.5) +
+  ylab("Rate of Cooperation") + 
+  xlab("Affective Feedback") +
+  scale_fill_jco() +
+  NULL
+
+# "interaction" plot
+m1.emm.dt <- data.table(summary(m1.emm))
+
+pd = position_dodge(0.7)
+gg2 <- ggplot(data=m1.emm.dt, 
+              aes(x=AffectiveFeedback, 
+                  y=emmean, 
+                  shape=Stroop, 
+                  color=Stroop, 
+                  group=Stroop)) +
+  geom_point(position=pd, size=3) +
+  ylim(0, 1) + 
+  geom_errorbar(aes(x=AffectiveFeedback, 
+                    ymin=lower.CL, 
+                    ymax=upper.CL,
+                    group=Stroop)
+                , position=pd, width=0.1) +
+  geom_line(position=pd) +
+  ylab("Rate of Cooperation") +
+  xlab("Affective Feedback") +
+  scale_color_jco() +
+  theme_pubr() +
+  #theme(legend.position="bottom") +
+  NULL
+
+gg2 <- m1.emm.dt %>% 
+  mutate(AffectiveFeedback = fct_relevel(AffectiveFeedback, "Cooperative", "Competitive")) %>% 
+  ggplot(aes(x=AffectiveFeedback, 
+             y=emmean, 
+             shape=Stroop, 
+             color=Stroop, 
+             group=Stroop)) +
+    geom_point(position=pd, size=3) +
+    ylim(0, 1) + 
+    geom_errorbar(aes(x=AffectiveFeedback, 
+                      ymin=lower.CL, 
+                      ymax=upper.CL,
+                      group=Stroop)
+                  , position=pd, width=0.1) +
+    geom_line(position=pd) +
+    ylab("Rate of Cooperation") +
+    xlab("Affective Feedback") +
+    scale_color_jco() +
+    theme_pubr() +
+    #theme(legend.position="bottom") +
+    NULL
+
+
+# interaction "jitter" plot
+gg3_1 <- gg2 +
+  geom_point(data=combined_dat, aes(x=AffectiveFeedback, y=IPD_Score, fill=Stroop),
+             position=position_jitterdodge(jitter.width=0.2)) +
+  #             position=position_jitter(width=0.2)) +
+  xlab("Affective Feedback") +
+  theme(legend.position="top") +
+  NULL
+gg_response <- gg3_1 # used below
+
+##################################
+
+q1 <- lm(CoopExpect ~ Stroop * AffectiveFeedback, data = combined_dat)
+
+q2 <- lm(CoopExpect ~ Stroop + AffectiveFeedback, data = combined_dat)
+
+q1.emm <- emmeans(q1, specs = c("AffectiveFeedback", "Stroop"))  
+
+
+# bar-plot with 2nd factor different color
+pd <- position_dodge(0.7)
+gg1_2 <- ggbarplot(x="AffectiveFeedback",
+                 y="CoopExpect",
+                 fill="Stroop",
+                 data=combined_dat,
+                 add=c("mean_ci"),
+                 position=pd) +
+  geom_point(aes(fill=Stroop), 
+             color="black", 
+             position=position_jitterdodge(jitter.width=0.2), 
+             show.legend=FALSE, 
+             alpha=0.5) +
+  ylab("Expectation of Cooperation") + 
+  xlab("Affective Feedback") +
+  scale_fill_jco() +
+  NULL
+
+# "interaction" plot
+q1.emm.dt <- data.table(summary(q1.emm))
+
+pd = position_dodge(0.7)
+gg2_2 <- ggplot(data=q1.emm.dt, 
+              aes(x=AffectiveFeedback, 
+                  y=emmean, 
+                  shape=Stroop, 
+                  color=Stroop, 
+                  group=Stroop)) +
+  geom_point(position=pd, size=3) +
+  ylim(0, 1) + 
+  geom_errorbar(aes(x=AffectiveFeedback, 
+                    ymin=lower.CL, 
+                    ymax=upper.CL,
+                    group=Stroop)
+                , position=pd, width=0.1) +
+  geom_line(position=pd) +
+  ylab("Expectation of Cooperation") +
+  xlab("Affective Feedback") +
+  scale_color_jco() +
+  theme_pubr() +
+  #theme(legend.position="bottom") +
+  NULL
+
+gg2_2 <- q1.emm.dt %>% 
+  mutate(AffectiveFeedback = fct_relevel(AffectiveFeedback, "Cooperative", "Competitive")) %>% 
+  ggplot(aes(x=AffectiveFeedback, 
+             y=emmean, 
+             shape=Stroop, 
+             color=Stroop, 
+             group=Stroop)) +
+  geom_point(position=pd, size=3) +
+  ylim(0, 1) + 
+  geom_errorbar(aes(x=AffectiveFeedback, 
+                    ymin=lower.CL, 
+                    ymax=upper.CL,
+                    group=Stroop)
+                , position=pd, width=0.1) +
+  geom_line(position=pd) +
+  ylab("Expectation of Cooperation") +
+  xlab("Affective Feedback") +
+  scale_color_jco() +
+  theme_pubr() +
+  #theme(legend.position="bottom") +
+  NULL
+
+# interaction "jitter" plot
+gg3_2 <- gg2_2 +
+  geom_point(data=combined_dat, aes(x=AffectiveFeedback, y=CoopExpect, fill=Stroop),
+             position=position_jitterdodge(jitter.width=0.2)) +
+  #             position=position_jitter(width=0.2)) +
+  xlab("Affective Feedback") +
+  theme(legend.position="top") +
+  NULL
+
+cowplot::plot_grid(gg1_1, gg3_1, gg1_2, gg3_2, nrow=2, labels = "AUTO")
+
 ```
 ]
 
@@ -201,11 +383,210 @@ cowplot::plot_grid(fert_plot_1, fert_plot_2, nrow=2)
 
 ## Results 
 
+.center[
 ```{r, echo = FALSE}
-countdown(minutes = 1, seconds = 30, top = 0, font_size = "0.7em", play_sound = FALSE)
+ggbetweenstats(
+  combined_dat,
+  condition,
+  IPD_Score,
+  ylab = "Cooperation",
+  plot.type = "boxviolin",
+  type = "parametric", 
+  var.equal = TRUE)
+```
+]
+
+---
+
+## Results 
+
+.center[
+```{r, echo = FALSE}
+ggbetweenstats(
+  combined_dat,
+  condition,
+  CoopExpect,
+  ylab = "Expectation of Cooperation",
+  plot.type = "boxviolin",
+  type = "parametric", 
+  var.equal = TRUE)
+```
+]
+
+---
+
+## Results 
+
+.center[ 
+```{r, echo = FALSE}
+
+# IPD expectation of cooperation 
+
+combined_dat_AF <- combined_dat %>% dplyr::select(ends_with("AffectiveFeedback"))
+
+combined_dat_AF$Condition <- combined_dat$condition 
+
+combined_dat_AF_Cond1or3 <-
+  combined_dat_AF %>% filter(Condition == 2 | Condition == 4)
+
+combined_dat_AF_Cond1or3$Condition = NULL
+
+combined_dat_AF_Cond2or4 <-
+  combined_dat_AF %>% filter(Condition == 1 | Condition == 2)
+
+combined_dat_AF_Cond2or4$Condition = NULL
+
+combined_dat_CE <- combined_dat %>% dplyr::select(ends_with("CoopExpect"))
+
+combined_dat_CE$Condition <- combined_dat$condition 
+
+coop.ce.avg = function(x){
+  mean(combined_dat_CE[combined_dat_CE$Condition == 2 | combined_dat_CE$Condition == 4, x]) * 100 - 50
+}
+
+Cond1or3_AVG <- lapply(list("R1_CoopExpect", "R2_CoopExpect", "R3_CoopExpect", "R4_CoopExpect", "R5_CoopExpect", "R6_CoopExpect",
+                            "R7_CoopExpect", "R8_CoopExpect", "R9_CoopExpect", "R10_CoopExpect", "R11_CoopExpect", "R12_CoopExpect",
+                            "R13_CoopExpect", "R14_CoopExpect", "R15_CoopExpect", "R16_CoopExpect", "R17_CoopExpect", "R18_CoopExpect",
+                            "R19_CoopExpect"), coop.ce.avg)
+
+Coop_Feedback <- unlist(Cond1or3_AVG)
+
+CE_Comparison <- data.frame(Coop_Feedback)
+
+comp.ce.avg = function(x){
+  mean(combined_dat_CE[combined_dat_CE$Condition == 1 | combined_dat_CE$Condition == 3, x]) * 100 - 50
+}
+
+Cond2or4_AVG <- lapply(list("R1_CoopExpect", "R2_CoopExpect", "R3_CoopExpect", "R4_CoopExpect", "R5_CoopExpect", "R6_CoopExpect",
+                            "R7_CoopExpect", "R8_CoopExpect", "R9_CoopExpect", "R10_CoopExpect", "R11_CoopExpect", "R12_CoopExpect",
+                            "R13_CoopExpect", "R14_CoopExpect", "R15_CoopExpect", "R16_CoopExpect", "R17_CoopExpect", "R18_CoopExpect",
+                            "R19_CoopExpect"), comp.ce.avg)
+
+Comp_Feedback <- unlist(Cond2or4_AVG)
+
+CE_Comparison$Comp_Feedback <- Comp_Feedback
+
+CE_Comparison$Post_Round <- c(1:19)
+
+keycol.1 <- "Condition"
+
+valuecol.1 <- "CoopExp"
+
+gathercols.1 <- c("Coop_Feedback", "Comp_Feedback")
+
+CE_Comparison <- gather_(CE_Comparison, keycol.1, valuecol.1, gathercols.1)
+
+CE_CompPlot <- 
+  ggplot(CE_Comparison, aes(x=Post_Round, y=CoopExp, group=Condition)) +
+  geom_point(aes(color=Condition)) + 
+  geom_line(aes(color=Condition)) + 
+  scale_color_manual(values = c("#A6CEE3","#1F78B4"), labels = c("Cooperative", "Competitive")) + 
+  ylim(-50, 50) + 
+  theme_classic() + 
+  labs(x = "Round", y = "Expectation of Cooperation in the Following Round", color = "Affective Feedback") 
+
+CE_CompPlot
+```
+]
+
+---
+
+## Results 
+
+.center[ 
+```{r, echo = FALSE}
+# IPD score comp vs. coop 
+
+combined_dat_CR <- combined_dat %>% dplyr::select(ends_with("_Strategy"))
+
+combined_dat_CR$Condition <- combined_dat$condition
+
+coop.cr = function(x){
+  decision = data.frame(table(combined_dat_CR[combined_dat_CR$Condition == 2 | combined_dat_CR$Condition == 4, x]))
+  (decision[1, 2] / (decision[1, 2] + decision[2, 2])) * 100
+}
+
+Cond1or3_CR <- lapply(list("R1_Strategy", "R2_Strategy", "R3_Strategy", "R4_Strategy", "R5_Strategy", "R6_Strategy", 
+                           "R7_Strategy", "R8_Strategy", "R9_Strategy", "R10_Strategy", "R11_Strategy", "R12_Strategy",
+                           "R13_Strategy", "R14_Strategy", "R15_Strategy", "R16_Strategy", "R17_Strategy", "R18_Strategy",
+                           "R19_Strategy", "R20_Strategy"), coop.cr)
+
+Cooperative_Feedback <- unlist(Cond1or3_CR)
+
+CR_Comparison <- data.frame(Cooperative_Feedback)
+
+comp.cr = function(x){
+  decision = data.frame(table(combined_dat_CR[combined_dat_CR$Condition == 1 | combined_dat_CR$Condition == 3, x]))
+  (decision[1, 2] / (decision[1, 2] + decision[2, 2])) * 100
+}
+
+Cond2or4_CR <- lapply(list("R1_Strategy", "R2_Strategy", "R3_Strategy", "R4_Strategy", "R5_Strategy", "R6_Strategy", 
+                           "R7_Strategy", "R8_Strategy", "R9_Strategy", "R10_Strategy", "R11_Strategy", "R12_Strategy",
+                           "R13_Strategy", "R14_Strategy", "R15_Strategy", "R16_Strategy", "R17_Strategy", "R18_Strategy",
+                           "R19_Strategy", "R20_Strategy"), comp.cr)
+
+Competitive_Feedback <- unlist(Cond2or4_CR)
+
+CR_Comparison$Competitive_Feedback <- Competitive_Feedback
+
+CR_Comparison$Round <- c(1:20)
+
+keycol.2 <- "Condition"
+
+valuecol.2 <- "CoopRatio"
+
+gathercols.2 <- c("Cooperative_Feedback", "Competitive_Feedback")
+
+CR_Comparison <- gather_(CR_Comparison, keycol.2, valuecol.2, gathercols.2)
+
+CR_CompPlot <- 
+  ggplot(CR_Comparison, aes(x=Round, y=CoopRatio, group=Condition)) +
+  geom_point(aes(color=Condition)) + 
+  geom_line(aes(color=Condition)) + 
+  scale_color_manual(values = c("#A6CEE3","#1F78B4"), labels = c("Cooperative", "Competitive")) + 
+  ylim(0, 100) + 
+  theme_classic() + 
+  labs(x = "Round", y = "Cooperation Rate (%)", color = "Affective Feedback")
+
+CR_CompPlot
+```
+]
+
+---
+
+## Results 
+
+```{r, echo = FALSE, fig.width = 20}
+regint_c_combined <- lm(scale(CoopExpect) ~ scale(PPIR_C)*AffectiveFeedback*Stroop, data = combined_dat)
+
+plotint_c_combined <- plot_model(regint_c_combined, type = "pred", terms = c("PPIR_C", "AffectiveFeedback", "Stroop"), 
+                                 title = "Predicted values of PD cooperation expectation", axis.title = c("PPI-R Coldheartedness", "Cooperation Expectation"), 
+                                 legend.title = "Affective Feedback")
+
+regint_sti_combined <- lm(scale(CoopExpect) ~ scale(PPIR_STI)*AffectiveFeedback*Stroop, data = combined_dat)
+
+plotint_sti_combined <- plot_model(regint_sti_combined, type = "pred", terms = c("PPIR_STI", "AffectiveFeedback", "Stroop"), 
+                                   title = "Predicted values of PD cooperation expectation", axis.title = c("PPI-R Stress Immunity", "Cooperation Expectation"), 
+                                   legend.title = "Affective Feedback")
+
+cowplot::plot_grid(plotint_sti_combined, plotint_c_combined, nrow=1)
 ```
 
-```{r}
 
-```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
