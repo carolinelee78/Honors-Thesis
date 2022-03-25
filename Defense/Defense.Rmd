@@ -1,0 +1,211 @@
+---
+title: "The Influence of Psychopathic Traits and Affective Feedback on Cooperation in the Iterated Prisoner's Dilemma"
+author: 
+- Caroline Lee 
+- "Advisors: Andy Kazama, Ph.D., Tom Costello, M.A., Shauna Bowes, M.A."
+- Personality Research Lab 
+- Emory Department of Psychology
+output: xaringan::moon_reader
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(tidyverse) # load tidyverse package
+library(countdown)
+library(apaTables)
+library(tidyverse)
+library(purrr)
+library(tidyr)
+library(ggplot2)
+library(correlation)
+library(varhandle)
+library(cowplot) 
+library(ggstatsplot)
+library(sjPlot)
+library(sjmisc)
+library(ggplot2)
+library(psych)
+library(ggpubr)
+library(Hmisc)
+library(ggnewscale)
+library(emmeans)
+library(ggsci)
+library(data.table)
+library(multcomp)
+library(report)
+library(broom)
+library(rstatix)
+library(ggfortify)
+library(stats)
+
+theme_set(theme_sjplot())
+
+knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
+
+setwd("/Users/carolinelee/Desktop/Honors")
+
+dat1 <- read.csv(file = 'undergrad_dat.csv', header = TRUE)
+dat2 <- read.csv(file = 'undergrad_dat_ppin.csv', header = TRUE)
+dat3 <- read.csv(file = 'prolific_dat.csv', header = TRUE)
+dat4 <- read.csv(file = 'prolific_dat_ppin.csv', header = TRUE)
+
+undergrad_dat <- dplyr::bind_rows(dat1, dat2)
+
+table(undergrad_dat$attention_check) 
+
+undergrad_dat <-
+  undergrad_dat %>% filter(attention_check == "TRUE")
+
+prolific_dat <- dplyr::bind_rows(dat3, dat4)
+
+table(prolific_dat$attention_check) 
+
+prolific_dat <-
+  prolific_dat %>% filter(attention_check == "TRUE")
+
+combined_dat <- dplyr::bind_rows(undergrad_dat, prolific_dat)
+
+combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 1, "Cooperative", 
+                                                                   ifelse(condition == 2, "Competitive",
+                                                                          ifelse(condition == 3, "Cooperative",
+                                                                                 "Competitive"))),
+                                        Stroop = ifelse(condition == 1 | condition == 2, "Incongruent", "Congruent")
+)
+
+```
+
+## Results
+
+```{r, echo = FALSE}
+countdown(minutes = 1, seconds = 30, top = 0, font_size = "0.7em", play_sound = FALSE)
+```
+
+.center[
+```{r, echo = FALSE}
+ggscatterstats(data=combined_dat, 
+               x=FERT_Score_2, 
+               y=FERT_CorrectEstimate, 
+               xlab = "Actual FERT Score", 
+               ylab = "Estimated FERT Score", 
+               caption = "FERT = Facial Expression Recognition Task")
+```
+]
+
+---
+
+## Results 
+
+```{r, echo = FALSE}
+countdown(minutes = 1, seconds = 30, top = 0, font_size = "0.7em", play_sound = FALSE)
+```
+
+.pull-left[
+```{r, echo = FALSE}
+vQuart = quantile(combined_dat$FERT_Score_2, c(0:4/4))
+
+# classify values
+combined_dat$quartile = with(combined_dat, 
+               cut(FERT_Score_2, 
+                   vQuart, 
+                   include.lowest = T, 
+                   labels = c("Bottom", "Second", "Third", "Top")))
+
+combined_dat$quartile <- as.factor(combined_dat$quartile)
+
+Quartile <- rep(c("Bottom", "Second", "Third", "Top"), 2)
+Prpt <- c(0.5844749, 0.6844262, 0.7352941, 0.8135684, 0.6252055, 0.6455738, 0.6698039, 0.6813462)
+Measure <- c(rep(c("Actual"), 4), rep(c("Estimate"), 4))
+
+dk.data.quart <- data.frame(Quartile, Prpt, Measure)
+
+dk.quart.bottom <- combined_dat[combined_dat$quartile=="Bottom", c("FERT_Score_2", "FERT_CorrectEstimate")]
+
+dk.quart.bottom <- gather(dk.quart.bottom, Group, Proportion, FERT_Score_2, FERT_CorrectEstimate)
+
+dk.quart.second <- combined_dat[combined_dat$quartile=="Second", c("FERT_Score_2", "FERT_CorrectEstimate")]
+
+dk.quart.second <- gather(dk.quart.second, Group, Proportion, FERT_Score_2, FERT_CorrectEstimate)
+
+dk.quart.third <- combined_dat[combined_dat$quartile=="Third", c("FERT_Score_2", "FERT_CorrectEstimate")]
+
+dk.quart.top <- combined_dat[combined_dat$quartile=="Top", c("FERT_Score_2", "FERT_CorrectEstimate")]
+
+quart_plot <- ggplot(data=dk.data.quart, aes(x=Quartile, y=Prpt, group=Measure)) +
+  geom_point(aes(color=Measure)) + 
+  geom_line(aes(color=Measure)) + 
+  scale_color_manual(values = c("#CAB2D6", "#6A3D9A"), labels = c("Actual", "Estimate")) + 
+  labs(y = "Average Proportion of Correct Responses")
+
+##################
+
+vTert = quantile(combined_dat$FERT_Score_2, c(0:3/3))
+
+# classify values
+combined_dat$tertile = with(combined_dat, 
+                             cut(FERT_Score_2, 
+                                 vTert, 
+                                 include.lowest = T, 
+                                 labels = c("Lower", "Middle", "Upper")))
+
+Tertile <- rep(c("Lower", "Middle", "Upper"), 2)
+Prpt <- c(0.6035088, 0.7058081, 0.7934942, 0.6386316, 0.6412121, 0.6792105)
+Measure <- c(rep(c("Actual"), 3), rep(c("Estimate"), 3))
+
+dk.data.tert <- data.frame(Tertile, Prpt, Measure)
+
+dk.tert.lower <- dk.data.tert[ c(1,4), ]
+
+dk.tert.middle <- dk.data.tert[ c(2,5), ]
+
+dk.tert.upper <- dk.data.tert[ c(3,6), ]
+
+tert_plot <- ggplot(data=dk.data.tert, aes(x=Tertile, y=Prpt, group=Measure)) +
+  geom_point(aes(color=Measure)) + 
+  geom_line(aes(color=Measure)) + 
+  scale_color_manual(values = c("#CAB2D6", "#6A3D9A"), labels = c("Actual", "Estimate")) + 
+  labs(y = "Average Proportion of Correct Responses", x = "Tercile")
+
+cowplot::plot_grid(quart_plot, tert_plot, nrow=2)
+```
+]
+
+.pull-right[
+```{r, echo = FALSE}
+
+fert_plot_1 <- ggplot(combined_dat, aes(x=FERT_Score_2, y=FERT_CorrectEstimate)) + 
+  geom_point() +
+  geom_smooth(aes(colour="Linear"), method='lm', se=FALSE, formula=y~x) + 
+  geom_smooth(aes(colour="Quadratic"), method='lm', se=FALSE, formula=y~poly(x,2)) + 
+  geom_smooth(aes(colour="Cubic"), method='lm', se=FALSE, formula=y~poly(x,3)) +
+  labs(x = "Proportion of Correct FERT Responses", y = "FERT Self-Report Performance Estimate") + 
+  scale_colour_manual(name="Model", values=c("mediumslateblue", "mediumturquoise", "lightsalmon")) + 
+  guides(colour = guide_legend(override.aes = list(alpha = 0))) +
+  theme_classic() 
+
+fert_plot_2 <- ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) + 
+  geom_point() +
+  geom_smooth(aes(colour="Linear"), method='lm', se=FALSE, formula=y~x) + 
+  geom_smooth(aes(colour="Quadratic"), method='lm', se=FALSE, formula=y~poly(x,2)) + 
+  geom_smooth(aes(colour="Cubic"), method='lm', se=FALSE, formula=y~poly(x,3)) +
+  labs(x = "FERT Score", y = "FERT Self-Report Performance Estimate") + 
+  scale_colour_manual(name="Model", values=c("mediumslateblue", "mediumturquoise", "lightsalmon")) + 
+  guides(colour = guide_legend(override.aes = list(alpha = 0))) +
+  theme_classic() 
+
+cowplot::plot_grid(fert_plot_1, fert_plot_2, nrow=2)
+```
+]
+
+---
+
+## Results 
+
+```{r, echo = FALSE}
+countdown(minutes = 1, seconds = 30, top = 0, font_size = "0.7em", play_sound = FALSE)
+```
+
+```{r}
+
+```
+
