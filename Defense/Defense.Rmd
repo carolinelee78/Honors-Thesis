@@ -129,13 +129,13 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 
 ## Emotions as Social Information (EASI) Model 
 
-Van Kleef (2009)
+
 
 ---
 
 ## Interdependence Theory 
 
-Kelley & Thibaut (1978); Van Lange et al. (2013)
+
 
 ---
 
