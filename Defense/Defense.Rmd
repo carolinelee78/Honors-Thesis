@@ -11,6 +11,12 @@ output:
       countdown: 60000
 ---
 
+```{css, echo = F}
+.partial-bg {
+  background-image: linear-gradient(0deg, black);
+}
+```
+
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
@@ -80,7 +86,14 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 
 ## Psychopathy 
 
-de Brito et al. (2020)
+![debrito](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/debrito.png)
+
+---
+
+## Reverse Appraisal 
+
+
+
 ---
 
 ## Results
@@ -99,8 +112,8 @@ ggscatterstats(data=combined_dat,
 ---
 
 ## Results 
-
-```{r, echo = FALSE, fig.width = 17}
+.center[ 
+```{r, echo = FALSE}
 vQuart = quantile(combined_dat$FERT_Score_2, c(0:4/4))
 
 # classify values
@@ -136,8 +149,14 @@ quart_plot <- ggplot(data=dk.data.quart, aes(x=Quartile, y=Prpt, group=Measure))
   scale_color_manual(values = c("#CAB2D6", "#6A3D9A"), labels = c("Actual", "Estimate")) + 
   labs(y = "Average Proportion of Correct Responses")
 
-##################
+quart_plot
+```
+]
+---
 
+## Results 
+.center[ 
+```{r, echo = FALSE}
 vTert = quantile(combined_dat$FERT_Score_2, c(0:3/3))
 
 # classify values
@@ -165,16 +184,17 @@ tert_plot <- ggplot(data=dk.data.tert, aes(x=Tertile, y=Prpt, group=Measure)) +
   scale_color_manual(values = c("#CAB2D6", "#6A3D9A"), labels = c("Actual", "Estimate")) + 
   labs(y = "Average Proportion of Correct Responses", x = "Tercile")
 
-cowplot::plot_grid(quart_plot, tert_plot, nrow=1)
+tert_plot
 ```
+]
 
 ---
 
 ## Results
+.center[ 
+```{r, echo = FALSE}
 
-```{r, echo = FALSE, fig.width = 17}
-
-fert_plot_1 <- ggplot(combined_dat, aes(x=FERT_Score_2, y=FERT_CorrectEstimate)) + 
+ggplot(combined_dat, aes(x=FERT_Score_2, y=FERT_CorrectEstimate)) + 
   geom_point() +
   geom_smooth(aes(colour="Linear"), method='lm', se=FALSE, formula=y~x) + 
   geom_smooth(aes(colour="Quadratic"), method='lm', se=FALSE, formula=y~poly(x,2)) + 
@@ -183,8 +203,15 @@ fert_plot_1 <- ggplot(combined_dat, aes(x=FERT_Score_2, y=FERT_CorrectEstimate))
   scale_colour_manual(name="Model", values=c("mediumslateblue", "mediumturquoise", "lightsalmon")) + 
   guides(colour = guide_legend(override.aes = list(alpha = 0))) +
   theme_classic() 
+```
+]
 
-fert_plot_2 <- ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) + 
+---
+
+## Results 
+.center[ 
+```{r, echo = FALSE}
+ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) + 
   geom_point() +
   geom_smooth(aes(colour="Linear"), method='lm', se=FALSE, formula=y~x) + 
   geom_smooth(aes(colour="Quadratic"), method='lm', se=FALSE, formula=y~poly(x,2)) + 
@@ -193,9 +220,8 @@ fert_plot_2 <- ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) +
   scale_colour_manual(name="Model", values=c("mediumslateblue", "mediumturquoise", "lightsalmon")) + 
   guides(colour = guide_legend(override.aes = list(alpha = 0))) +
   theme_classic() 
-
-cowplot::plot_grid(fert_plot_1, fert_plot_2, nrow=1)
 ```
+]
 
 ---
 
@@ -555,32 +581,36 @@ CR_CompPlot
 ---
 
 ## Results 
-
-```{r, echo = FALSE, fig.width = 20}
-regint_c_combined <- lm(scale(CoopExpect) ~ scale(PPIR_C)*AffectiveFeedback*Stroop, data = combined_dat)
-
-plotint_c_combined <- plot_model(regint_c_combined, type = "pred", terms = c("PPIR_C", "AffectiveFeedback", "Stroop"), 
-                                 title = "Predicted values of PD cooperation expectation", axis.title = c("PPI-R Coldheartedness", "Cooperation Expectation"), 
-                                 legend.title = "Affective Feedback")
-
+.center[ 
+```{r, echo = FALSE}
 regint_sti_combined <- lm(scale(CoopExpect) ~ scale(PPIR_STI)*AffectiveFeedback*Stroop, data = combined_dat)
 
 plotint_sti_combined <- plot_model(regint_sti_combined, type = "pred", terms = c("PPIR_STI", "AffectiveFeedback", "Stroop"), 
                                    title = "Predicted values of PD cooperation expectation", axis.title = c("PPI-R Stress Immunity", "Cooperation Expectation"), 
                                    legend.title = "Affective Feedback")
 
-cowplot::plot_grid(plotint_sti_combined, plotint_c_combined, nrow=1)
+plotint_sti_combined
 ```
+]
+---
 
+## Results 
+.center[ 
+```{r, echo = FALSE}
+regint_c_combined <- lm(scale(CoopExpect) ~ scale(PPIR_C)*AffectiveFeedback*Stroop, data = combined_dat)
 
+plotint_c_combined <- plot_model(regint_c_combined, type = "pred", terms = c("PPIR_C", "AffectiveFeedback", "Stroop"), 
+                                 title = "Predicted values of PD cooperation expectation", axis.title = c("PPI-R Coldheartedness", "Cooperation Expectation"), 
+                                 legend.title = "Affective Feedback")
 
+plotint_c_combined
+```
+]
 
+---
+class: partial-bg center, middle, inverse
 
-
-
-
-
-
+# Questions
 
 
 
