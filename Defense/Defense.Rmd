@@ -7,6 +7,7 @@ author:
 - Emory Department of Psychology
 output: 
   xaringan::moon_reader: 
+    css: ["default", "default-fonts", "hygge"]
     nature:
       countdown: 60000
 ---
@@ -47,8 +48,7 @@ library(broom)
 library(rstatix)
 library(ggfortify)
 library(stats)
-library(icons)
-library(fontawesome)
+library(magick)
 
 theme_set(theme_sjplot())
 
@@ -92,9 +92,65 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 
 ---
 
+## Psychopathy 
+
+**Psychopathic Personality Inventory - Revised** (PPI-R; Lilienfeld & Widows, 2005)
+
+.pull-left[.full-width[.content-box-yellow[**Fearless Dominance** <br> <br> &bull; Stress Immunity <br> <br> &bull; Social Influence <br> <br> &bull; Fearlessness]]] 
+.pull-right[.full-width[.content-box-green[**Self-Centered Impulsivity** <br> <br> &bull; Carefree Nonplanfulness <br> <br> &bull; Machiavellian Egocentricity <br> <br> &bull; Blame Externalization <br> <br> &bull; Rebellious Nonconformity]]] 
+
+.pull-left[.full-width[.content-box-purple[**Coldheartedness**]]]
+
+---
+
+## Psychopathy 
+
+**Levenson Self-Report Psychopathy Scale** (LSRP; Levenson et al., 1995)
+
+.pull-left[.full-width[.content-box-blue[**Interpersonal Facet** <br> <br> *Factor 1*]]]
+
+.pull-left[.full-width[.content-box-yellow[**Affective Facet** <br> <br> *Factor 1*]]]
+
+.pull-right[.full-width[.content-box-green[**Lifestyle Facet** <br> <br> *Factor 2*]]]
+
+.pull-right[.full-width[.content-box-red[**Antisocial Facet** <br> <br> *Factor 2*]]]
+
+---
+
 ## Reverse Appraisal 
 
 ![reverse_appraisal](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/reverse_appraisal.png)
+---
+
+## Dunning-Kruger Effect 
+
+
+---
+
+## Emotions as Social Information (EASI) Model 
+
+Van Kleef (2009)
+
+---
+
+## Interdependence Theory 
+
+Kelley & Thibaut (1978); Van Lange et al. (2013)
+
+---
+
+## Current Study 
+
+---
+
+## Hypotheses 
+
+ .content-box-yellow[`.content-box-yellow[]`]
+
+---
+
+## Hypotheses 
+
 ---
 
 ## Results
@@ -583,7 +639,7 @@ CR_CompPlot
 
 ## Results 
 .center[ 
-```{r, echo = FALSE}
+```{r, echo = FALSE, fig.width=10}
 regint_sti_combined <- lm(scale(CoopExpect) ~ scale(PPIR_STI)*AffectiveFeedback*Stroop, data = combined_dat)
 
 plotint_sti_combined <- plot_model(regint_sti_combined, type = "pred", terms = c("PPIR_STI", "AffectiveFeedback", "Stroop"), 
@@ -597,7 +653,7 @@ plotint_sti_combined
 
 ## Results 
 .center[ 
-```{r, echo = FALSE}
+```{r, echo = FALSE, fig.width = 10}
 regint_c_combined <- lm(scale(CoopExpect) ~ scale(PPIR_C)*AffectiveFeedback*Stroop, data = combined_dat)
 
 plotint_c_combined <- plot_model(regint_c_combined, type = "pred", terms = c("PPIR_C", "AffectiveFeedback", "Stroop"), 
@@ -609,19 +665,35 @@ plotint_c_combined
 ]
 
 ---
+
+## Limitations 
+
+<ul>
+  <li>Small sample size resulted in low power, qualifying the generalizability of the results for the present study and increasing likelihood of making a Type II error</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+---
+
+## Future Directions 
+
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+---
 class: partial-bg center, middle, inverse
 
 # Questions
 
 ```{r, echo = FALSE}
-download_fontawesome(version = "dev")
+question <- image_read("https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/questions.png")
 
-
+image_negate(question)
 ```
-
-
-
-
 
 
 
