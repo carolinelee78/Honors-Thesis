@@ -155,12 +155,13 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 
 ## Psychopathy and Emotion Perception 
 
-![bottleneck](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/ab.png)
+![ab1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/ab.png)
 
 ---
 
 ## Psychopathy and emotion perception 
 
+![ab2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/ab2.png)
 
 ---
 
