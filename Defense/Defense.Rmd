@@ -149,53 +149,13 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 
 ## Psychopathy and Emotion Perception 
 
-Hervey M. Cleckley 
-
-The Cleckley psychopath & “the mask of sanity”
-
-<ol>
-  <li>Interpersonal charm and poise</li>
-  <li><strong>Affective detechment</strong></li>
-  <li>Impulse control deficits</li>
-</ol>
-
-
-... "**a general poverty in affect**" (Cleckley, 1955, p.306)
-
-Joseph M. Newman 
-
-Exaggerated "Attention Bottleneck" 
-
-Narrower "bottleneck" for information that is **not** goal-relevant
-
-Cleckley, 1944; Cleckley, 1988; NIH, 1951
-
-Newman, 1987; Patrick, 2018; 
+![cleckley](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/cleckley.png)
 
 ---
 
 ## Psychopathy and Emotion Perception 
 
 
-**Global** emotion recognition deficit in psychopathy? – **Yes**.
-
-**Global** emotion recognition deficit in psychopathy? – **No**.
-
-University of Wisconsin-Madison, n.d.
-
-Increases with higher levels of psychopathy: 
-
-<ul>
-   <li>Reduced response to goal-peripheral affective content </li>
-   <li>Negative perception of goal-peripheral neutral content  (inhibitory devaluation)</li>
-</ul>
-
-Effects disappear when enough time is allotted for 
-processing goal-peripheral content 
-
-Larson et al., 2013; Newman, 1987; 
-
-Tillem & Baskin-Sommers, 2017
 
 ---
 
