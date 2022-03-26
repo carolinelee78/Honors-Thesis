@@ -129,13 +129,13 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 
 ## Emotions as Social Information (EASI) Model 
 
-
+![easi](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/easi.png)
 
 ---
 
 ## Interdependence Theory 
 
-
+![interdependence](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/interdependence.png)
 
 ---
 
