@@ -4259,7 +4259,7 @@ ggplot(combined_dat, aes(x=FERT_Score_2, y=FERT_CorrectEstimate)) +
 
 ## Results 
 
-.pull-left[.full-width[.content-box-yellow[**Hypothesis 1a** <br> <br> Consistent with Dunning-Kruger effect <br> <br> .orange[**Partially supported**]]]]]
+.pull-left[.full-width[.content-box-yellow[**Hypothesis 1a** <br> <br> Consistent with Dunning-Kruger effect <br> <br> .orange[**Partially supported**]]]]
 
 .pull-right[ 
 ```{r, echo = FALSE}
@@ -4283,17 +4283,25 @@ ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) +
 ]]]
 
 .pull-right[
-![S1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S1.png)
+![S1-2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/s1-2.png)
 ]
 
-.pull-right[
-![S2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S2.png)
-]
 ---
 
 ## Results 
 
-.center[
+.pull-left[.full-width[.content-box-red[**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> 
+<span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability .red[**Not supported**]]]]
+
+
+---
+
+## Results
+
+.pull-left[.full-width[.content-box-green[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Rate and expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
+Competitive affective feedback: Rate and expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
+
+.pull-right[
 ```{r, echo = FALSE}
 m1 <- lm(IPD_Score ~ Stroop * AffectiveFeedback, data = combined_dat)
 
@@ -4469,7 +4477,10 @@ cowplot::plot_grid(gg1_1, gg3_1, gg1_2, gg3_2, nrow=2, labels = "AUTO")
 
 ## Results 
 
-.center[
+.pull-left[.full-width[.content-box-green[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
+Competitive affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
+
+.pull-right[
 ```{r, echo = FALSE}
 ggbetweenstats(
   combined_dat,
@@ -4486,7 +4497,10 @@ ggbetweenstats(
 
 ## Results 
 
-.center[
+.pull-left[.full-width[.content-box-green[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
+Competitive affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
+
+.pull-right[
 ```{r, echo = FALSE}
 ggbetweenstats(
   combined_dat,
@@ -4503,7 +4517,76 @@ ggbetweenstats(
 
 ## Results 
 
-.center[ 
+.pull-left[.full-width[.content-box-green[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
+Competitive affective feedback: Rate and expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
+
+.pull-right[ 
+```{r, echo = FALSE}
+# IPD score comp vs. coop 
+
+combined_dat_CR <- combined_dat %>% dplyr::select(ends_with("_Strategy"))
+
+combined_dat_CR$Condition <- combined_dat$condition
+
+coop.cr = function(x){
+  decision = data.frame(table(combined_dat_CR[combined_dat_CR$Condition == 2 | combined_dat_CR$Condition == 4, x]))
+  (decision[1, 2] / (decision[1, 2] + decision[2, 2])) * 100
+}
+
+Cond1or3_CR <- lapply(list("R1_Strategy", "R2_Strategy", "R3_Strategy", "R4_Strategy", "R5_Strategy", "R6_Strategy", 
+                           "R7_Strategy", "R8_Strategy", "R9_Strategy", "R10_Strategy", "R11_Strategy", "R12_Strategy",
+                           "R13_Strategy", "R14_Strategy", "R15_Strategy", "R16_Strategy", "R17_Strategy", "R18_Strategy",
+                           "R19_Strategy", "R20_Strategy"), coop.cr)
+
+Cooperative_Feedback <- unlist(Cond1or3_CR)
+
+CR_Comparison <- data.frame(Cooperative_Feedback)
+
+comp.cr = function(x){
+  decision = data.frame(table(combined_dat_CR[combined_dat_CR$Condition == 1 | combined_dat_CR$Condition == 3, x]))
+  (decision[1, 2] / (decision[1, 2] + decision[2, 2])) * 100
+}
+
+Cond2or4_CR <- lapply(list("R1_Strategy", "R2_Strategy", "R3_Strategy", "R4_Strategy", "R5_Strategy", "R6_Strategy", 
+                           "R7_Strategy", "R8_Strategy", "R9_Strategy", "R10_Strategy", "R11_Strategy", "R12_Strategy",
+                           "R13_Strategy", "R14_Strategy", "R15_Strategy", "R16_Strategy", "R17_Strategy", "R18_Strategy",
+                           "R19_Strategy", "R20_Strategy"), comp.cr)
+
+Competitive_Feedback <- unlist(Cond2or4_CR)
+
+CR_Comparison$Competitive_Feedback <- Competitive_Feedback
+
+CR_Comparison$Round <- c(1:20)
+
+keycol.2 <- "Condition"
+
+valuecol.2 <- "CoopRatio"
+
+gathercols.2 <- c("Cooperative_Feedback", "Competitive_Feedback")
+
+CR_Comparison <- gather_(CR_Comparison, keycol.2, valuecol.2, gathercols.2)
+
+CR_CompPlot <- 
+  ggplot(CR_Comparison, aes(x=Round, y=CoopRatio, group=Condition)) +
+  geom_point(aes(color=Condition)) + 
+  geom_line(aes(color=Condition)) + 
+  scale_color_manual(values = c("#A6CEE3","#1F78B4"), labels = c("Cooperative", "Competitive")) + 
+  ylim(0, 100) + 
+  theme_classic() + 
+  labs(x = "Round", y = "Cooperation Rate (%)", color = "Affective Feedback")
+
+CR_CompPlot
+```
+]
+
+---
+
+## Results 
+
+.pull-left[.full-width[.content-box-green[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
+Competitive affective feedback: Rate and expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
+
+.pull-right[ 
 ```{r, echo = FALSE}
 
 # IPD expectation of cooperation 
@@ -4579,69 +4662,10 @@ CE_CompPlot
 
 ## Results 
 
-.center[ 
-```{r, echo = FALSE}
-# IPD score comp vs. coop 
+.pull-left[.full-width[.content-box-yellow[**Hypothesis 2d** <br> <br> 
+Three-way interaction between psychopathy, affective feedback congruence, and Stroop interference <br> <br> .orange[**Partially supported**]]]]
 
-combined_dat_CR <- combined_dat %>% dplyr::select(ends_with("_Strategy"))
-
-combined_dat_CR$Condition <- combined_dat$condition
-
-coop.cr = function(x){
-  decision = data.frame(table(combined_dat_CR[combined_dat_CR$Condition == 2 | combined_dat_CR$Condition == 4, x]))
-  (decision[1, 2] / (decision[1, 2] + decision[2, 2])) * 100
-}
-
-Cond1or3_CR <- lapply(list("R1_Strategy", "R2_Strategy", "R3_Strategy", "R4_Strategy", "R5_Strategy", "R6_Strategy", 
-                           "R7_Strategy", "R8_Strategy", "R9_Strategy", "R10_Strategy", "R11_Strategy", "R12_Strategy",
-                           "R13_Strategy", "R14_Strategy", "R15_Strategy", "R16_Strategy", "R17_Strategy", "R18_Strategy",
-                           "R19_Strategy", "R20_Strategy"), coop.cr)
-
-Cooperative_Feedback <- unlist(Cond1or3_CR)
-
-CR_Comparison <- data.frame(Cooperative_Feedback)
-
-comp.cr = function(x){
-  decision = data.frame(table(combined_dat_CR[combined_dat_CR$Condition == 1 | combined_dat_CR$Condition == 3, x]))
-  (decision[1, 2] / (decision[1, 2] + decision[2, 2])) * 100
-}
-
-Cond2or4_CR <- lapply(list("R1_Strategy", "R2_Strategy", "R3_Strategy", "R4_Strategy", "R5_Strategy", "R6_Strategy", 
-                           "R7_Strategy", "R8_Strategy", "R9_Strategy", "R10_Strategy", "R11_Strategy", "R12_Strategy",
-                           "R13_Strategy", "R14_Strategy", "R15_Strategy", "R16_Strategy", "R17_Strategy", "R18_Strategy",
-                           "R19_Strategy", "R20_Strategy"), comp.cr)
-
-Competitive_Feedback <- unlist(Cond2or4_CR)
-
-CR_Comparison$Competitive_Feedback <- Competitive_Feedback
-
-CR_Comparison$Round <- c(1:20)
-
-keycol.2 <- "Condition"
-
-valuecol.2 <- "CoopRatio"
-
-gathercols.2 <- c("Cooperative_Feedback", "Competitive_Feedback")
-
-CR_Comparison <- gather_(CR_Comparison, keycol.2, valuecol.2, gathercols.2)
-
-CR_CompPlot <- 
-  ggplot(CR_Comparison, aes(x=Round, y=CoopRatio, group=Condition)) +
-  geom_point(aes(color=Condition)) + 
-  geom_line(aes(color=Condition)) + 
-  scale_color_manual(values = c("#A6CEE3","#1F78B4"), labels = c("Cooperative", "Competitive")) + 
-  ylim(0, 100) + 
-  theme_classic() + 
-  labs(x = "Round", y = "Cooperation Rate (%)", color = "Affective Feedback")
-
-CR_CompPlot
-```
-]
-
----
-
-## Results 
-.center[ 
+.pull-right[ 
 ```{r, echo = FALSE, fig.width=10}
 regint_sti_combined <- lm(scale(CoopExpect) ~ scale(PPIR_STI)*AffectiveFeedback*Stroop, data = combined_dat)
 
@@ -4655,7 +4679,11 @@ plotint_sti_combined
 ---
 
 ## Results 
-.center[ 
+
+.pull-left[.full-width[.content-box-yellow[**Hypothesis 2d** <br> <br> 
+Three-way interaction between psychopathy, affective feedback congruence, and Stroop interference <br> <br> .orange[**Partially supported**]]]]
+
+.pull-right[ 
 ```{r, echo = FALSE, fig.width = 10}
 regint_c_combined <- lm(scale(CoopExpect) ~ scale(PPIR_C)*AffectiveFeedback*Stroop, data = combined_dat)
 
