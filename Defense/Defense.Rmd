@@ -4258,7 +4258,7 @@ ggplot(combined_dat, aes(x=FERT_Score_2, y=FERT_CorrectEstimate)) +
 
 ---
 
-## Results 
+## Results
 
 .pull-left[.full-width[.content-box-yellow[<font style="opacity:0"> asfdasdfasdf</font> <br> <br> **Hypothesis 1a** <br> <br> Consistent with the Dunning-Kruger effect <br> <br> .orange[**Partially supported**<font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]]
 
@@ -4280,7 +4280,7 @@ ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) +
 
 ## Results 
 
-.pull-left[.full-width[.content-box-red[**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> .red[**Not supported**]
+.pull-left[.full-width[.content-box-red[<font style="opacity:0"> asfdasdfasdf</font> <br> <br>**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> .red[**Not supported** <font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]
 ]]]
 
 .pull-right[
@@ -4291,8 +4291,8 @@ ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) +
 
 ## Results 
 
-.pull-left[.full-width[.content-box-red[**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> 
-<span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability <br> <br> .red[**Not supported**]]]]
+.pull-left[.full-width[.content-box-red[<font style="opacity:0"> asfdasdfasdf</font> <br> <br>**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> 
+<span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability <br> <br> .red[**Not supported** <font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]]
 
 .pull-right[
 ![T3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table3.png)
