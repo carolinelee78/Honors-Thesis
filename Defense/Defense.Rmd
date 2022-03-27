@@ -4290,8 +4290,10 @@ ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) +
 
 ## Results 
 
-.pull-left[.full-width[.content-box-red[**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> 
-<span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability .red[**Not supported**]]]]
+.full-width[.content-box-red[**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> 
+<span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability .red[**Not supported**]]]
+
+![T3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table3.png)
 
 
 ---
