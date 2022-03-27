@@ -4292,7 +4292,7 @@ ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) +
 ## Results 
 
 .pull-left[.full-width[.content-box-red[<font style="opacity:0"> asfdasdfasdf</font> <br> <br>**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> 
-<span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability <br> <br> .red[**Not supported** <font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]]
+<span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability <br> <br> .red[**Not supported**] <font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]
 
 .pull-right[
 ![T3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table3.png)
@@ -4481,48 +4481,8 @@ cowplot::plot_grid(gg1_1, gg3_1, gg1_2, gg3_2, nrow=2, labels = "AUTO")
 
 ## Results 
 
-.pull-left[.full-width[.content-box-green[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
-Competitive affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
-
-.pull-right[
-```{r, echo = FALSE}
-ggbetweenstats(
-  combined_dat,
-  condition,
-  IPD_Score,
-  ylab = "Cooperation",
-  plot.type = "boxviolin",
-  type = "parametric", 
-  var.equal = TRUE)
-```
-]
-
----
-
-## Results 
-
-.pull-left[.full-width[.content-box-green[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
-Competitive affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
-
-.pull-right[
-```{r, echo = FALSE}
-ggbetweenstats(
-  combined_dat,
-  condition,
-  CoopExpect,
-  ylab = "Expectation of Cooperation",
-  plot.type = "boxviolin",
-  type = "parametric", 
-  var.equal = TRUE)
-```
-]
-
----
-
-## Results 
-
-.pull-left[.full-width[.content-box-green[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
-Competitive affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
+.pull-left[.full-width[.content-box-green[<font style="opacity:0"> asfdasdfasdf</font> <br> **Hypothesis 2a** <br> <br> Cooperative affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
+Competitive affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]<font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]
 
 .pull-right[ 
 ```{r, echo = FALSE}
@@ -4587,8 +4547,8 @@ CR_CompPlot
 
 ## Results 
 
-.pull-left[.full-width[.content-box-green[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
-Competitive affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
+.pull-left[.full-width[.content-box-green[<font style="opacity:0"> asfdasdfasdf</font> <br> **Hypothesis 2a** <br> <br> Cooperative affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
+Competitive affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]<font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]
 
 .pull-right[ 
 ```{r, echo = FALSE}
@@ -4659,6 +4619,62 @@ CE_CompPlot <-
   labs(x = "Round", y = "Expectation of Cooperation in the Following Round", color = "Affective Feedback") 
 
 CE_CompPlot
+```
+]
+
+---
+
+## Results 
+
+.pull-left[.full-width[.content-box-yellow[**Hypothesis 2b** <br> <br> <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Levels of PPI-R Self-Centered Impulsivity and its subscales &#10140; <br> <br> <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> Rate and expectation of cooperation in PD <br> <br> .orange[**Partially supported**]]]]
+
+.pull-right[
+![table3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table6.png)
+]
+
+---
+
+## Results 
+
+.pull-left[.full-width[.content-box-green[**Hypothesis 2c** <br> <br> 
+Rate of cooperation: <br> <br> 
+Cooperative &times; Incongruent **<** <br> Cooperative &times; Congruent 
+<br> <br> 
+Competitive &times; Incongruent **>** <br> Competitive &times; Congruent 
+<br> <br>.green[**Supported**]]]]
+
+.pull-right[
+```{r, echo = FALSE}
+ggbetweenstats(
+  combined_dat,
+  condition,
+  IPD_Score,
+  ylab = "Cooperation",
+  plot.type = "boxviolin",
+  type = "parametric", 
+  var.equal = TRUE)
+```
+]
+
+---
+
+## Results 
+
+.pull-left[.full-width[.content-box-green[**Hypothesis 2c** <br> <br> 
+Expectation of cooperation: <br> <br> 
+Cooperative &times; Incongruent < Cooperative &times; Congruent <br> <br> 
+Competitive &times; Incongruent > Competitive &times; Congruent <br> <br>.green[**Supported**]]]]
+
+.pull-right[
+```{r, echo = FALSE}
+ggbetweenstats(
+  combined_dat,
+  condition,
+  CoopExpect,
+  ylab = "Expectation of Cooperation",
+  plot.type = "boxviolin",
+  type = "parametric", 
+  var.equal = TRUE)
 ```
 ]
 
