@@ -1,4 +1,6 @@
 ---
+count: false
+
 title: "The Influence of Psychopathic Traits and Affective Feedback on Cooperation in the Iterated Prisoner's Dilemma"
 author: 
 - Caroline Lee 
@@ -42,6 +44,11 @@ li:not(:last-child) {
   overflow-y: scroll;
 }
 
+.pink { color: Orchid; }
+
+.coral { color: Coral; }
+
+.cblue { color: CornflowerBlue; }
 ```
 
 ```{r setup, include=FALSE}
@@ -115,6 +122,7 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 ## Psychopathy 
 
 ![debrito](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/debrito.png)
+.footnote[de Brito et al. (2020)]
 
 ---
 
@@ -126,6 +134,8 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 .pull-right[.full-width[.content-box-green[**Self-Centered Impulsivity** <br> <br> &bull; Carefree Nonplanfulness <br> <br> &bull; Machiavellian Egocentricity <br> <br> &bull; Blame Externalization <br> <br> &bull; Rebellious Nonconformity]]] 
 
 .pull-left[.full-width[.content-box-purple[**Coldheartedness**]]]
+
+
 
 ---
 
@@ -147,17 +157,21 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 
 ![easi](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/easi.png)
 
+.left[.footnote[Van Kleef, 2009]]
 ---
 
 ## Interdependence Theory 
 
 ![interdependence](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/interdependence.png)
 
+.left[.footnote[Kelley & Thibaut, 1978; Van Lange et al., 2013]]
 ---
 
 ## Psychopathy and Emotion Perception 
 
 ![cleckley](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/cleckley.png)
+
+.left[.footnote[Cleckley, 1944; Cleckley, 1988; NIH, 1951]]
 
 ---
 
@@ -165,17 +179,21 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 
 ![ab1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/ab.png)
 
+.left[.footnote[Newman, 1987; Patrick, 2018; University of Wisconsin-Madison, n.d.]]
 ---
 
 ## Psychopathy and Emotion Perception 
 
 ![ab2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/ab2.png)
 
+.left[.footnote[Larson et al., 2013; Newman, 1987; Tillem & Baskin-Sommers, 2017]]
 ---
 
 ## Reverse Appraisal 
 
 ![reverse_appraisal](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/reverse_appraisal.png)
+
+.left[.footnote[Gratch & de Melo, 2019]]
 
 ---
 
@@ -183,12 +201,14 @@ combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 
 
 ![dunning-kruger](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/dunning-kruger.png)
 
+.left[.footnote[Kruger & Dunning, 2019; Lévy-Garboua et al., 2017; Sanchez & Dunning, 2019]]
 ---
 
 ## Current Study 
+name: current-study
 
 .pre[
-```{js, results = 'hide', error=FALSE, eval=FALSE}
+```{js, java-code, results = 'hide', error=FALSE, eval=FALSE}
 var consent_questions = {
   timeline: [
     {
@@ -4137,7 +4157,7 @@ Three-way interaction between psychopathy, affective feedback congruence, and St
 
 ## Results
 
-.pull-left[.full-width[.content-box-green[<font style="opacity:0"> asfdasdfasdf</font> <br> <br>  **Hypothesis 1a** <br> <br> Actual and estimated emotion recognition ability would be weakly correlated <br> <br>.green[**Supported**] <font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]
+.pull-left[.full-width[.content-box-red[<font style="opacity:0"> asfdasdfasdf</font> <br> <br>  **Hypothesis 1a** <br> <br> Actual and estimated emotion recognition ability would be weakly correlated <br> <br>.red[**Not Supported**] <font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]
 
 .pull-right[
 ```{r, echo = FALSE}
@@ -4636,12 +4656,11 @@ CE_CompPlot
 
 ## Results 
 
-.pull-left[.full-width[.content-box-green[**Hypothesis 2c** <br> <br> 
+.pull-left[.full-width[.content-box-yellow[**Hypothesis 2c** <br> <br> 
 Rate of cooperation: <br> <br> 
-Cooperative &times; Incongruent **<** <br> Cooperative &times; Congruent 
-<br> <br> 
-Competitive &times; Incongruent **>** <br> Competitive &times; Congruent 
-<br> <br>.green[**Supported**]]]]
+.green[**Cooperative &times; Incongruent**] .bolder[<] .cblue[**Cooperative &times; Congruent**] <br> <br> 
+.coral[**Competitive &times; Incongruent**] .bolder[>] .pink[**Competitive &times; Congruent**] 
+<br> <br> .orange[**Partially Supported**]]]]
 
 .pull-right[
 ```{r, echo = FALSE}
@@ -4656,14 +4675,20 @@ ggbetweenstats(
 ```
 ]
 
+.small[
+.green[**Condition 1: Cooperative &times; Incongruent**] <br>
+.coral[**Condition 2: Competitive &times; Incongruent**] <br>
+.cblue[**Condition 3: Cooperative &times; Congruent**] <br>
+.pink[**Condition 4: Competitive &times; Congruent**] 
+]
 ---
 
 ## Results 
 
-.pull-left[.full-width[.content-box-green[**Hypothesis 2c** <br> <br> 
+.pull-left[.full-width[.content-box-red[**Hypothesis 2c** <br> <br> 
 Expectation of cooperation: <br> <br> 
-Cooperative &times; Incongruent < Cooperative &times; Congruent <br> <br> 
-Competitive &times; Incongruent > Competitive &times; Congruent <br> <br>.green[**Supported**]]]]
+.green[**Cooperative &times; Incongruent**] .bolder[<] .cblue[**Cooperative &times; Congruent**] <br> <br> 
+.coral[**Competitive &times; Incongruent**] .bolder[>] .pink[**Competitive &times; Congruent**] <br> <br> .red[** Not Supported**]]]]
 
 .pull-right[
 ```{r, echo = FALSE}
@@ -4678,6 +4703,12 @@ ggbetweenstats(
 ```
 ]
 
+.small[
+.green[**Condition 1: Cooperative &times; Incongruent**] <br>
+.coral[**Condition 2: Competitive &times; Incongruent**] <br>
+.cblue[**Condition 3: Cooperative &times; Congruent**] <br>
+.pink[**Condition 4: Competitive &times; Congruent**] 
+]
 ---
 
 ## Results 
@@ -4717,26 +4748,27 @@ plotint_c_combined
 
 ---
 
-## Limitations 
+## Limitations & Future Directions
 
-<ul>
-  <li>Small sample size resulted in low power, qualifying the generalizability of the results for the present study and increasing likelihood of making a Type II error</li>
-  <li>Tea</li>
-  <li>Milk</li>
-</ul>
+.pull-left[.full-width[.content-box-purple[Insufficient power]]]
 
----
+.pull-right[.full-width[.content-box-green[Replicate the study with a larger sample size to have sufficient power (at least 80%)]]]
 
-## Future Directions 
+.pull-left[.full-width[.content-box-purple[Deception may have had low credibility, affecting rate & expectation of cooperation]]]
 
-<ul>
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Milk</li>
-</ul>
+.pull-right[.full-width[.content-box-green[Replicate the study with a human opponent using z-Tree]]]
+
+.pull-left[.full-width[.content-box-purple[Low internal consistency for PPI-R Coldheartedness]]]
+
+.pull-right[.full-width[.content-box-green[Use a longer version of the PPI-R]]]
+
+.pull-left[.full-width[.content-box-purple[Assumed that participants would not be able to detect TFT]]]
+
+.pull-right[.full-width[.content-box-green[Examine Dunning-Kruger effect for emotion recognition ability after controlling for the participants’ age & gender]]]
 
 ---
 class: partial-bg center, middle, inverse
+count: false
 
 # Questions
 
@@ -4747,57 +4779,61 @@ image_negate(question)
 ```
 
 ---
+count: false
 
 ![S1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S1.png)
 
 ---
+count: false
 
 ![S14](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S14.png)
 
 ---
+count: false
 
 ![S2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S2.png)
 
 ---
+count: false
 
 ![S3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S3.png)
 
 ---
+count: false
 
 ![S6](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S6.png)
 
 ---
+count: false
 
 ![Table1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table1.png)
 
 ---
+count: false
 
 ![Table2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table2.png)
 ---
+count: false
 
 ![Table4-1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table4_1.png)
 
 ---
+count: false
 
 ![Table4-2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table4_2.png)
 
----
-
-![Table3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table3.png)
 
 ---
+count: false
 
 ![Table5](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table5.png)
-
 ---
-
-![Table6](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table6.png)
-
----
+count: false
 
 ![Table7](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table7.png)
 
 ---
+count: false
 
 ![Table8](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table8.png)
 
