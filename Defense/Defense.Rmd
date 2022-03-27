@@ -41,6 +41,7 @@ li:not(:last-child) {
   height: 30pc;
   overflow-y: scroll;
 }
+
 ```
 
 ```{r setup, include=FALSE}
@@ -4136,7 +4137,7 @@ Three-way interaction between psychopathy, affective feedback congruence, and St
 
 ## Results
 
-.pull-left[.full-width[.content-box-green[**Hypothesis 1a** <br> <br> Actual and estimated emotion recognition ability would be weakly correlated <br> <br>.green[**Supported**]]]]
+.pull-left[.full-width[.content-box-green[<font style="opacity:0"> asfdasdfasdf</font> <br> <br>  **Hypothesis 1a** <br> <br> Actual and estimated emotion recognition ability would be weakly correlated <br> <br>.green[**Supported**] <font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]
 
 .pull-right[
 ```{r, echo = FALSE}
@@ -4153,7 +4154,7 @@ ggscatterstats(data=combined_dat,
 
 ## Results 
 
-.pull-left[.full-width[.content-box-yellow[**Hypothesis 1a** <br> <br> Consistent with Dunning-Kruger effect <br> <br> .orange[**Partially supported**]]]]
+.pull-left[.full-width[.content-box-yellow[<font style="opacity:0"> asfdasdfasdf</font> <br> <br> **Hypothesis 1a** <br> <br> Consistent with the Dunning-Kruger effect <br> <br> .orange[**Partially supported**<font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]]
 
 .pull-right[ 
 ```{r, echo = FALSE}
@@ -4199,7 +4200,7 @@ quart_plot
 
 ## Results 
 
-.pull-left[.full-width[.content-box-yellow[**Hypothesis 1a** <br> <br> Consistent with Dunning-Kruger effect <br> <br> .orange[**Partially supported**]]]]
+.pull-left[.full-width[.content-box-yellow[<font style="opacity:0"> asfdasdfasdf</font> <br> <br> **Hypothesis 1a** <br> <br> Consistent with the Dunning-Kruger effect <br> <br> .orange[**Partially supported**<font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]]
 
 .pull-right[ 
 ```{r, echo = FALSE}
@@ -4238,7 +4239,7 @@ tert_plot
 
 ## Results
 
-.pull-left[.full-width[.content-box-yellow[**Hypothesis 1a** <br> <br> Consistent with Dunning-Kruger effect <br> <br> .orange[**Partially supported**]]]]
+.pull-left[.full-width[.content-box-yellow[<font style="opacity:0"> asfdasdfasdf</font> <br> <br> **Hypothesis 1a** <br> <br> Consistent with the Dunning-Kruger effect <br> <br> .orange[**Partially supported**<font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]]
 
 .pull-right[ 
 ```{r, echo = FALSE}
@@ -4259,7 +4260,7 @@ ggplot(combined_dat, aes(x=FERT_Score_2, y=FERT_CorrectEstimate)) +
 
 ## Results 
 
-.pull-left[.full-width[.content-box-yellow[**Hypothesis 1a** <br> <br> Consistent with Dunning-Kruger effect <br> <br> .orange[**Partially supported**]]]]
+.pull-left[.full-width[.content-box-yellow[<font style="opacity:0"> asfdasdfasdf</font> <br> <br> **Hypothesis 1a** <br> <br> Consistent with the Dunning-Kruger effect <br> <br> .orange[**Partially supported**<font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]]
 
 .pull-right[ 
 ```{r, echo = FALSE}
@@ -4290,11 +4291,12 @@ ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) +
 
 ## Results 
 
-.full-width[.content-box-red[**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> 
-<span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability .red[**Not supported**]]]
+.pull-left[.full-width[.content-box-red[**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> 
+<span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability <br> <br> .red[**Not supported**]]]]
 
+.pull-right[
 ![T3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table3.png)
-
+]
 
 ---
 
@@ -4520,7 +4522,7 @@ ggbetweenstats(
 ## Results 
 
 .pull-left[.full-width[.content-box-green[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
-Competitive affective feedback: Rate and expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
+Competitive affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
 
 .pull-right[ 
 ```{r, echo = FALSE}
@@ -4586,7 +4588,7 @@ CR_CompPlot
 ## Results 
 
 .pull-left[.full-width[.content-box-green[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
-Competitive affective feedback: Rate and expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
+Competitive affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
 
 .pull-right[ 
 ```{r, echo = FALSE}
