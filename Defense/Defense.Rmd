@@ -125,13 +125,13 @@ count: false
 # The Influence of Psychopathic Traits and Affective Feedback on Cooperation in the Iterated Prisoner's Dilemma 
 
 ### Caroline Lee 
-### Advisors: Andy Kazama, Ph.D., Tom Costello, M.A., Shauna Bowes, M.A. 
+### Advisors: Andy Kazama, Ph.D., Tom Costello, M.A., Shauna Bowes, M.A.
 ### Personality Research Lab 
 ### Emory Department of Psychology
 
 ???
 
-Hello and welcome everyone, thank you so much for attending my defense. I would first like to extend a huge thank you to my current advisor Dr. Kazama, all of my commitee members, my late advisor Dr. Scott Lilienfeld, and my graduate student mentors Tom and Shauna for the support and mentorship throughout my undergraduate career and for this thesis. I would not have been able to find my love for research and psychology and complete this thesis without your support and I am so grateful for your support.  
+Hello and welcome everyone, thank you so much for attending my defense. I would first like to extend a huge thank you to my current advisor Dr. Kazama, all of my commitee members - Dr. Hamann, Dr. Mignozzetti, and Dr. Arbilly, my late advisor Dr. Scott Lilienfeld, and my graduate student mentors Tom and Shauna for the support and mentorship throughout my undergraduate career and for this thesis. I would not have been able to find my love for research and psychology and complete this thesis without your support and I am so grateful for that. 
 
 ---
 
@@ -219,22 +219,7 @@ And the Emotion as Social Information model, also known as the EASI model,
 
 According to this model, observing someone else’s emotional expression in a social interaction can affect the observer’s behavior through two pathways: (1) the inferential pathway, in which the emotional expression of the other individual allows the observer to infer their mental states, like beliefs, desires, and intention, and (2) the affective pathway, where the emotional expression of the other individual elicits affective reactions in the observer. 
 
-So a paradigm from game theory that allowed me to look at these interactions in this model was the prisoner's dilemma, looking a specific interpersonal context of cooperation. 
-
-
-In the context of modified social dilemma paradigms in which affective feedback (i.e., facial emotional expressions) is presented alongside the outcome in the feedback phase (i.e., each player’s previous decision and the resulting payoff), there is an additional layer to this inferential pathway. In addition to the other player’s emotional expression, their decision in contrast to the player’s decision is presented in conjunction with one another as information from which to infer their mental state. This specific process has been termed reverse appraisal. 
-
----
-
-## Interdependence Theory 
-
-![interdependence](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/interdependence.png)
-
-.small[.left[.footnote[.gray[Kelley & Thibaut, 1978; Van Lange et al., 2013]]]]
-
-???
-
-interdependence theory, proposed by Van Lange and colleagues suggests that a complex interplay of structural influences (e.g., arrangement of the payoff matrix, length of the game, etc.), psychological characteristics (e.g., individual differences in personality, affect, motives, etc.),  and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.) contribute to decision-making in social dilemmas. To assess the interplay of such processes in interpersonal decision-making, researchers have begun to add modifications to the social dilemma paradigms, including the PD 
+And for this project I wanted to specifically look at the interaction of interpersonal and affetive processes in the context of interpersonal decision making, and more specifically, in decision-making for cooperation. 
 
 ---
 
@@ -249,6 +234,18 @@ knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-
 ???
 
 Studies exploring neural correlates of psychopathy have supported these findings, with psychopathic traits showing associations with hypoactivity in areas implicated in interpersonal decision making, including but not limited to the orbitofrontal cortex (Yang & Raine, 2008), dorsolateral prefrontal cortex (Koenigs, 2014), and the amygdala (Blair, 2007). 
+
+---
+
+## Interdependence Theory 
+
+![interdependence](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/interdependence.png)
+
+.small[.left[.footnote[.gray[Kelley & Thibaut, 1978; Van Lange et al., 2013]]]]
+
+???
+
+interdependence theory, proposed by Van Lange and colleagues suggests that a complex interplay of structural influences (e.g., arrangement of the payoff matrix, length of the game, etc.), psychological characteristics (e.g., individual differences in personality, affect, motives, etc.),  and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.) contribute to decision-making in social dilemmas. To assess the interplay of such processes in interpersonal decision-making, researchers have begun to add modifications to the social dilemma paradigms, including the PD 
 
 ---
 
@@ -269,20 +266,20 @@ This dilemma is amplified in an iterated PD (spanning multiple rounds) as a play
 
 ---
 
-## Modified Prisoner's Dilemma
+## Prisoner's Dilemma (with affective feedback)
 
-.pull-left[.full-width[.content-box-red[**Decision Phase** <br> <br> Participant makes a decision to cooperate or defect]]]
+.pull-left[.full-width[.content-box-red[**1 - Decision Phase** <br> <br> Participant makes a decision to cooperate or defect]]]
 
-.pull-right[.full-width[.content-box-red[**Decision Phase** <br> <br> Participant makes a decision to convey affective feedback]]]
+.pull-right[.full-width[.content-box-red[**4 - Decision Phase** <br> <br> Participant makes a decision to select type of affective feedback]]]
 
 ???
 The PD paradigm has served as a useful framework for exploring the relation between cooperation and individual differences in social preferences as well as attentional and emotional processing and have only grown in precision and usefulness as a growing body of research has incrementally proposed improvements. More specifically, the paradigm allows researchers to model social cooperation in a “social decision cascade” comprising three sequential phases in each round: (1) the decision phase, in which two players make a decision to cooperate or defect, (2) the anticipation phase, in which players wait to view the interdependent outcome, and (3) the feedback phase, in which the outcome is revealed. Structural influences of the paradigm (e.g., arrangement of the payoff matrix, length of the game, etc.) shape participants’ behavioral responses, but so do their psychological characteristics (e.g., individual differences in personality, affect, motives, etc.) and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.). 
 
 --
 
-.pull-left[.full-width[.content-box-yellow[**Anticipation Phase** <br> <br> Participant anticipates payoff]]]
+.pull-left[.full-width[.content-box-yellow[**2 - Anticipation Phase** <br> <br> Participant anticipates payoff]]]
 
-.pull-right[.full-width[.content-box-yellow[**Anticipation Phase** <br> <br> Participant anticipates opponent's affective feedback]]]
+.pull-right[.full-width[.content-box-yellow[**5 - Anticipation Phase** <br> <br> Participant anticipates opponent's affective feedback]]]
 
 ???
 The PD paradigm has served as a useful framework for exploring the relation between cooperation and individual differences in social preferences as well as attentional and emotional processing and have only grown in precision and usefulness as a growing body of research has incrementally proposed improvements. More specifically, the paradigm allows researchers to model social cooperation in a “social decision cascade” comprising three sequential phases in each round: (1) the decision phase, in which two players make a decision to cooperate or defect, (2) the anticipation phase, in which players wait to view the interdependent outcome, and (3) the feedback phase, in which the outcome is revealed. Structural influences of the paradigm (e.g., arrangement of the payoff matrix, length of the game, etc.) shape participants’ behavioral responses, but so do their psychological characteristics (e.g., individual differences in personality, affect, motives, etc.) and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.). 
@@ -290,12 +287,26 @@ The PD paradigm has served as a useful framework for exploring the relation betw
 
 --
 
-.pull-left[.full-width[.content-box-green[**Feedback Phase** <br> <br> Co-player’s response is revealed and the participant receives feedback regarding payoff]]]
+.pull-left[.full-width[.content-box-green[**3 - Feedback Phase** <br> <br> Co-player’s response is revealed and the participant receives feedback regarding payoff]]]
 
-.pull-right[.full-width[.content-box-green[**Feedback Phase** <br> <br> Co-player’s affective reaction is revealed and the participant is able to engage in reverse appraisal]]]
+.pull-right[.full-width[.content-box-green[**6 - Feedback Phase** <br> <br> Co-player’s affective reaction is revealed and the participant is able to engage in reverse appraisal]]]
 
 ???
 The PD paradigm has served as a useful framework for exploring the relation between cooperation and individual differences in social preferences as well as attentional and emotional processing and have only grown in precision and usefulness as a growing body of research has incrementally proposed improvements. More specifically, the paradigm allows researchers to model social cooperation in a “social decision cascade” comprising three sequential phases in each round: (1) the decision phase, in which two players make a decision to cooperate or defect, (2) the anticipation phase, in which players wait to view the interdependent outcome, and (3) the feedback phase, in which the outcome is revealed. Structural influences of the paradigm (e.g., arrangement of the payoff matrix, length of the game, etc.) shape participants’ behavioral responses, but so do their psychological characteristics (e.g., individual differences in personality, affect, motives, etc.) and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.). 
+
+---
+
+## Reverse Appraisal 
+
+![reverse_appraisal](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/reverse_appraisal.png)
+
+.small[.left[.footnote[.gray[Gratch & de Melo, 2019]]]]
+
+???
+
+In the context of modified social dilemma paradigms in which affective feedback (i.e., facial emotional expressions) is presented alongside the outcome in the feedback phase (i.e., each player’s previous decision and the resulting payoff), there is an additional layer to this inferential pathway. In addition to the other player’s emotional expression, their decision in contrast to the player’s decision is presented in conjunction with one another as information from which to infer their mental state. This specific process has been termed reverse appraisal (de Melo et al., 2014; Hareli & Hess, 2010; Scherer & Grandjean, 2008). 
+
+de Melo and colleagues studied reverse appraisal in the iterated PD paradigm by testing if the affective feedback paired with the CC and CD outcomes would enable the players to infer their mental state (specifically, their cooperative intent) in informing their decision-making via reverse appraisal. Accordingly, as the CC outcome allows both players to take the second-highest payoff while the CD outcome results in the highest payoff for the opponent while subjecting the player to the lowest payoff, de Melo and colleagues (2014) hypothesized that players would be able to infer cooperative intent from receiving the affective feedback of a happy facial expression paired with the outcome of CC, whereas they would infer competitive intent when a regretful/guilty expression is paired with the outcome. For the outcome of CD, it was hypothesized that the reverse would be true (i.e., competitive intent would be inferred from a happy facial expression, whereas cooperative intent would be inferred from a regretful/guilty expression). Indeed, in a cooperative context of mutual cooperation (i.e., CC), the opponent’s facial expression of joy led to increased expectations of cooperation, whereas the expression of regret led to decreased expectations of cooperation. As hypothesized, the opponent’s facial expression of regret in a competitive context (i.e., CD) led to increased expectations of cooperation; however, the opponent’s expression of joy in this context did not lead to decreased expectations of cooperation (de Melo et al., 2014). One possible explanation for this finding suggested by the authors is that the expression of joy in the competitive context may not have led the participants to infer a mental state reflective of an intentionally non-cooperative or malicious intent (e.g., experiencing schadenfreude in the opponent having received a worse payoff). 
 
 ---
 
@@ -342,20 +353,6 @@ An interesting effect of this attention bottleneck, supposedly for all of us, no
 ???
 
 The Stroop effect is a well-validated attentional phenomenon measured by comparing task performance in trials or conditions with Stroop-incongruent stimuli (i.e., simultaneous presentation of one type of stimuli presenting task-relevant information and another type of stimuli presenting task-irrelevant information, creating conflict) and Stroop-congruent stimuli (i.e., simultaneous presentation of two types of stimuli presenting task-relevant information). Therefore, the verbal-facial Stroop effect for the affective feedback employed in this study may interfere with the processing of information from the affective feedback congruence to infer the opponent’s intentions (i.e., by engaging in reverse appraisal). 
-
----
-
-## Reverse Appraisal 
-
-![reverse_appraisal](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/reverse_appraisal.png)
-
-.small[.left[.footnote[.gray[Gratch & de Melo, 2019]]]]
-
-???
-
-In the context of modified social dilemma paradigms in which affective feedback (i.e., facial emotional expressions) is presented alongside the outcome in the feedback phase (i.e., each player’s previous decision and the resulting payoff), there is an additional layer to this inferential pathway. In addition to the other player’s emotional expression, their decision in contrast to the player’s decision is presented in conjunction with one another as information from which to infer their mental state. This specific process has been termed reverse appraisal (de Melo et al., 2014; Hareli & Hess, 2010; Scherer & Grandjean, 2008). 
-
-de Melo and colleagues studied reverse appraisal in the iterated PD paradigm by testing if the affective feedback paired with the CC and CD outcomes would enable the players to infer their mental state (specifically, their cooperative intent) in informing their decision-making via reverse appraisal. Accordingly, as the CC outcome allows both players to take the second-highest payoff while the CD outcome results in the highest payoff for the opponent while subjecting the player to the lowest payoff, de Melo and colleagues (2014) hypothesized that players would be able to infer cooperative intent from receiving the affective feedback of a happy facial expression paired with the outcome of CC, whereas they would infer competitive intent when a regretful/guilty expression is paired with the outcome. For the outcome of CD, it was hypothesized that the reverse would be true (i.e., competitive intent would be inferred from a happy facial expression, whereas cooperative intent would be inferred from a regretful/guilty expression). Indeed, in a cooperative context of mutual cooperation (i.e., CC), the opponent’s facial expression of joy led to increased expectations of cooperation, whereas the expression of regret led to decreased expectations of cooperation. As hypothesized, the opponent’s facial expression of regret in a competitive context (i.e., CD) led to increased expectations of cooperation; however, the opponent’s expression of joy in this context did not lead to decreased expectations of cooperation (de Melo et al., 2014). One possible explanation for this finding suggested by the authors is that the expression of joy in the competitive context may not have led the participants to infer a mental state reflective of an intentionally non-cooperative or malicious intent (e.g., experiencing schadenfreude in the opponent having received a worse payoff). 
 
 ---
 
@@ -4291,6 +4288,14 @@ So this is the Javascript code for the current study
 
 ---
 
+## Current Study
+
+
+![fert](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/fert.png)
+
+.small[.left[.footnote[.gray[Passarelli et al., 2018]]]]
+
+---
 ## Current Study 
 
 ![F1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/F1.png)
@@ -4304,10 +4309,18 @@ The primary purpose of the present study was to examine the individual and inter
 
 .full-width[.content-box-grey[**Hypothesis 1a** <br> <br> Actual and estimated emotion recognition ability would be weakly correlated <br> <br> Consistency with Dunning-Kruger effect]]
 
+???
+
+I predicted that actual and estimated emotion recognition ability will be weakly correlated, but consistent with the Dunning-Kruger effect.  
+
 --
 
 .full-width[.content-box-grey[**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> 
 <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability]]
+
+???
+
+Furthermore, I predicted that psychopathy will explain significant variance in the participant’s estimates of their emotion recognition ability. Specifically, higher levels of psychopathy will be associated with lower estimates of emotion recognition ability.
 
 ---
 
@@ -4316,9 +4329,17 @@ The primary purpose of the present study was to examine the individual and inter
 .full-width[.content-box-grey[**Hypothesis 2a** <br> <br> Cooperative affective feedback: Rate and expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
 Competitive affective feedback: Rate and expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> ]]
 
+???
+
+I predicted that the rate and expectation of cooperation in PD for participants assigned to the cooperative/congruent affective feedback conditions (wherein the computerized opponent expresses joy following mutual cooperation and regret following exploitation) will be higher compared to those of participants assigned to competitive/incongruent affective feedback conditions (wherein the computerized opponent expresses regret following mutual cooperation and joy following exploitation).
+
 --
 
 .full-width[.content-box-grey[**Hypothesis 2b** <br> <br> <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Levels of PPI-R Self-Centered Impulsivity and its subscales &#10140; <br> <br> <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> Rate and expectation of cooperation in PD]]
+
+???
+
+Given mixed findings across studies examining the link between psychopathy and the rate of cooperation in PD with variations in measures of psychopathy, strategy of the opponent, and length of the PD games, my hypothesis is exploratory in nature. As I will be using the PPI-R-40 (a shortened version of the PPI-R) for measuring the level of psychopathy, and since multiple studies have found a significant negative relation between cooperation in PD and scores on subscales subsumed under the dimension of PPI-R Self-Centered Impulsivity, I predict that the rate and expectation of cooperation in PD will be negatively associated with PPI-R Self-Centered Impulsivity and its subscales. 
 
 ---
 
@@ -4329,10 +4350,18 @@ Rate and expectation of cooperation: <br> <br>
 Cooperative &times; Stroop-incongruent < Cooperative &times; Stroop-congruent <br> <br> 
 Competitive &times; Stroop-incongruent > Competitive &times; Stroop-congruent ]]
 
+???
+
+I predicted that the rate and expectation of cooperation in PD for participants assigned to the cooperative x Stroop-incongruent affective feedback condition will be lower compared to those of participants assigned to the cooperative x Stroop-congruent affective feedback condition. Furthermore, I predicted that the rate and expectation of cooperation in PD for participants assigned to the competitive x Stroop-incongruent affective feedback condition will be higher compared to those of participants assigned to the competitive x Stroop-congruent affective feedback condition. 
+
 --
 
 .full-width[.content-box-grey[**Hypothesis 2d** <br> <br> 
 Three-way interaction between psychopathy, affective feedback congruence, and Stroop interference]]
+
+???
+
+I predicted that there will be a 3-way interaction between psychopathy, affective feedback congruence, and Stroop interference, such that the interaction of affective feedback congruence and Stroop interference will differ based on the level of psychopathy. More specifically, I predict that participants receiving cooperative and competitive feedback will show decreasing rates and expectations of cooperation at higher levels of psychopathy, with a larger interaction effect in conditions with Stroop interference. 
 
 ---
 
@@ -4350,6 +4379,12 @@ ggscatterstats(data=combined_dat,
                caption = "FERT = Facial Expression Recognition Task")
 ```
 ]
+
+???
+
+Overall, participants’ estimated and actual performance on the FERT as measured by the proportion of correct responses on the FERT were not significantly associated, t(235) = 1.53, p = 0.13, r = 0.10. This finding was in contrast to Hypothesis 1a, which predicted that a small correlation would be found. 
+
+As recent studies have shown that adults with typical facial expression recognition ability have only modest cognitive insight into their ability (see review by Palermo et al., 2017), it was hypothesized that facial emotion recognition ability as measured by the proportion of correct responses on the FERT would be weakly correlated with estimated measures of performance. The relation between measured and estimated emotion recognition ability has been debated; some studies have found small or non-significant associations (Bowles et al., 2009; Hall et al., 1999), whereas other studies have found robust associations that demonstrate increased cognitive awareness of emotion recognition ability in comparison to other cognitive abilities (Arizpe et al., 2019; Zell & Krizan, 2014). Consistent with previous research (e.g., Hall et al., 1999), the present study found a statistically insignificant relation between actual and estimated emotion recognition ability. 
 
 ---
 
@@ -4397,6 +4432,11 @@ quart_plot <- ggplot(data=dk.data.quart, aes(x=Quartile, y=Prpt, group=Measure))
 quart_plot
 ```
 ]
+
+???
+
+Pairwise comparisons for quartiles revealed similar patterns, with participants in the bottom quartile not showing statistically significant overestimation of their performance on the FERT (t(72) = 1.61, p = .111) and participants in the second quartile also not showing statistically significant underestimation of their performance on the FERT (t(60) = -1.79, p = 0.078). However, consistent with predictions for the Dunning-Kruger effect, participants in upper quartiles underestimated their performance (third quartile: t(50) = -3.32, p < 0.001; top quartile: t(51) = -6.01, p < 0.001). 
+
 ---
 
 ## Results 
@@ -4436,6 +4476,10 @@ tert_plot
 ```
 ]
 
+???
+
+Before conducting paired t-tests, average proportions of correct responses for the FERT by tercile and quartile were computed. Pairwise comparisons for terciles revealed that participants in the lower tercile did not overestimate their performance on the FERT (t(94) = 1.73, p = 0.086), contrary to the predictions for the Dunning-Kruger effect. However, statistically significant overestimation was found in both middle and upper terciles (2nd tercile: t(65) = -0.06, p = 0.003; 3rd tercile: t(75) = -0.11, p < 0.001), consistent with trends of a Dunning-Kruger effect. 
+
 ---
 
 ## Results
@@ -4457,6 +4501,10 @@ ggplot(combined_dat, aes(x=FERT_Score_2, y=FERT_CorrectEstimate)) +
 ```
 ]
 
+???
+
+Mixed-model regression analyses were subsequently conducted to test for curvilinearity with linear, quadratic, and cubic components, as recommended by Sanchez & Dunning (2018). Standardized parameters were obtained by fitting the model on a standardized version of the dataset, and 95% Confidence Intervals (CIs) and p-values were computed using the Wald approximation. With the composite score calculated by the Bayesian 2PL procedure as the measure of participants’ performance on FERT, a cubic model produced the best fit (R^2 = .043). In this cubic model, the linear and cubic trends were both found to be statistically significant (linear: b = 0.35, 95% CI [0.13, 0.56], t(233) = 3.20, p = 0.002; β = 0.35, 95% CI [0.13, 0.56]; cubic: b = -0.08, 95% CI [-0.14, -0.02], t(233) = -2.76, p = 0.006; β = -0.31, 95% CI [-0.53, -0.09])).  
+
 ---
 
 ## Results
@@ -4477,6 +4525,10 @@ ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) +
 ```
 ]
 
+???
+
+Mixed-model regression analyses were subsequently conducted to test for curvilinearity with linear, quadratic, and cubic components, as recommended by Sanchez & Dunning (2018). Standardized parameters were obtained by fitting the model on a standardized version of the dataset, and 95% Confidence Intervals (CIs) and p-values were computed using the Wald approximation. With the composite score calculated by the Bayesian 2PL procedure as the measure of participants’ performance on FERT, a cubic model produced the best fit (R^2 = .043). In this cubic model, the linear and cubic trends were both found to be statistically significant (linear: b = 0.35, 95% CI [0.13, 0.56], t(233) = 3.20, p = 0.002; β = 0.35, 95% CI [0.13, 0.56]; cubic: b = -0.08, 95% CI [-0.14, -0.02], t(233) = -2.76, p = 0.006; β = -0.31, 95% CI [-0.53, -0.09])).  
+
 ---
 
 ## Results 
@@ -4488,16 +4540,9 @@ ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) +
 ![S1-2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/s1-2.png)
 ]
 
----
+???
 
-## Results 
-
-.pull-left[.full-width[.content-box-red[<font style="opacity:0"> asfdasdfasdf</font> <br> <br>**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> 
-<span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability <br> <br> .red[**Not supported**] <font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]
-
-.pull-right[
-![T3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table3.png)
-]
+As the composite FERT score calculated with the Bayesian 2PL procedure was negatively related to PPI-R Machiavellian Egocentricity only (r = -0.18, p = .0097), fixed-effects ANOVAs were conducted to assess whether the level of Machiavellian Egocentricity significantly differ between the terciles and quartiles for emotion recognition ability. Results indicated that the level of Machiavellian Egocentricity did not vary significantly between terciles (F(2, 205) = 1.57, p = 0.211; η_p^2 = 0.02, 95% CI [0.00, 1.00]) or quartiles (F(3, 204) = 1.67, p = 0.174; η_p^2 = 0.02, 95% CI [0.00, 1.00]), not supporting Hypothesis 1b. Therefore, the relation between Machiavellian Egocentricity and the Dunning-Kruger effect for emotion recognition ability was not examined. 
 
 ---
 
@@ -4916,6 +4961,11 @@ plotint_sti_combined <- plot_model(regint_sti_combined, type = "pred", terms = c
 plotint_sti_combined
 ```
 ]
+
+???
+
+Finally, three-way interactions between affective feedback congruence, Stroop interference, and two PPI-R measures were detected in predicting the expectation of cooperation in PD: Stress Immunity (a subscale of Fearless Dominance) and Coldheartedness. Parallel trends emerged for the two three-way interactions between affective feedback congruence, Stroop interference, and the two PPI-R measures (Stress Immunity and Coldheartedness), with inverse trends emerging for the influence of affective feedback on cooperation in PD for higher levels of Stress Immunity and Coldheartedness depending on the presence or absence of Stroop interference (see Figure 9C and Figure 9K).  In the absence of Stroop interference, participants who received cooperative affective feedback showed increasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness, whereas participants who received competitive affective feedback showed decreasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness. With Stroop interference, participants who received cooperative affective feedback showed decreasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness, whereas participants who received competitive affective feedback showed increasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness.  
+
 ---
 
 ## Results 
@@ -4935,6 +4985,9 @@ plotint_c_combined
 ```
 ]
 
+???
+
+Finally, three-way interactions between affective feedback congruence, Stroop interference, and two PPI-R measures were detected in predicting the expectation of cooperation in PD: Stress Immunity (a subscale of Fearless Dominance) and Coldheartedness. Parallel trends emerged for the two three-way interactions between affective feedback congruence, Stroop interference, and the two PPI-R measures (Stress Immunity and Coldheartedness), with inverse trends emerging for the influence of affective feedback on cooperation in PD for higher levels of Stress Immunity and Coldheartedness depending on the presence or absence of Stroop interference (see Figure 9C and Figure 9K).  In the absence of Stroop interference, participants who received cooperative affective feedback showed increasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness, whereas participants who received competitive affective feedback showed decreasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness. With Stroop interference, participants who received cooperative affective feedback showed decreasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness, whereas participants who received competitive affective feedback showed increasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness.  
 ---
 
 ## Limitations & Future Directions
