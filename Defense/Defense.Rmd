@@ -165,7 +165,7 @@ So it is the interpersonal-affective factor that makes psychopathy unique and di
 
 So to study psychopathy in community samples rather than forensic and clinical samples that the PCL-R is more fit for, researchers have developed measures to look at psychopathy in the general community population and have found that psychopathy including the ppi-r and lsrp. and researchers have found that psychopathy is not categorical construct , but psychopathy is actually an extreme variation of normal personality dimensions that are distributed continuously in the community population, so to define someone as a psychopath or a non-psychopath would not be appropriate, rather we all have a certain level of psychopathy along these dimensional measures. 
 
-The PPI-R includes three higher-order dimensions: 
+The PPI-R includes three higher-order dimensions: Fearless Dominance, which includes the subscales of , Self-Centered Impulsivity, which includes the subscales of, and Coldheartedness, which is largely independent of the two other dimensions. 
 
 ---
 
@@ -185,7 +185,17 @@ The PPI-R includes three higher-order dimensions:
 
 The LSRP is very similar to the PCL-R in structure 
 
-Even in community samples, psychopathy is associated with maladaptive outcomes, including aggression and atypical  social reward processing, and these maladaptive behavioral outcomes are largely tied to interpersonal dysfunction. For this reason, psychopathy is also referred to by some researchers as an emergent interpersonal syndrome, arguing that psychopathy reflects a constellation of an interpersonally malapative configuration of continuously distributed trait dimensions. 
+---
+
+## Personality Disorders and Interpersonal Dysfunction 
+
+
+
+.small[.left[.footnote[.gray[Mobbs, 2020, Pincus, 2018]]]]
+
+???
+
+Even in community samples, psychopathy is associated with maladaptive outcomes, including aggression and atypical  social reward processing, and these maladaptive behavioral outcomes are largely tied to interpersonal dysfunction. 
 
 Significant impairment in interpersonal relations, is central to the conceptualization and maladaptive behavioral outcomes associated with personality disorders, incluing psychopathy, and it is closely tied to affective processing - especially recognition of emotion as social signals.  
 
@@ -208,7 +218,7 @@ According to this model, observing someone else’s emotional expression in a so
 So a paradigm from game theory that allowed me to look at these interactions in this model was the prisoner's dilemma, looking a specific interpersonal context of cooperation. 
 
 
-In the context of modified social dilemma paradigms in which affective feedback (i.e., facial emotional expressions) is presented alongside the outcome in the feedback phase (i.e., each player’s previous decision and the resulting payoff), there is an additional layer to this inferential pathway. In addition to the other player’s emotional expression, their decision in contrast to the player’s decision is presented in conjunction with one another as information from which to infer their mental state. This specific process has been termed reverse appraisal (de Melo et al., 2014; Hareli & Hess, 2010; Scherer & Grandjean, 2008). 
+In the context of modified social dilemma paradigms in which affective feedback (i.e., facial emotional expressions) is presented alongside the outcome in the feedback phase (i.e., each player’s previous decision and the resulting payoff), there is an additional layer to this inferential pathway. In addition to the other player’s emotional expression, their decision in contrast to the player’s decision is presented in conjunction with one another as information from which to infer their mental state. This specific process has been termed reverse appraisal. 
 
 ---
 
@@ -217,6 +227,10 @@ In the context of modified social dilemma paradigms in which affective feedback 
 ![interdependence](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/interdependence.png)
 
 .small[.left[.footnote[.gray[Kelley & Thibaut, 1978; Van Lange et al., 2013]]]]
+
+???
+
+Interdependence Theory
 
 ---
 
@@ -239,6 +253,8 @@ knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-
 ]
 
 .small[.left[.footnote[.gray[Encyclopædia Britannica, 2010]]]]
+
+
 
 ---
 
@@ -309,6 +325,12 @@ An interesting effect of this attention bottleneck, supposedly for all of us, no
 
 .small[.left[.footnote[.gray[Gratch & de Melo, 2019]]]]
 
+???
+
+In the context of modified social dilemma paradigms in which affective feedback (i.e., facial emotional expressions) is presented alongside the outcome in the feedback phase (i.e., each player’s previous decision and the resulting payoff), there is an additional layer to this inferential pathway. In addition to the other player’s emotional expression, their decision in contrast to the player’s decision is presented in conjunction with one another as information from which to infer their mental state. This specific process has been termed reverse appraisal (de Melo et al., 2014; Hareli & Hess, 2010; Scherer & Grandjean, 2008). 
+
+In a recent study, de Melo and colleagues (2014) examined reverse appraisal in the iterated PD paradigm by testing if the affective feedback paired with the CC and CD outcomes would enable the players to infer their mental state (specifically, their cooperative intent) in informing their decision-making via reverse appraisal. Accordingly, as the CC outcome allows both players to take the second-highest payoff while the CD outcome results in the highest payoff for the opponent while subjecting the player to the lowest payoff, de Melo and colleagues (2014) hypothesized that players would be able to infer cooperative intent from receiving the affective feedback of a happy facial expression paired with the outcome of CC, whereas they would infer competitive intent when a regretful/guilty expression is paired with the outcome. For the outcome of CD, it was hypothesized that the reverse would be true (i.e., competitive intent would be inferred from a happy facial expression, whereas cooperative intent would be inferred from a regretful/guilty expression). Indeed, in a cooperative context of mutual cooperation (i.e., CC), the opponent’s facial expression of joy led to increased expectations of cooperation, whereas the expression of regret led to decreased expectations of cooperation. As hypothesized, the opponent’s facial expression of regret in a competitive context (i.e., CD) led to increased expectations of cooperation; however, the opponent’s expression of joy in this context did not lead to decreased expectations of cooperation (de Melo et al., 2014). One possible explanation for this finding suggested by the authors is that the expression of joy in the competitive context may not have led the participants to infer a mental state reflective of an intentionally non-cooperative or malicious intent (e.g., experiencing schadenfreude in the opponent having received a worse payoff). 
+
 ---
 
 ## Dunning-Kruger Effect 
@@ -316,6 +338,10 @@ An interesting effect of this attention bottleneck, supposedly for all of us, no
 ![dunning-kruger](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/dunning-kruger.png)
 
 .small[.left[.footnote[.gray[Kruger & Dunning, 2019; Lévy-Garboua et al., 2017; Sanchez & Dunning, 2019]]]]
+
+???
+
+auxiliary analyses on the presence of a Dunning-Kruger effect (i.e., the general tendency for lowest performers to overestimate performance and for the highest performers to underestimate performance, showing a curvilinear trend of confidence in relation to ability; Kruger & Dunning, 1999) for emotion recognition ability independent of psychopathy, and assess whether psychopathy explains significant variance in the participant’s estimates of their emotion recognition ability. If psychopathy is associated with a global deficit in emotion recognition, and patterns consistent Dunning-Kruger effect emerge such that participants with greater deficits in emotion recognition ability and higher levels of psychopathy show significant overestimation of emotion recognition ability, this may influence the inference of intentions from assessing the congruence of affective feedback (i.e., engaging in reverse appraisal) for participants with higher levels of psychopathy in the iterated PD task. To date, few studies have examined the influence of of individual differences in personality on the Dunning-Kruger effect, and only one study looked at the influence of personality specifically on the Dunning-Kruger effect for emotion recognition ability. Therefore, these auxiliary analyses will be exploratory in nature.  
 
 ---
 
@@ -4225,6 +4251,11 @@ jsPsych.init({
 })
 ```
 ]
+
+???
+
+So this is the Javascript code for the current study 
+
 ---
 
 ## Current Study 
@@ -4900,62 +4931,84 @@ question <- image_read("https://raw.githubusercontent.com/carolinelee78/Honors-T
 image_negate(question)
 ```
 
+???
+
+Thank you so much for listening! If there are any questions about my presentation, I can answer them now. 
+
+---
+class: middle
+count: false 
+
+![ppi-r](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/ppir.png)
+
 ---
 count: false
+class: middle 
 
 ![S1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S1.png)
 
 ---
 count: false
+class: middle 
 
 ![S14](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S14.png)
 
 ---
 count: false
+class: middle
 
 ![S2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S2.png)
 
 ---
 count: false
+class: middle
 
 ![S3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S3.png)
 
 ---
 count: false
+class: middle
 
 ![S6](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S6.png)
 
 ---
 count: false
+class: middle 
 
 ![Table1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table1.png)
 
 ---
 count: false
+class: middle
 
 ![Table2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table2.png)
 ---
 count: false
+class: middle 
 
 ![Table4-1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table4_1.png)
 
 ---
 count: false
+class: middle
 
 ![Table4-2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table4_2.png)
 
 
 ---
 count: false
+class: middle
 
 ![Table5](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table5.png)
 ---
 count: false
+class: middle 
 
 ![Table7](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table7.png)
 
 ---
 count: false
+class: middle 
 
 ![Table8](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table8.png)
 
