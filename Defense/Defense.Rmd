@@ -7,7 +7,7 @@ output:
     css: ["default", "default-fonts", "hygge"]
     nature:
       includePresenterNotes: true
-      countdown: 60000
+      countdown: 45000
       navigation:
         scroll: false
         
@@ -131,7 +131,7 @@ count: false
 
 ???
 
-Hello and welcome everyone, thank you so much for attending my defense. I would first like to extend a huge thank you to my current advisor Dr. Kazama, all of my commitee members, my late advisor Dr. Scott Lilienfeld, and my graduate student mentors Tom and Shauna for the support and mentorship throughout my undergraduate career and for this thesis. I would not have been able to find my love for research and psychology and complete this thesis without your support and I will be forever grateful for your support and all that I have been able to learn from you in this journey.  
+Hello and welcome everyone, thank you so much for attending my defense. I would first like to extend a huge thank you to my current advisor Dr. Kazama, all of my commitee members, my late advisor Dr. Scott Lilienfeld, and my graduate student mentors Tom and Shauna for the support and mentorship throughout my undergraduate career and for this thesis. I would not have been able to find my love for research and psychology and complete this thesis without your support and I am so grateful for your support.  
 
 ---
 
@@ -163,7 +163,7 @@ So it is the interpersonal-affective factor that makes psychopathy unique and di
 
 ???
 
-So to study psychopathy in community samples rather than forensic and clinical samples that the PCL-R is more fit for, researchers have developed measures to look at psychopathy in the general community population and have found that psychopathy including the ppi-r and lsrp. and researchers have found that psychopathy is not categorical construct , but psychopathy is actually an extreme variation of normal personality dimensions that are distributed continuously in the community population, so to define someone as a psychopath or a non-psychopath would not be appropriate, rather we all have a certain level of psychopathy along these dimensional measures. 
+So to study psychopathy in community samples rather than forensic and clinical samples that the PCL-R is more fit for, researchers have developed measures to look at psychopathy in the general community population including the ppi-r and lsrp. and researchers have found that psychopathy is not categorical construct, rather an extreme variation of normal personality dimensions that are distributed continuously in the community population, so to define someone as a psychopath or a non-psychopath would not be appropriate
 
 The PPI-R includes three higher-order dimensions: Fearless Dominance, which includes the subscales of , Self-Centered Impulsivity, which includes the subscales of, and Coldheartedness, which is largely independent of the two other dimensions. 
 
@@ -189,15 +189,19 @@ The LSRP is very similar to the PCL-R in structure
 
 ## Personality Disorders and Interpersonal Dysfunction 
 
-
+.center[
+```{r, echo = FALSE, out.width = "550px"}
+knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/interpersonal.png")
+```
+]
 
 .small[.left[.footnote[.gray[Mobbs, 2020, Pincus, 2018]]]]
 
 ???
 
-Even in community samples, psychopathy is associated with maladaptive outcomes, including aggression and atypical  social reward processing, and these maladaptive behavioral outcomes are largely tied to interpersonal dysfunction. 
+Even in community samples, psychopathy is associated with maladaptive outcomes, including aggression and atypical social reward processing, and these maladaptive behavioral outcomes are largely tied to interpersonal dysfunction. 
 
-Significant impairment in interpersonal relations, is central to the conceptualization and maladaptive behavioral outcomes associated with personality disorders, incluing psychopathy, and it is closely tied to affective processing - especially recognition of emotion as social signals.  
+Significant impairment in interpersonal relations, is central to the conceptualization and maladaptive behavioral outcomes associated with personality disorders, including psychopathy, and it is closely tied to affective processing - especially recognition of emotion as social signals.  
 
 Specifically, the ability to recognize and infer intentions from social signals, such as facial emotional expressions, is critical to the formation and maintenance of interpersonal relations. So to better understand maladaptive behavioral outcomes associated with psychopathy, it is important to look at the relations between individual differences in emotion recognition and psychopathy in an interpersonal context. 
 
@@ -230,7 +234,7 @@ In the context of modified social dilemma paradigms in which affective feedback 
 
 ???
 
-Interdependence Theory
+interdependence theory, proposed by Van Lange and colleagues suggests that a complex interplay of structural influences (e.g., arrangement of the payoff matrix, length of the game, etc.), psychological characteristics (e.g., individual differences in personality, affect, motives, etc.),  and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.) contribute to decision-making in social dilemmas. To assess the interplay of such processes in interpersonal decision-making, researchers have begun to add modifications to the social dilemma paradigms, including the PD 
 
 ---
 
@@ -241,6 +245,10 @@ knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-
 ]
 
 .small[.left[.footnote[.gray[de Brito et al., 2020]]]]
+
+???
+
+Studies exploring neural correlates of psychopathy have supported these findings, with psychopathic traits showing associations with hypoactivity in areas implicated in interpersonal decision making, including but not limited to the orbitofrontal cortex (Yang & Raine, 2008), dorsolateral prefrontal cortex (Koenigs, 2014), and the amygdala (Blair, 2007). 
 
 ---
 
@@ -254,7 +262,10 @@ knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-
 
 .small[.left[.footnote[.gray[Encyclopædia Britannica, 2010]]]]
 
+???
 
+The PD paradigm, which is based on mathematical game theory, evaluates social cooperation in an interactive two-person task. In each round of the PD, both players make a simultaneous decision to either cooperate or defect; one-shot PD consists of one round, whereas iterated PD consists of more than one round. Researchers can also implement a sequential one-shot PD, wherein players would play a series of one round of PD against different players. After player A and player B settle on a decision for the round, the outcome is revealed to both players. There are four possible outcomes in PD: CC (mutual cooperation), DD (mutual defection), CD (cooperation by A and defection by B), and DC (defection by A and cooperation by D). Specific payoffs are assigned for each outcome, and may differ for each payoff matrix as long as it satisfies two conditions: S (payoff for CD) < P (payoff for DD) < R (payoff for CC) < T (payoff for DC), and 2R > S + T (Rapoport & Chammah, 1965). As T > R, a player would always receive a higher payoff by defecting when the opponent cooperates; as P > S, a player would always receive a higher payoff by defecting when the opponent defects. Therefore, as players cannot communicate at any point during the game, participants would always do better by defecting in a one-shot PD. However, achieving the highest payoff by defecting when the opponent cooperates and receives the lowest payoff creates a social dilemma wherein the player would be “betraying” the cooperative opponent in yielding the best outcome for oneself. 
+This dilemma is amplified in an iterated PD (spanning multiple rounds) as a player must engage repeatedly with the same opponent (Axelrod & Hamilton, 1981). In an iterated PD, unlike the one-shot PD, the constraint of 2R > S + T ensures that continuous selection of R (mutual cooperation) would be preferred over the alternation between S and T (Rapoport & Chammah, 1965). 
 
 ---
 
@@ -264,17 +275,27 @@ knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-
 
 .pull-right[.full-width[.content-box-red[**Decision Phase** <br> <br> Participant makes a decision to convey affective feedback]]]
 
+???
+The PD paradigm has served as a useful framework for exploring the relation between cooperation and individual differences in social preferences as well as attentional and emotional processing and have only grown in precision and usefulness as a growing body of research has incrementally proposed improvements. More specifically, the paradigm allows researchers to model social cooperation in a “social decision cascade” comprising three sequential phases in each round: (1) the decision phase, in which two players make a decision to cooperate or defect, (2) the anticipation phase, in which players wait to view the interdependent outcome, and (3) the feedback phase, in which the outcome is revealed. Structural influences of the paradigm (e.g., arrangement of the payoff matrix, length of the game, etc.) shape participants’ behavioral responses, but so do their psychological characteristics (e.g., individual differences in personality, affect, motives, etc.) and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.). 
+
 --
 
 .pull-left[.full-width[.content-box-yellow[**Anticipation Phase** <br> <br> Participant anticipates payoff]]]
 
 .pull-right[.full-width[.content-box-yellow[**Anticipation Phase** <br> <br> Participant anticipates opponent's affective feedback]]]
 
+???
+The PD paradigm has served as a useful framework for exploring the relation between cooperation and individual differences in social preferences as well as attentional and emotional processing and have only grown in precision and usefulness as a growing body of research has incrementally proposed improvements. More specifically, the paradigm allows researchers to model social cooperation in a “social decision cascade” comprising three sequential phases in each round: (1) the decision phase, in which two players make a decision to cooperate or defect, (2) the anticipation phase, in which players wait to view the interdependent outcome, and (3) the feedback phase, in which the outcome is revealed. Structural influences of the paradigm (e.g., arrangement of the payoff matrix, length of the game, etc.) shape participants’ behavioral responses, but so do their psychological characteristics (e.g., individual differences in personality, affect, motives, etc.) and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.). 
+
+
 --
 
 .pull-left[.full-width[.content-box-green[**Feedback Phase** <br> <br> Co-player’s response is revealed and the participant receives feedback regarding payoff]]]
 
 .pull-right[.full-width[.content-box-green[**Feedback Phase** <br> <br> Co-player’s affective reaction is revealed and the participant is able to engage in reverse appraisal]]]
+
+???
+The PD paradigm has served as a useful framework for exploring the relation between cooperation and individual differences in social preferences as well as attentional and emotional processing and have only grown in precision and usefulness as a growing body of research has incrementally proposed improvements. More specifically, the paradigm allows researchers to model social cooperation in a “social decision cascade” comprising three sequential phases in each round: (1) the decision phase, in which two players make a decision to cooperate or defect, (2) the anticipation phase, in which players wait to view the interdependent outcome, and (3) the feedback phase, in which the outcome is revealed. Structural influences of the paradigm (e.g., arrangement of the payoff matrix, length of the game, etc.) shape participants’ behavioral responses, but so do their psychological characteristics (e.g., individual differences in personality, affect, motives, etc.) and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.). 
 
 ---
 
@@ -317,6 +338,11 @@ An interesting effect of this attention bottleneck, supposedly for all of us, no
 ![stroop](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/stroop.png)
 
 .small[.left[.footnote[.gray[MacLeod, 2015; Petrovic & Castellanos, 2016]]]]
+
+???
+
+The Stroop effect is a well-validated attentional phenomenon measured by comparing task performance in trials or conditions with Stroop-incongruent stimuli (i.e., simultaneous presentation of one type of stimuli presenting task-relevant information and another type of stimuli presenting task-irrelevant information, creating conflict) and Stroop-congruent stimuli (i.e., simultaneous presentation of two types of stimuli presenting task-relevant information). Therefore, the verbal-facial Stroop effect for the affective feedback employed in this study may interfere with the processing of information from the affective feedback congruence to infer the opponent’s intentions (i.e., by engaging in reverse appraisal). 
+
 ---
 
 ## Reverse Appraisal 
@@ -329,7 +355,7 @@ An interesting effect of this attention bottleneck, supposedly for all of us, no
 
 In the context of modified social dilemma paradigms in which affective feedback (i.e., facial emotional expressions) is presented alongside the outcome in the feedback phase (i.e., each player’s previous decision and the resulting payoff), there is an additional layer to this inferential pathway. In addition to the other player’s emotional expression, their decision in contrast to the player’s decision is presented in conjunction with one another as information from which to infer their mental state. This specific process has been termed reverse appraisal (de Melo et al., 2014; Hareli & Hess, 2010; Scherer & Grandjean, 2008). 
 
-In a recent study, de Melo and colleagues (2014) examined reverse appraisal in the iterated PD paradigm by testing if the affective feedback paired with the CC and CD outcomes would enable the players to infer their mental state (specifically, their cooperative intent) in informing their decision-making via reverse appraisal. Accordingly, as the CC outcome allows both players to take the second-highest payoff while the CD outcome results in the highest payoff for the opponent while subjecting the player to the lowest payoff, de Melo and colleagues (2014) hypothesized that players would be able to infer cooperative intent from receiving the affective feedback of a happy facial expression paired with the outcome of CC, whereas they would infer competitive intent when a regretful/guilty expression is paired with the outcome. For the outcome of CD, it was hypothesized that the reverse would be true (i.e., competitive intent would be inferred from a happy facial expression, whereas cooperative intent would be inferred from a regretful/guilty expression). Indeed, in a cooperative context of mutual cooperation (i.e., CC), the opponent’s facial expression of joy led to increased expectations of cooperation, whereas the expression of regret led to decreased expectations of cooperation. As hypothesized, the opponent’s facial expression of regret in a competitive context (i.e., CD) led to increased expectations of cooperation; however, the opponent’s expression of joy in this context did not lead to decreased expectations of cooperation (de Melo et al., 2014). One possible explanation for this finding suggested by the authors is that the expression of joy in the competitive context may not have led the participants to infer a mental state reflective of an intentionally non-cooperative or malicious intent (e.g., experiencing schadenfreude in the opponent having received a worse payoff). 
+de Melo and colleagues studied reverse appraisal in the iterated PD paradigm by testing if the affective feedback paired with the CC and CD outcomes would enable the players to infer their mental state (specifically, their cooperative intent) in informing their decision-making via reverse appraisal. Accordingly, as the CC outcome allows both players to take the second-highest payoff while the CD outcome results in the highest payoff for the opponent while subjecting the player to the lowest payoff, de Melo and colleagues (2014) hypothesized that players would be able to infer cooperative intent from receiving the affective feedback of a happy facial expression paired with the outcome of CC, whereas they would infer competitive intent when a regretful/guilty expression is paired with the outcome. For the outcome of CD, it was hypothesized that the reverse would be true (i.e., competitive intent would be inferred from a happy facial expression, whereas cooperative intent would be inferred from a regretful/guilty expression). Indeed, in a cooperative context of mutual cooperation (i.e., CC), the opponent’s facial expression of joy led to increased expectations of cooperation, whereas the expression of regret led to decreased expectations of cooperation. As hypothesized, the opponent’s facial expression of regret in a competitive context (i.e., CD) led to increased expectations of cooperation; however, the opponent’s expression of joy in this context did not lead to decreased expectations of cooperation (de Melo et al., 2014). One possible explanation for this finding suggested by the authors is that the expression of joy in the competitive context may not have led the participants to infer a mental state reflective of an intentionally non-cooperative or malicious intent (e.g., experiencing schadenfreude in the opponent having received a worse payoff). 
 
 ---
 
@@ -346,6 +372,13 @@ auxiliary analyses on the presence of a Dunning-Kruger effect (i.e., the general
 ---
 
 ## Current Study 
+
+```{css, echo = F}
+.pre {
+  height: 30pc;
+  overflow-y: scroll;
+} 
+````
 
 .pre[
 ```{js, java-code, results = 'hide', error=FALSE, eval=FALSE}
@@ -4261,6 +4294,9 @@ So this is the Javascript code for the current study
 ## Current Study 
 
 ![F1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/F1.png)
+???
+
+The primary purpose of the present study was to examine the individual and interactive influence of psychopathy, affective feedback congruence, and Stroop interference on cooperation in PD. A secondary goal for the present study was to conduct exploratory analyses on the relation between psychopathy and emotion perception, as well as the influence of psychopathy on the Dunning-Kruger effect for emotion recognition ability should the effect emerge. In the following subsections, the specific aims and hypotheses for the present study are outlined in greater detail. 
 
 ---
 
