@@ -252,8 +252,8 @@ interdependence theory, proposed by Van Lange and colleagues suggests that a com
 ## Prisoner's Dilemma 
 
 .center[
-```{r, echo = FALSE, out.width = "400px"}
-knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/pd.jpg")
+```{r, echo = FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/pd2.png")
 ```
 ]
 
