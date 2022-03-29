@@ -145,7 +145,7 @@ ol {
 }
 ol > li {
   list-style: none;
-  padding: 10px 0px 0px; 
+  padding: 20px 0px 0px; 
 }
 ol > li:before {
   content: counter(list) ") ";
@@ -337,18 +337,8 @@ The Stroop effect is a well-validated attentional phenomenon measured by compari
 
 ### Influence of psychopathy and associated cognitive & affective processes on interdependent decision making
 
-.small[**Testori et al., 2019**]
 
-.small[**Johnston et al., 2014** &#10140; computerised opponent started happy, become
-increasingly unhappy with every trial for which the participant chose to defect]
-
-```{r, echo = FALSE, out.height = 3} 
-knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/easi.png")
-```
-
-.small[right[.footnote[.gray[Emotions as Social Information Model]]]]
-
-.small[.left[.footnote[.gray[Van Kleef, 2009]]]]
+.small[.left[.footnote[.gray[Emotions as Social Information Model]]]]
 
 ???
 
@@ -417,62 +407,21 @@ The PD paradigm has served as a useful framework for exploring the relation betw
 
 ## Current Study 
 
-```{r, echo = F, fig.width = 5, fig.height = 5, fig.align = "center", out.width='\\textwidth'}
-dat1 <- data.frame(
-  group= c("Undergrad", "Prolific"),
-  value=c(148, 89)
-)
-
-# Basic piechart
-
-p <- ggplot(data = dat1, aes(x = " ", y = value, fill = as.factor(group))) + 
-  geom_bar(width = 1, stat = "identity") +
-  coord_polar("y", start=0) + 
-  scale_fill_manual(values = c("lightgoldenrod1", "lightpink"), labels = c("Undergrad", "Prolific")) +
-  theme_void() 
-
-p + theme(legend.title=element_blank())
-```
+![pie1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Rplot01.png)
 
 ---
 count: false
 
 ## Current Study 
 
-```{r, echo = F, fig.width = 8, fig.height = 8, fig.align = "center",  out.width='\\textwidth'}
-dat2 <- data.frame(
-  group= c("Male", "Female", "Non-Binary, Gender Non-Conforming", "Did Not Respond"),
-  value=c(70, 162, 4, 1)
-)
 
-p <- ggplot(data = dat2, aes(x = " ", y = value, fill = as.factor(group))) + 
-  geom_bar(width = 1, stat = "identity") +
-  coord_polar("y", start=0) + 
-  scale_fill_manual(values = c("lightcoral", "gold", "green3", "mediumturquoise", "deepskyblue"), labels = c("Male", "Female", "Non-Binary, Gender Non-Conforming", "Did Not Respond")) +
-  theme_void() 
-
-p + theme(legend.title=element_blank())
-```
-
+![pie2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Rplot02.png)
 
 ---
 count: false
 ## Current Study 
 
-```{r, echo = F, fig.width = 6, fig.height = 6, fig.align = "center",  out.width='\\textwidth'}
-dat3 <- data.frame(
-  group= c("White", "Asian", "Hispanic", "Mixed", "Black or African American", "middle Eastern or North African", "Other", "Did Not Answer"),
-  value=c(91,61, 36, 25, 18, 2, 2, 2)
-)
-
-p <- ggplot(data = dat3, aes(x = " ", y = value, fill = as.factor(group))) + 
-  geom_bar(width = 1, stat = "identity") +
-  coord_polar("y", start=0) + 
-  scale_fill_manual(values = c("lightcoral", "gold", "green3", "mediumturquoise", "deepskyblue", "mediumpurple1", "#009E73", "#0072B2"), labels = c("White", "Asian", "Hispanic", "Mixed", "Black or African American", "Middle Eastern or North African", "Other", "Did Not Answer")) +
-  theme_void() 
-
-p + theme(legend.title=element_blank())
-```
+![pie3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Rplot03.png)
 
 ---
 
