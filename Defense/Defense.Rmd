@@ -349,6 +349,7 @@ An interesting effect of this attention bottleneck, supposedly for all of us, no
 
 ---
 
+
 ## Stroop Interference
 
 ![stroop](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/stroop.png)
@@ -357,6 +358,7 @@ An interesting effect of this attention bottleneck, supposedly for all of us, no
 
 ???
 
+Consistent with the attentional bottleneck hypothesis (Baskin-Sommers et al., 2011), studies utilizing variations of the Stroop task have also shown that psychopathy is associated with reduced Stroop interference (Hiatt et al., 2004; Strohmaier, 2015).
 The Stroop effect is a well-validated attentional phenomenon measured by comparing task performance in trials or conditions with Stroop-incongruent stimuli (i.e., simultaneous presentation of one type of stimuli presenting task-relevant information and another type of stimuli presenting task-irrelevant information, creating conflict) and Stroop-congruent stimuli (i.e., simultaneous presentation of two types of stimuli presenting task-relevant information). Therefore, the verbal-facial Stroop effect for the affective feedback employed in this study may interfere with the processing of information from the affective feedback congruence to infer the opponent’s intentions (i.e., by engaging in reverse appraisal). 
 
 ---
