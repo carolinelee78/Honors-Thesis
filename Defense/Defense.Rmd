@@ -125,8 +125,9 @@ count: false
 # The Influence of Psychopathic Traits and Affective Feedback on Cooperation in the Iterated Prisoner's Dilemma 
 
 ### Caroline Lee 
-### Advisors: Andy Kazama, Ph.D., Tom Costello, M.A., Shauna Bowes, M.A.
-### Personality Research Lab 
+### Advisors: Andy Kazama, Ph.D., Scott Lilienfeld, Ph.D. 
+### Committee Members: Umberto Mignozzetti, Ph.D., Stephan Hamann, Ph.D., Michal Arbilly, Ph.D.
+### Mentors: Tom Costello, M.A., Shauna Bowes, M.A.
 ### Emory Department of Psychology
 
 ???
@@ -203,8 +204,6 @@ Even in community samples, psychopathy is associated with maladaptive outcomes, 
 
 Significant impairment in interpersonal relations, is central to the conceptualization and maladaptive behavioral outcomes associated with personality disorders, including psychopathy, and it is closely tied to affective processing - especially recognition of emotion as social signals.  
 
-Specifically, the ability to recognize and infer intentions from social signals, such as facial emotional expressions, is critical to the formation and maintenance of interpersonal relations. So to better understand maladaptive behavioral outcomes associated with psychopathy, it is important to look at the relations between individual differences in emotion recognition and psychopathy in an interpersonal context. 
-
 ---
 
 ## Emotions as Social Information (EASI) Model 
@@ -214,6 +213,8 @@ Specifically, the ability to recognize and infer intentions from social signals,
 .small[.left[.footnote[.gray[Van Kleef, 2009]]]]
 
 ???
+
+Specifically, the ability to recognize and infer intentions from social signals, such as facial emotional expressions, is critical to the formation and maintenance of interpersonal relations. So to better understand maladaptive behavioral outcomes associated with psychopathy, it is important to look at the relations between individual differences in emotion recognition and psychopathy in an interpersonal context. 
 
 And the Emotion as Social Information model, also known as the EASI model, 
 
@@ -237,18 +238,6 @@ Studies exploring neural correlates of psychopathy have supported these findings
 
 ---
 
-## Interdependence Theory 
-
-![interdependence](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/interdependence.png)
-
-.small[.left[.footnote[.gray[Kelley & Thibaut, 1978; Van Lange et al., 2013]]]]
-
-???
-
-interdependence theory, proposed by Van Lange and colleagues suggests that a complex interplay of structural influences (e.g., arrangement of the payoff matrix, length of the game, etc.), psychological characteristics (e.g., individual differences in personality, affect, motives, etc.),  and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.) contribute to decision-making in social dilemmas. To assess the interplay of such processes in interpersonal decision-making, researchers have begun to add modifications to the social dilemma paradigms, including the PD 
-
----
-
 ## Prisoner's Dilemma 
 
 .center[
@@ -261,7 +250,11 @@ knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-
 
 ???
 
-The PD paradigm, which is based on mathematical game theory, evaluates social cooperation in an interactive two-person task. In each round of the PD, both players make a simultaneous decision to either cooperate or defect; one-shot PD consists of one round, whereas iterated PD consists of more than one round. Researchers can also implement a sequential one-shot PD, wherein players would play a series of one round of PD against different players. After player A and player B settle on a decision for the round, the outcome is revealed to both players. There are four possible outcomes in PD: CC (mutual cooperation), DD (mutual defection), CD (cooperation by A and defection by B), and DC (defection by A and cooperation by D). Specific payoffs are assigned for each outcome, and may differ for each payoff matrix as long as it satisfies two conditions: S (payoff for CD) < P (payoff for DD) < R (payoff for CC) < T (payoff for DC), and 2R > S + T (Rapoport & Chammah, 1965). As T > R, a player would always receive a higher payoff by defecting when the opponent cooperates; as P > S, a player would always receive a higher payoff by defecting when the opponent defects. Therefore, as players cannot communicate at any point during the game, participants would always do better by defecting in a one-shot PD. However, achieving the highest payoff by defecting when the opponent cooperates and receives the lowest payoff creates a social dilemma wherein the player would be “betraying” the cooperative opponent in yielding the best outcome for oneself. 
+The PD paradigm, which is based on mathematical game theory, evaluates social cooperation in an interactive two-person task. In each round of the PD, both players make a simultaneous decision to either cooperate or defect; one-shot PD consists of one round, whereas iterated PD consists of more than one round.
+
+And imagine that you are this blue prisoner and your friend is this orange prisoner. So police are interrogating you and your friend, and they said if you confess and your friend doesn’t, you get to walk free while your friend gets 20 years in prison, so you should fess up soon. Because if your friend confesses before you, you are gonna end up in jail for 20 years while your friend walks free. If you guys both confess, you’ll both get 5 years in prison, and if you both stay silent, you each get 1 year, because they won’t have enough evidence. So thinking from your point of view, the best scenario is if you confess first and even though you are betraying your friend, you get to walk free. 
+
+Researchers can also implement a sequential one-shot PD, wherein players would play a series of one round of PD against different players. After player A and player B settle on a decision for the round, the outcome is revealed to both players. There are four possible outcomes in PD: CC (mutual cooperation), DD (mutual defection), CD (cooperation by A and defection by B), and DC (defection by A and cooperation by D). Specific payoffs are assigned for each outcome, and may differ for each payoff matrix as long as it satisfies two conditions: S (payoff for CD) < P (payoff for DD) < R (payoff for CC) < T (payoff for DC), and 2R > S + T (Rapoport & Chammah, 1965). As T > R, a player would always receive a higher payoff by defecting when the opponent cooperates; as P > S, a player would always receive a higher payoff by defecting when the opponent defects. Therefore, as players cannot communicate at any point during the game, participants would always do better by defecting in a one-shot PD. However, achieving the highest payoff by defecting when the opponent cooperates and receives the lowest payoff creates a social dilemma wherein the player would be “betraying” the cooperative opponent in yielding the best outcome for oneself. 
 This dilemma is amplified in an iterated PD (spanning multiple rounds) as a player must engage repeatedly with the same opponent (Axelrod & Hamilton, 1981). In an iterated PD, unlike the one-shot PD, the constraint of 2R > S + T ensures that continuous selection of R (mutual cooperation) would be preferred over the alternation between S and T (Rapoport & Chammah, 1965). 
 
 ---
@@ -307,6 +300,18 @@ The PD paradigm has served as a useful framework for exploring the relation betw
 In the context of modified social dilemma paradigms in which affective feedback (i.e., facial emotional expressions) is presented alongside the outcome in the feedback phase (i.e., each player’s previous decision and the resulting payoff), there is an additional layer to this inferential pathway. In addition to the other player’s emotional expression, their decision in contrast to the player’s decision is presented in conjunction with one another as information from which to infer their mental state. This specific process has been termed reverse appraisal (de Melo et al., 2014; Hareli & Hess, 2010; Scherer & Grandjean, 2008). 
 
 de Melo and colleagues studied reverse appraisal in the iterated PD paradigm by testing if the affective feedback paired with the CC and CD outcomes would enable the players to infer their mental state (specifically, their cooperative intent) in informing their decision-making via reverse appraisal. Accordingly, as the CC outcome allows both players to take the second-highest payoff while the CD outcome results in the highest payoff for the opponent while subjecting the player to the lowest payoff, de Melo and colleagues (2014) hypothesized that players would be able to infer cooperative intent from receiving the affective feedback of a happy facial expression paired with the outcome of CC, whereas they would infer competitive intent when a regretful/guilty expression is paired with the outcome. For the outcome of CD, it was hypothesized that the reverse would be true (i.e., competitive intent would be inferred from a happy facial expression, whereas cooperative intent would be inferred from a regretful/guilty expression). Indeed, in a cooperative context of mutual cooperation (i.e., CC), the opponent’s facial expression of joy led to increased expectations of cooperation, whereas the expression of regret led to decreased expectations of cooperation. As hypothesized, the opponent’s facial expression of regret in a competitive context (i.e., CD) led to increased expectations of cooperation; however, the opponent’s expression of joy in this context did not lead to decreased expectations of cooperation (de Melo et al., 2014). One possible explanation for this finding suggested by the authors is that the expression of joy in the competitive context may not have led the participants to infer a mental state reflective of an intentionally non-cooperative or malicious intent (e.g., experiencing schadenfreude in the opponent having received a worse payoff). 
+
+---
+
+## Interdependence Theory 
+
+![interdependence](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/interdependence.png)
+
+.small[.left[.footnote[.gray[Kelley & Thibaut, 1978; Van Lange et al., 2013]]]]
+
+???
+
+interdependence theory, proposed by Van Lange and colleagues suggests that a complex interplay of structural influences (e.g., arrangement of the payoff matrix, length of the game, etc.), psychological characteristics (e.g., individual differences in personality, affect, motives, etc.),  and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.) contribute to decision-making in social dilemmas. To assess the interplay of such processes in interpersonal decision-making, researchers have begun to add modifications to the social dilemma paradigms, including the PD 
 
 ---
 
@@ -4303,6 +4308,11 @@ So this is the Javascript code for the current study
 
 The primary purpose of the present study was to examine the individual and interactive influence of psychopathy, affective feedback congruence, and Stroop interference on cooperation in PD. A secondary goal for the present study was to conduct exploratory analyses on the relation between psychopathy and emotion perception, as well as the influence of psychopathy on the Dunning-Kruger effect for emotion recognition ability should the effect emerge. In the following subsections, the specific aims and hypotheses for the present study are outlined in greater detail. 
 
+Condition 1: Cooperative × Incongruent 
+Condition 2: Competitive × Incongruent 
+Condition 3: Cooperative × Congruent 
+Condition 4: Competitive × Congruent
+
 ---
 
 ## Hypotheses 
@@ -4907,6 +4917,11 @@ ggbetweenstats(
 .cblue[**Condition 3: Cooperative &times; Congruent**] <br>
 .pink[**Condition 4: Competitive &times; Congruent**] 
 ]
+
+???
+
+Supporting Hypothesis 2a, Holms-Sidak post-hoc pairwise multiple comparisons revealed that (1) participants in Condition 1 (i.e., participants who received Stroop-incongruent and cooperative affective feedback) cooperated more and expected more cooperation by the opponent in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p < .05), and (2) participants in Condition 3 (i.e., participants who received Stroop-congruent and cooperative affective feedback) cooperated more and expected more cooperation by the opponent in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p < 0.001). As hypothesized, participants in Condition 2 (i.e., participants who received Stroop-incongruent and competitive affective feedback) cooperated more in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p = 0.04). However, the pairwise comparison for the expectation of cooperation was not statistically significant. 
+
 ---
 
 ## Results 
@@ -4943,6 +4958,11 @@ ggbetweenstats(
 .cblue[**Condition 3: Cooperative &times; Congruent**] <br>
 .pink[**Condition 4: Competitive &times; Congruent**] 
 ]
+
+???
+
+Supporting Hypothesis 2a, Holms-Sidak post-hoc pairwise multiple comparisons revealed that (1) participants in Condition 1 (i.e., participants who received Stroop-incongruent and cooperative affective feedback) cooperated more and expected more cooperation by the opponent in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p < .05), and (2) participants in Condition 3 (i.e., participants who received Stroop-congruent and cooperative affective feedback) cooperated more and expected more cooperation by the opponent in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p < 0.001). As hypothesized, participants in Condition 2 (i.e., participants who received Stroop-incongruent and competitive affective feedback) cooperated more in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p = 0.04). However, the pairwise comparison for the expectation of cooperation was not statistically significant. 
+
 ---
 
 ## Results 

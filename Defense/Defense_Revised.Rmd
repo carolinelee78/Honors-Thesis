@@ -1,0 +1,1349 @@
+---
+count: false
+exclude: true
+output: 
+  xaringan::moon_reader: 
+    seal: false
+    css: ["default", "default-fonts", "hygge"]
+    nature:
+      includePresenterNotes: true
+      countdown: 45000
+      navigation:
+        scroll: false
+        
+---
+exclude: true
+
+```{css, echo = F}
+.partial-bg {
+  background-image: linear-gradient(0deg, black);
+}
+
+ol {
+  counter-reset: list;
+}
+ol > li {
+  list-style: none;
+}
+ol > li:before {
+  content: counter(list) ") ";
+  counter-increment: list;
+}
+ol > li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.pre {
+  height: 30pc;
+  overflow-y: scroll;
+}
+
+.pink { color: Orchid; }
+
+.coral { color: Coral; }
+
+.cblue { color: CornflowerBlue; }
+```
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse) # load tidyverse package
+library(countdown)
+library(apaTables)
+library(tidyverse)
+library(purrr)
+library(tidyr)
+library(ggplot2)
+library(correlation)
+library(varhandle)
+library(cowplot) 
+library(ggstatsplot)
+library(sjPlot)
+library(sjmisc)
+library(ggplot2)
+library(psych)
+library(ggpubr)
+library(Hmisc)
+library(ggnewscale)
+library(emmeans)
+library(ggsci)
+library(data.table)
+library(multcomp)
+library(report)
+library(broom)
+library(rstatix)
+library(ggfortify)
+library(stats)
+library(magick)
+
+theme_set(theme_sjplot())
+
+knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
+
+setwd("/Users/carolinelee/Desktop/Honors")
+
+dat1 <- read.csv(file = 'undergrad_dat.csv', header = TRUE)
+dat2 <- read.csv(file = 'undergrad_dat_ppin.csv', header = TRUE)
+dat3 <- read.csv(file = 'prolific_dat.csv', header = TRUE)
+dat4 <- read.csv(file = 'prolific_dat_ppin.csv', header = TRUE)
+
+undergrad_dat <- dplyr::bind_rows(dat1, dat2)
+
+table(undergrad_dat$attention_check) 
+
+undergrad_dat <-
+  undergrad_dat %>% filter(attention_check == "TRUE")
+
+prolific_dat <- dplyr::bind_rows(dat3, dat4)
+
+table(prolific_dat$attention_check) 
+
+prolific_dat <-
+  prolific_dat %>% filter(attention_check == "TRUE")
+
+combined_dat <- dplyr::bind_rows(undergrad_dat, prolific_dat)
+
+combined_dat <- combined_dat %>% mutate(AffectiveFeedback = ifelse(condition == 1, "Cooperative", 
+                                                                   ifelse(condition == 2, "Competitive",
+                                                                          ifelse(condition == 3, "Cooperative",
+                                                                                 "Competitive"))),
+                                        Stroop = ifelse(condition == 1 | condition == 2, "Incongruent", "Congruent")
+)
+
+```
+
+---
+
+class: partial-bg center, middle, inverse
+count: false
+
+# The Influence of Psychopathic Traits and Affective Feedback on Cooperation in the Iterated Prisoner's Dilemma 
+
+### Caroline Lee 
+### Advisors: Andrew Kazama, Ph.D., Scott Lilienfeld, Ph.D. 
+### Committee Members: Umberto Mignozzetti, Ph.D., Stephan Hamann, Ph.D., Michal Arbilly, Ph.D.
+### Mentors: Thomas Costello, M.A., Shauna Bowes, M.A.
+### Emory Department of Psychology
+
+???
+
+Hello and welcome everyone, thank you so much for attending my defense. I would first like to extend a huge thank you to my current advisor Dr. Kazama, all of my commitee members - Dr. Hamann, Dr. Mignozzetti, and Dr. Arbilly, my late advisor Dr. Scott Lilienfeld, and my graduate student mentors Tom and Shauna for the all support and mentorship throughout my undergraduate career and for this thesis. I would not have been able to find my love for research and psychology and complete this thesis without your support and I am so grateful for all the opportunities and support you've given me. 
+
+---
+
+## Presentation Outline 
+
+```{css, echo = F}
+ol {
+  counter-reset: list;
+}
+ol > li {
+  list-style: none;
+}
+ol > li:before {
+  content: counter(list) ") ";
+  counter-increment: list;
+}
+ol > li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+```
+
+<ol>
+  <li>Introduction to psychopathy </li>
+???
+
+So before I start with the presentation, I wanted to go over a quick outline of the talk - I'll start with a brief intro to psychopathy, Cognitive and emotional processing in psychopathy, interactive and individual influence of psychopathy and associated cognitive & affective processes and how they might influence interdependent decision making, 
+
+and go over my thesis project, how it adds to the existing research, methods, what I found and the implications 
+
+and I look forward to receiving your questions and feedback at the end of the presentation 
+--
+  <li>Cognitive and emotional processing in psychopathy </li>
+  
+???
+
+So before I start with the presentation, I wanted to go over a quick outline of the talk - I'll start with a brief intro to psychopathy, Cognitive and emotional processing in psychopathy, interactive and individual influence of psychopathy and associated cognitive & affective processes and how they might influence interdependent decision making, 
+
+and go over my thesis project, how it adds to the existing research, methods, what I found and the implications 
+
+and I look forward to receiving your questions and feedback at the end of the presentation 
+--
+  <li>Interactive and individual influence of psychopathy and associated cognitive & affective processes on interdependent decision making </li>
+  
+???
+
+So before I start with the presentation, I wanted to go over a quick outline of the talk - I'll start with a brief intro to psychopathy, Cognitive and emotional processing in psychopathy, interactive and individual influence of psychopathy and associated cognitive & affective processes and how they might influence interdependent decision making, 
+
+and go over my thesis project, how it adds to the existing research, methods, what I found and the implications 
+
+and I look forward to receiving your questions and feedback at the end of the presentation 
+--
+  <li>Current Study </li>
+  
+???
+
+So before I start with the presentation, I wanted to go over a quick outline of the talk - I'll start with a brief intro to psychopathy, Cognitive and emotional processing in psychopathy, interactive and individual influence of psychopathy and associated cognitive & affective processes and how they might influence interdependent decision making, 
+
+and go over my thesis project, how it adds to the existing research, methods, what I found and the implications 
+
+and I look forward to receiving your questions and feedback at the end of the presentation 
+
+--
+  <li>Questions</li>
+</ol>
+
+???
+
+So before I start with the presentation, I wanted to go over a quick outline of the talk - I'll start with a brief intro to psychopathy, Cognitive and emotional processing in psychopathy, interactive and individual influence of psychopathy and associated cognitive & affective processes and how they might influence interdependent decision making, 
+
+and go over my thesis project, how it adds to the existing research, methods, what I found and the implications 
+
+and I look forward to receiving your questions and feedback at the end of the presentation 
+
+---
+
+## Psychopathy 
+
+??? 
+
+So I first want to start with a brief introduction to psychopathy. 
+
+Before I learned about research on psychopathy my freshman year, I would say that my understanding of psychopathy was pretty much based in popular and definitely really interesting depictions of what a "psychopath" might be from popular media including tv shows, movies, and stories about serial killers who you might also know including ted bundy, john wayne gacy aka pogo the clown who's very scary, and charles manson the famous cult leader.  
+
+
+
+---
+
+## Psychopathy 
+
+??? 
+
+And there are many misconceptions about psychopathy out there that I also had before learning about the research. The first misconception is that we tend to think that psychopathy is something that is categorical, that someone is either a "psychopath" like ted bundy or a "non-psychopath" like all of us hopefully. So I was really fascinated to learn about two big misconceptions about psychopathy which also happen to be very common misconceptions generally. 
+
+
+Research shows that this is not the case, psychopathy is actually a dimensional construct, so it grades along a continuous spectrum and has multiple intercorrelated dimensions. 
+
+---
+
+### Psychopathy 
+
+And in forensic and clinical samples with incarcerated offenders as participants, the dimensional measure that is used to study psychopathy is the Hare Psychopathy Checklist - Revised, also known as the PCL-R. 
+
+
+
+
+
+---
+
+## Emotions as Social Information (EASI) Model 
+
+![easi](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/easi.png)
+
+.small[.left[.footnote[.gray[Van Kleef, 2009]]]]
+
+???
+
+Specifically, the ability to recognize and infer intentions from social signals, such as facial emotional expressions, is critical to the formation and maintenance of interpersonal relations. So to better understand maladaptive behavioral outcomes associated with psychopathy, it is important to look at the relations between individual differences in emotion recognition and psychopathy in an interpersonal context. 
+
+And the Emotion as Social Information model, also known as the EASI model, 
+
+According to this model, observing someone else’s emotional expression in a social interaction can affect the observer’s behavior through two pathways: (1) the inferential pathway, in which the emotional expression of the other individual allows the observer to infer their mental states, like beliefs, desires, and intention, and (2) the affective pathway, where the emotional expression of the other individual elicits affective reactions in the observer. 
+
+And for this project I wanted to specifically look at the interaction of interpersonal and affetive processes in the context of interpersonal decision making, and more specifically, in decision-making for cooperation. 
+
+---
+
+## Prisoner's Dilemma 
+
+.center[
+```{r, echo = FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/pd2.png")
+```
+]
+
+.small[.left[.footnote[.gray[Encyclopædia Britannica, 2010]]]]
+
+???
+
+The PD paradigm, which is based on mathematical game theory, evaluates social cooperation in an interactive two-person task. In each round of the PD, both players make a simultaneous decision to either cooperate or defect; one-shot PD consists of one round, whereas iterated PD consists of more than one round.
+
+And imagine that you are this blue prisoner and your friend is this orange prisoner. So police are interrogating you and your friend, and they said if you confess and your friend doesn’t, you get to walk free while your friend gets 20 years in prison, so you should fess up soon. Because if your friend confesses before you, you are gonna end up in jail for 20 years while your friend walks free. If you guys both confess, you’ll both get 5 years in prison, and if you both stay silent, you each get 1 year, because they won’t have enough evidence. So thinking from your point of view, the best scenario is if you confess first and even though you are betraying your friend, you get to walk free. 
+
+Researchers can also implement a sequential one-shot PD, wherein players would play a series of one round of PD against different players. After player A and player B settle on a decision for the round, the outcome is revealed to both players. There are four possible outcomes in PD: CC (mutual cooperation), DD (mutual defection), CD (cooperation by A and defection by B), and DC (defection by A and cooperation by D). Specific payoffs are assigned for each outcome, and may differ for each payoff matrix as long as it satisfies two conditions: S (payoff for CD) < P (payoff for DD) < R (payoff for CC) < T (payoff for DC), and 2R > S + T (Rapoport & Chammah, 1965). As T > R, a player would always receive a higher payoff by defecting when the opponent cooperates; as P > S, a player would always receive a higher payoff by defecting when the opponent defects. Therefore, as players cannot communicate at any point during the game, participants would always do better by defecting in a one-shot PD. However, achieving the highest payoff by defecting when the opponent cooperates and receives the lowest payoff creates a social dilemma wherein the player would be “betraying” the cooperative opponent in yielding the best outcome for oneself. 
+This dilemma is amplified in an iterated PD (spanning multiple rounds) as a player must engage repeatedly with the same opponent (Axelrod & Hamilton, 1981). In an iterated PD, unlike the one-shot PD, the constraint of 2R > S + T ensures that continuous selection of R (mutual cooperation) would be preferred over the alternation between S and T (Rapoport & Chammah, 1965). 
+
+---
+
+## Prisoner's Dilemma (with affective feedback)
+
+.pull-left[.full-width[.content-box-red[**1 - Decision Phase** <br> <br> Participant makes a decision to cooperate or defect]]]
+
+.pull-right[.full-width[.content-box-red[**4 - Decision Phase** <br> <br> Participant makes a decision to select type of affective feedback]]]
+
+???
+The PD paradigm has served as a useful framework for exploring the relation between cooperation and individual differences in social preferences as well as attentional and emotional processing and have only grown in precision and usefulness as a growing body of research has incrementally proposed improvements. More specifically, the paradigm allows researchers to model social cooperation in a “social decision cascade” comprising three sequential phases in each round: (1) the decision phase, in which two players make a decision to cooperate or defect, (2) the anticipation phase, in which players wait to view the interdependent outcome, and (3) the feedback phase, in which the outcome is revealed. Structural influences of the paradigm (e.g., arrangement of the payoff matrix, length of the game, etc.) shape participants’ behavioral responses, but so do their psychological characteristics (e.g., individual differences in personality, affect, motives, etc.) and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.). 
+
+--
+
+.pull-left[.full-width[.content-box-yellow[**2 - Anticipation Phase** <br> <br> Participant anticipates payoff]]]
+
+.pull-right[.full-width[.content-box-yellow[**5 - Anticipation Phase** <br> <br> Participant anticipates opponent's affective feedback]]]
+
+???
+The PD paradigm has served as a useful framework for exploring the relation between cooperation and individual differences in social preferences as well as attentional and emotional processing and have only grown in precision and usefulness as a growing body of research has incrementally proposed improvements. More specifically, the paradigm allows researchers to model social cooperation in a “social decision cascade” comprising three sequential phases in each round: (1) the decision phase, in which two players make a decision to cooperate or defect, (2) the anticipation phase, in which players wait to view the interdependent outcome, and (3) the feedback phase, in which the outcome is revealed. Structural influences of the paradigm (e.g., arrangement of the payoff matrix, length of the game, etc.) shape participants’ behavioral responses, but so do their psychological characteristics (e.g., individual differences in personality, affect, motives, etc.) and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.). 
+
+
+--
+
+.pull-left[.full-width[.content-box-green[**3 - Feedback Phase** <br> <br> Co-player’s response is revealed and the participant receives feedback regarding payoff]]]
+
+.pull-right[.full-width[.content-box-green[**6 - Feedback Phase** <br> <br> Co-player’s affective reaction is revealed and the participant is able to engage in reverse appraisal]]]
+
+???
+The PD paradigm has served as a useful framework for exploring the relation between cooperation and individual differences in social preferences as well as attentional and emotional processing and have only grown in precision and usefulness as a growing body of research has incrementally proposed improvements. More specifically, the paradigm allows researchers to model social cooperation in a “social decision cascade” comprising three sequential phases in each round: (1) the decision phase, in which two players make a decision to cooperate or defect, (2) the anticipation phase, in which players wait to view the interdependent outcome, and (3) the feedback phase, in which the outcome is revealed. Structural influences of the paradigm (e.g., arrangement of the payoff matrix, length of the game, etc.) shape participants’ behavioral responses, but so do their psychological characteristics (e.g., individual differences in personality, affect, motives, etc.) and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.). 
+
+---
+
+## Current Study 
+
+---
+
+## Current Study 
+
+---
+
+## Current Study 
+
+---
+
+## Results
+
+.pull-left[.full-width[.content-box-green[**Hypothesis** <br> <br> Cooperative affective feedback: Rate and expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
+Competitive affective feedback: Rate and expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]]]]
+
+.pull-right[
+```{r, echo = FALSE}
+m1 <- lm(IPD_Score ~ Stroop * AffectiveFeedback, data = combined_dat)
+
+m2 <- lm(IPD_Score ~ Stroop + AffectiveFeedback, data = combined_dat)
+
+m1.emm <- emmeans(m1, specs = c("AffectiveFeedback", "Stroop"))  
+
+# bar-plot with 2nd factor different color
+pd <- position_dodge(0.7)
+gg1_1 <- ggbarplot(x="AffectiveFeedback",
+                 y="IPD_Score",
+                 fill="Stroop",
+                 data=combined_dat,
+                 add=c("mean_ci"),
+                 position=pd) +
+  geom_point(aes(fill=Stroop), 
+             color="black", 
+             position=position_jitterdodge(jitter.width=0.2), 
+             show.legend=FALSE, 
+             alpha=0.5) +
+  ylab("Rate of Cooperation") + 
+  xlab("Affective Feedback") +
+  scale_fill_jco() +
+  NULL
+
+# "interaction" plot
+m1.emm.dt <- data.table(summary(m1.emm))
+
+pd = position_dodge(0.7)
+gg2 <- ggplot(data=m1.emm.dt, 
+              aes(x=AffectiveFeedback, 
+                  y=emmean, 
+                  shape=Stroop, 
+                  color=Stroop, 
+                  group=Stroop)) +
+  geom_point(position=pd, size=3) +
+  ylim(0, 1) + 
+  geom_errorbar(aes(x=AffectiveFeedback, 
+                    ymin=lower.CL, 
+                    ymax=upper.CL,
+                    group=Stroop)
+                , position=pd, width=0.1) +
+  geom_line(position=pd) +
+  ylab("Rate of Cooperation") +
+  xlab("Affective Feedback") +
+  scale_color_jco() +
+  theme_pubr() +
+  #theme(legend.position="bottom") +
+  NULL
+
+gg2 <- m1.emm.dt %>% 
+  mutate(AffectiveFeedback = fct_relevel(AffectiveFeedback, "Cooperative", "Competitive")) %>% 
+  ggplot(aes(x=AffectiveFeedback, 
+             y=emmean, 
+             shape=Stroop, 
+             color=Stroop, 
+             group=Stroop)) +
+    geom_point(position=pd, size=3) +
+    ylim(0, 1) + 
+    geom_errorbar(aes(x=AffectiveFeedback, 
+                      ymin=lower.CL, 
+                      ymax=upper.CL,
+                      group=Stroop)
+                  , position=pd, width=0.1) +
+    geom_line(position=pd) +
+    ylab("Rate of Cooperation") +
+    xlab("Affective Feedback") +
+    scale_color_jco() +
+    theme_pubr() +
+    #theme(legend.position="bottom") +
+    NULL
+
+
+# interaction "jitter" plot
+gg3_1 <- gg2 +
+  geom_point(data=combined_dat, aes(x=AffectiveFeedback, y=IPD_Score, fill=Stroop),
+             position=position_jitterdodge(jitter.width=0.2)) +
+  #             position=position_jitter(width=0.2)) +
+  xlab("Affective Feedback") +
+  theme(legend.position="top") +
+  NULL
+gg_response <- gg3_1 # used below
+
+##################################
+
+q1 <- lm(CoopExpect ~ Stroop * AffectiveFeedback, data = combined_dat)
+
+q2 <- lm(CoopExpect ~ Stroop + AffectiveFeedback, data = combined_dat)
+
+q1.emm <- emmeans(q1, specs = c("AffectiveFeedback", "Stroop"))  
+
+
+# bar-plot with 2nd factor different color
+pd <- position_dodge(0.7)
+gg1_2 <- ggbarplot(x="AffectiveFeedback",
+                 y="CoopExpect",
+                 fill="Stroop",
+                 data=combined_dat,
+                 add=c("mean_ci"),
+                 position=pd) +
+  geom_point(aes(fill=Stroop), 
+             color="black", 
+             position=position_jitterdodge(jitter.width=0.2), 
+             show.legend=FALSE, 
+             alpha=0.5) +
+  ylab("Expectation of Cooperation") + 
+  xlab("Affective Feedback") +
+  scale_fill_jco() +
+  NULL
+
+# "interaction" plot
+q1.emm.dt <- data.table(summary(q1.emm))
+
+pd = position_dodge(0.7)
+gg2_2 <- ggplot(data=q1.emm.dt, 
+              aes(x=AffectiveFeedback, 
+                  y=emmean, 
+                  shape=Stroop, 
+                  color=Stroop, 
+                  group=Stroop)) +
+  geom_point(position=pd, size=3) +
+  ylim(0, 1) + 
+  geom_errorbar(aes(x=AffectiveFeedback, 
+                    ymin=lower.CL, 
+                    ymax=upper.CL,
+                    group=Stroop)
+                , position=pd, width=0.1) +
+  geom_line(position=pd) +
+  ylab("Expectation of Cooperation") +
+  xlab("Affective Feedback") +
+  scale_color_jco() +
+  theme_pubr() +
+  #theme(legend.position="bottom") +
+  NULL
+
+gg2_2 <- q1.emm.dt %>% 
+  mutate(AffectiveFeedback = fct_relevel(AffectiveFeedback, "Cooperative", "Competitive")) %>% 
+  ggplot(aes(x=AffectiveFeedback, 
+             y=emmean, 
+             shape=Stroop, 
+             color=Stroop, 
+             group=Stroop)) +
+  geom_point(position=pd, size=3) +
+  ylim(0, 1) + 
+  geom_errorbar(aes(x=AffectiveFeedback, 
+                    ymin=lower.CL, 
+                    ymax=upper.CL,
+                    group=Stroop)
+                , position=pd, width=0.1) +
+  geom_line(position=pd) +
+  ylab("Expectation of Cooperation") +
+  xlab("Affective Feedback") +
+  scale_color_jco() +
+  theme_pubr() +
+  #theme(legend.position="bottom") +
+  NULL
+
+# interaction "jitter" plot
+gg3_2 <- gg2_2 +
+  geom_point(data=combined_dat, aes(x=AffectiveFeedback, y=CoopExpect, fill=Stroop),
+             position=position_jitterdodge(jitter.width=0.2)) +
+  #             position=position_jitter(width=0.2)) +
+  xlab("Affective Feedback") +
+  theme(legend.position="top") +
+  NULL
+
+cowplot::plot_grid(gg1_1, gg3_1, gg1_2, gg3_2, nrow=2, labels = "AUTO")
+
+```
+]
+
+
+---
+
+.center[
+```{r, echo = FALSE, fig.width = 17}
+m1 <- lm(IPD_Score ~ Stroop * AffectiveFeedback, data = combined_dat)
+
+m2 <- lm(IPD_Score ~ Stroop + AffectiveFeedback, data = combined_dat)
+
+m1.emm <- emmeans(m1, specs = c("AffectiveFeedback", "Stroop"))  
+
+# bar-plot with 2nd factor different color
+pd <- position_dodge(0.7)
+gg1_1 <- ggbarplot(x="AffectiveFeedback",
+                 y="IPD_Score",
+                 fill="Stroop",
+                 data=combined_dat,
+                 add=c("mean_ci"),
+                 position=pd) +
+  geom_point(aes(fill=Stroop), 
+             color="black", 
+             position=position_jitterdodge(jitter.width=0.2), 
+             show.legend=FALSE, 
+             alpha=0.5) +
+  ylab("Rate of Cooperation") + 
+  xlab("Affective Feedback") +
+  scale_fill_jco() +
+  NULL
+
+# "interaction" plot
+m1.emm.dt <- data.table(summary(m1.emm))
+
+pd = position_dodge(0.7)
+gg2 <- ggplot(data=m1.emm.dt, 
+              aes(x=AffectiveFeedback, 
+                  y=emmean, 
+                  shape=Stroop, 
+                  color=Stroop, 
+                  group=Stroop)) +
+  geom_point(position=pd, size=3) +
+  ylim(0, 1) + 
+  geom_errorbar(aes(x=AffectiveFeedback, 
+                    ymin=lower.CL, 
+                    ymax=upper.CL,
+                    group=Stroop)
+                , position=pd, width=0.1) +
+  geom_line(position=pd) +
+  ylab("Rate of Cooperation") +
+  xlab("Affective Feedback") +
+  scale_color_jco() +
+  theme_pubr() +
+  #theme(legend.position="bottom") +
+  NULL
+
+gg2 <- m1.emm.dt %>% 
+  mutate(AffectiveFeedback = fct_relevel(AffectiveFeedback, "Cooperative", "Competitive")) %>% 
+  ggplot(aes(x=AffectiveFeedback, 
+             y=emmean, 
+             shape=Stroop, 
+             color=Stroop, 
+             group=Stroop)) +
+    geom_point(position=pd, size=3) +
+    ylim(0, 1) + 
+    geom_errorbar(aes(x=AffectiveFeedback, 
+                      ymin=lower.CL, 
+                      ymax=upper.CL,
+                      group=Stroop)
+                  , position=pd, width=0.1) +
+    geom_line(position=pd) +
+    ylab("Rate of Cooperation") +
+    xlab("Affective Feedback") +
+    scale_color_jco() +
+    theme_pubr() +
+    #theme(legend.position="bottom") +
+    NULL
+
+
+# interaction "jitter" plot
+gg3_1 <- gg2 +
+  geom_point(data=combined_dat, aes(x=AffectiveFeedback, y=IPD_Score, fill=Stroop),
+             position=position_jitterdodge(jitter.width=0.2)) +
+  #             position=position_jitter(width=0.2)) +
+  xlab("Affective Feedback") +
+  theme(legend.position="top") +
+  NULL
+gg_response <- gg3_1 # used below
+
+##################################
+
+q1 <- lm(CoopExpect ~ Stroop * AffectiveFeedback, data = combined_dat)
+
+q2 <- lm(CoopExpect ~ Stroop + AffectiveFeedback, data = combined_dat)
+
+q1.emm <- emmeans(q1, specs = c("AffectiveFeedback", "Stroop"))  
+
+
+# bar-plot with 2nd factor different color
+pd <- position_dodge(0.7)
+gg1_2 <- ggbarplot(x="AffectiveFeedback",
+                 y="CoopExpect",
+                 fill="Stroop",
+                 data=combined_dat,
+                 add=c("mean_ci"),
+                 position=pd) +
+  geom_point(aes(fill=Stroop), 
+             color="black", 
+             position=position_jitterdodge(jitter.width=0.2), 
+             show.legend=FALSE, 
+             alpha=0.5) +
+  ylab("Expectation of Cooperation") + 
+  xlab("Affective Feedback") +
+  scale_fill_jco() +
+  NULL
+
+# "interaction" plot
+q1.emm.dt <- data.table(summary(q1.emm))
+
+pd = position_dodge(0.7)
+gg2_2 <- ggplot(data=q1.emm.dt, 
+              aes(x=AffectiveFeedback, 
+                  y=emmean, 
+                  shape=Stroop, 
+                  color=Stroop, 
+                  group=Stroop)) +
+  geom_point(position=pd, size=3) +
+  ylim(0, 1) + 
+  geom_errorbar(aes(x=AffectiveFeedback, 
+                    ymin=lower.CL, 
+                    ymax=upper.CL,
+                    group=Stroop)
+                , position=pd, width=0.1) +
+  geom_line(position=pd) +
+  ylab("Expectation of Cooperation") +
+  xlab("Affective Feedback") +
+  scale_color_jco() +
+  theme_pubr() +
+  #theme(legend.position="bottom") +
+  NULL
+
+gg2_2 <- q1.emm.dt %>% 
+  mutate(AffectiveFeedback = fct_relevel(AffectiveFeedback, "Cooperative", "Competitive")) %>% 
+  ggplot(aes(x=AffectiveFeedback, 
+             y=emmean, 
+             shape=Stroop, 
+             color=Stroop, 
+             group=Stroop)) +
+  geom_point(position=pd, size=3) +
+  ylim(0, 1) + 
+  geom_errorbar(aes(x=AffectiveFeedback, 
+                    ymin=lower.CL, 
+                    ymax=upper.CL,
+                    group=Stroop)
+                , position=pd, width=0.1) +
+  geom_line(position=pd) +
+  ylab("Expectation of Cooperation") +
+  xlab("Affective Feedback") +
+  scale_color_jco() +
+  theme_pubr() +
+  #theme(legend.position="bottom") +
+  NULL
+
+# interaction "jitter" plot
+gg3_2 <- gg2_2 +
+  geom_point(data=combined_dat, aes(x=AffectiveFeedback, y=CoopExpect, fill=Stroop),
+             position=position_jitterdodge(jitter.width=0.2)) +
+  #             position=position_jitter(width=0.2)) +
+  xlab("Affective Feedback") +
+  theme(legend.position="top") +
+  NULL
+
+cowplot::plot_grid(gg1_1, gg3_1, gg1_2, gg3_2, nrow=2, labels = "AUTO")
+
+```
+]
+
+---
+
+## Results 
+
+.pull-left[.full-width[.content-box-green[<font style="opacity:0"> asfdasdfasdf</font> <br> **Hypothesis** <br> <br> Cooperative affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
+Competitive affective feedback: Rate of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]<font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]
+
+.pull-right[ 
+```{r, echo = FALSE}
+# IPD score comp vs. coop 
+
+combined_dat_CR <- combined_dat %>% dplyr::select(ends_with("_Strategy"))
+
+combined_dat_CR$Condition <- combined_dat$condition
+
+coop.cr = function(x){
+  decision = data.frame(table(combined_dat_CR[combined_dat_CR$Condition == 2 | combined_dat_CR$Condition == 4, x]))
+  (decision[1, 2] / (decision[1, 2] + decision[2, 2])) * 100
+}
+
+Cond1or3_CR <- lapply(list("R1_Strategy", "R2_Strategy", "R3_Strategy", "R4_Strategy", "R5_Strategy", "R6_Strategy", 
+                           "R7_Strategy", "R8_Strategy", "R9_Strategy", "R10_Strategy", "R11_Strategy", "R12_Strategy",
+                           "R13_Strategy", "R14_Strategy", "R15_Strategy", "R16_Strategy", "R17_Strategy", "R18_Strategy",
+                           "R19_Strategy", "R20_Strategy"), coop.cr)
+
+Cooperative_Feedback <- unlist(Cond1or3_CR)
+
+CR_Comparison <- data.frame(Cooperative_Feedback)
+
+comp.cr = function(x){
+  decision = data.frame(table(combined_dat_CR[combined_dat_CR$Condition == 1 | combined_dat_CR$Condition == 3, x]))
+  (decision[1, 2] / (decision[1, 2] + decision[2, 2])) * 100
+}
+
+Cond2or4_CR <- lapply(list("R1_Strategy", "R2_Strategy", "R3_Strategy", "R4_Strategy", "R5_Strategy", "R6_Strategy", 
+                           "R7_Strategy", "R8_Strategy", "R9_Strategy", "R10_Strategy", "R11_Strategy", "R12_Strategy",
+                           "R13_Strategy", "R14_Strategy", "R15_Strategy", "R16_Strategy", "R17_Strategy", "R18_Strategy",
+                           "R19_Strategy", "R20_Strategy"), comp.cr)
+
+Competitive_Feedback <- unlist(Cond2or4_CR)
+
+CR_Comparison$Competitive_Feedback <- Competitive_Feedback
+
+CR_Comparison$Round <- c(1:20)
+
+keycol.2 <- "Condition"
+
+valuecol.2 <- "CoopRatio"
+
+gathercols.2 <- c("Cooperative_Feedback", "Competitive_Feedback")
+
+CR_Comparison <- gather_(CR_Comparison, keycol.2, valuecol.2, gathercols.2)
+
+CR_CompPlot <- 
+  ggplot(CR_Comparison, aes(x=Round, y=CoopRatio, group=Condition)) +
+  geom_point(aes(color=Condition)) + 
+  geom_line(aes(color=Condition)) + 
+  scale_color_manual(values = c("#A6CEE3","#1F78B4"), labels = c("Cooperative", "Competitive")) + 
+  ylim(0, 100) + 
+  theme_classic() + 
+  labs(x = "Round", y = "Cooperation Rate (%)", color = "Affective Feedback")
+
+CR_CompPlot
+```
+]
+
+---
+
+```{r, echo = FALSE}
+# IPD score comp vs. coop 
+
+combined_dat_CR <- combined_dat %>% dplyr::select(ends_with("_Strategy"))
+
+combined_dat_CR$Condition <- combined_dat$condition
+
+coop.cr = function(x){
+  decision = data.frame(table(combined_dat_CR[combined_dat_CR$Condition == 2 | combined_dat_CR$Condition == 4, x]))
+  (decision[1, 2] / (decision[1, 2] + decision[2, 2])) * 100
+}
+
+Cond1or3_CR <- lapply(list("R1_Strategy", "R2_Strategy", "R3_Strategy", "R4_Strategy", "R5_Strategy", "R6_Strategy", 
+                           "R7_Strategy", "R8_Strategy", "R9_Strategy", "R10_Strategy", "R11_Strategy", "R12_Strategy",
+                           "R13_Strategy", "R14_Strategy", "R15_Strategy", "R16_Strategy", "R17_Strategy", "R18_Strategy",
+                           "R19_Strategy", "R20_Strategy"), coop.cr)
+
+Cooperative_Feedback <- unlist(Cond1or3_CR)
+
+CR_Comparison <- data.frame(Cooperative_Feedback)
+
+comp.cr = function(x){
+  decision = data.frame(table(combined_dat_CR[combined_dat_CR$Condition == 1 | combined_dat_CR$Condition == 3, x]))
+  (decision[1, 2] / (decision[1, 2] + decision[2, 2])) * 100
+}
+
+Cond2or4_CR <- lapply(list("R1_Strategy", "R2_Strategy", "R3_Strategy", "R4_Strategy", "R5_Strategy", "R6_Strategy", 
+                           "R7_Strategy", "R8_Strategy", "R9_Strategy", "R10_Strategy", "R11_Strategy", "R12_Strategy",
+                           "R13_Strategy", "R14_Strategy", "R15_Strategy", "R16_Strategy", "R17_Strategy", "R18_Strategy",
+                           "R19_Strategy", "R20_Strategy"), comp.cr)
+
+Competitive_Feedback <- unlist(Cond2or4_CR)
+
+CR_Comparison$Competitive_Feedback <- Competitive_Feedback
+
+CR_Comparison$Round <- c(1:20)
+
+keycol.2 <- "Condition"
+
+valuecol.2 <- "CoopRatio"
+
+gathercols.2 <- c("Cooperative_Feedback", "Competitive_Feedback")
+
+CR_Comparison <- gather_(CR_Comparison, keycol.2, valuecol.2, gathercols.2)
+
+CR_CompPlot <- 
+  ggplot(CR_Comparison, aes(x=Round, y=CoopRatio, group=Condition)) +
+  geom_point(aes(color=Condition)) + 
+  geom_line(aes(color=Condition)) + 
+  scale_color_manual(values = c("#A6CEE3","#1F78B4"), labels = c("Cooperative", "Competitive")) + 
+  ylim(0, 100) + 
+  theme_classic() + 
+  labs(x = "Round", y = "Cooperation Rate (%)", color = "Affective Feedback")
+
+CR_CompPlot
+```
+
+---
+
+## Reverse Appraisal 
+
+![reverse_appraisal](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/reverse_appraisal.png)
+
+.small[.left[.footnote[.gray[Gratch & de Melo, 2019]]]]
+
+???
+
+In the context of modified social dilemma paradigms in which affective feedback (i.e., facial emotional expressions) is presented alongside the outcome in the feedback phase (i.e., each player’s previous decision and the resulting payoff), there is an additional layer to this inferential pathway. In addition to the other player’s emotional expression, their decision in contrast to the player’s decision is presented in conjunction with one another as information from which to infer their mental state. This specific process has been termed reverse appraisal (de Melo et al., 2014; Hareli & Hess, 2010; Scherer & Grandjean, 2008). 
+
+de Melo and colleagues studied reverse appraisal in the iterated PD paradigm by testing if the affective feedback paired with the CC and CD outcomes would enable the players to infer their mental state (specifically, their cooperative intent) in informing their decision-making via reverse appraisal. Accordingly, as the CC outcome allows both players to take the second-highest payoff while the CD outcome results in the highest payoff for the opponent while subjecting the player to the lowest payoff, de Melo and colleagues (2014) hypothesized that players would be able to infer cooperative intent from receiving the affective feedback of a happy facial expression paired with the outcome of CC, whereas they would infer competitive intent when a regretful/guilty expression is paired with the outcome. For the outcome of CD, it was hypothesized that the reverse would be true (i.e., competitive intent would be inferred from a happy facial expression, whereas cooperative intent would be inferred from a regretful/guilty expression). Indeed, in a cooperative context of mutual cooperation (i.e., CC), the opponent’s facial expression of joy led to increased expectations of cooperation, whereas the expression of regret led to decreased expectations of cooperation. As hypothesized, the opponent’s facial expression of regret in a competitive context (i.e., CD) led to increased expectations of cooperation; however, the opponent’s expression of joy in this context did not lead to decreased expectations of cooperation (de Melo et al., 2014). One possible explanation for this finding suggested by the authors is that the expression of joy in the competitive context may not have led the participants to infer a mental state reflective of an intentionally non-cooperative or malicious intent (e.g., experiencing schadenfreude in the opponent having received a worse payoff). 
+
+---
+
+## Results 
+
+.pull-left[.full-width[.content-box-green[<font style="opacity:0"> asfdasdfasdf</font> <br> **Hypothesis** <br> <br> Cooperative affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> <br> <br> 
+Competitive affective feedback: Expectation of cooperation <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> <br> <br>.green[**Supported**]<font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]
+
+.pull-right[ 
+```{r, echo = FALSE}
+
+# IPD expectation of cooperation 
+
+combined_dat_AF <- combined_dat %>% dplyr::select(ends_with("AffectiveFeedback"))
+
+combined_dat_AF$Condition <- combined_dat$condition 
+
+combined_dat_AF_Cond1or3 <-
+  combined_dat_AF %>% filter(Condition == 2 | Condition == 4)
+
+combined_dat_AF_Cond1or3$Condition = NULL
+
+combined_dat_AF_Cond2or4 <-
+  combined_dat_AF %>% filter(Condition == 1 | Condition == 2)
+
+combined_dat_AF_Cond2or4$Condition = NULL
+
+combined_dat_CE <- combined_dat %>% dplyr::select(ends_with("CoopExpect"))
+
+combined_dat_CE$Condition <- combined_dat$condition 
+
+coop.ce.avg = function(x){
+  mean(combined_dat_CE[combined_dat_CE$Condition == 2 | combined_dat_CE$Condition == 4, x]) * 100 - 50
+}
+
+Cond1or3_AVG <- lapply(list("R1_CoopExpect", "R2_CoopExpect", "R3_CoopExpect", "R4_CoopExpect", "R5_CoopExpect", "R6_CoopExpect",
+                            "R7_CoopExpect", "R8_CoopExpect", "R9_CoopExpect", "R10_CoopExpect", "R11_CoopExpect", "R12_CoopExpect",
+                            "R13_CoopExpect", "R14_CoopExpect", "R15_CoopExpect", "R16_CoopExpect", "R17_CoopExpect", "R18_CoopExpect",
+                            "R19_CoopExpect"), coop.ce.avg)
+
+Coop_Feedback <- unlist(Cond1or3_AVG)
+
+CE_Comparison <- data.frame(Coop_Feedback)
+
+comp.ce.avg = function(x){
+  mean(combined_dat_CE[combined_dat_CE$Condition == 1 | combined_dat_CE$Condition == 3, x]) * 100 - 50
+}
+
+Cond2or4_AVG <- lapply(list("R1_CoopExpect", "R2_CoopExpect", "R3_CoopExpect", "R4_CoopExpect", "R5_CoopExpect", "R6_CoopExpect",
+                            "R7_CoopExpect", "R8_CoopExpect", "R9_CoopExpect", "R10_CoopExpect", "R11_CoopExpect", "R12_CoopExpect",
+                            "R13_CoopExpect", "R14_CoopExpect", "R15_CoopExpect", "R16_CoopExpect", "R17_CoopExpect", "R18_CoopExpect",
+                            "R19_CoopExpect"), comp.ce.avg)
+
+Comp_Feedback <- unlist(Cond2or4_AVG)
+
+CE_Comparison$Comp_Feedback <- Comp_Feedback
+
+CE_Comparison$Post_Round <- c(1:19)
+
+keycol.1 <- "Condition"
+
+valuecol.1 <- "CoopExp"
+
+gathercols.1 <- c("Coop_Feedback", "Comp_Feedback")
+
+CE_Comparison <- gather_(CE_Comparison, keycol.1, valuecol.1, gathercols.1)
+
+CE_CompPlot <- 
+  ggplot(CE_Comparison, aes(x=Post_Round, y=CoopExp, group=Condition)) +
+  geom_point(aes(color=Condition)) + 
+  geom_line(aes(color=Condition)) + 
+  scale_color_manual(values = c("#A6CEE3","#1F78B4"), labels = c("Cooperative", "Competitive")) + 
+  ylim(-50, 50) + 
+  theme_classic() + 
+  labs(x = "Round", y = "Expectation of Cooperation in the Following Round", color = "Affective Feedback") 
+
+CE_CompPlot
+```
+]
+
+---
+
+.center[ 
+```{r, echo = FALSE}
+
+# IPD expectation of cooperation 
+
+combined_dat_AF <- combined_dat %>% dplyr::select(ends_with("AffectiveFeedback"))
+
+combined_dat_AF$Condition <- combined_dat$condition 
+
+combined_dat_AF_Cond1or3 <-
+  combined_dat_AF %>% filter(Condition == 2 | Condition == 4)
+
+combined_dat_AF_Cond1or3$Condition = NULL
+
+combined_dat_AF_Cond2or4 <-
+  combined_dat_AF %>% filter(Condition == 1 | Condition == 2)
+
+combined_dat_AF_Cond2or4$Condition = NULL
+
+combined_dat_CE <- combined_dat %>% dplyr::select(ends_with("CoopExpect"))
+
+combined_dat_CE$Condition <- combined_dat$condition 
+
+coop.ce.avg = function(x){
+  mean(combined_dat_CE[combined_dat_CE$Condition == 2 | combined_dat_CE$Condition == 4, x]) * 100 - 50
+}
+
+Cond1or3_AVG <- lapply(list("R1_CoopExpect", "R2_CoopExpect", "R3_CoopExpect", "R4_CoopExpect", "R5_CoopExpect", "R6_CoopExpect",
+                            "R7_CoopExpect", "R8_CoopExpect", "R9_CoopExpect", "R10_CoopExpect", "R11_CoopExpect", "R12_CoopExpect",
+                            "R13_CoopExpect", "R14_CoopExpect", "R15_CoopExpect", "R16_CoopExpect", "R17_CoopExpect", "R18_CoopExpect",
+                            "R19_CoopExpect"), coop.ce.avg)
+
+Coop_Feedback <- unlist(Cond1or3_AVG)
+
+CE_Comparison <- data.frame(Coop_Feedback)
+
+comp.ce.avg = function(x){
+  mean(combined_dat_CE[combined_dat_CE$Condition == 1 | combined_dat_CE$Condition == 3, x]) * 100 - 50
+}
+
+Cond2or4_AVG <- lapply(list("R1_CoopExpect", "R2_CoopExpect", "R3_CoopExpect", "R4_CoopExpect", "R5_CoopExpect", "R6_CoopExpect",
+                            "R7_CoopExpect", "R8_CoopExpect", "R9_CoopExpect", "R10_CoopExpect", "R11_CoopExpect", "R12_CoopExpect",
+                            "R13_CoopExpect", "R14_CoopExpect", "R15_CoopExpect", "R16_CoopExpect", "R17_CoopExpect", "R18_CoopExpect",
+                            "R19_CoopExpect"), comp.ce.avg)
+
+Comp_Feedback <- unlist(Cond2or4_AVG)
+
+CE_Comparison$Comp_Feedback <- Comp_Feedback
+
+CE_Comparison$Post_Round <- c(1:19)
+
+keycol.1 <- "Condition"
+
+valuecol.1 <- "CoopExp"
+
+gathercols.1 <- c("Coop_Feedback", "Comp_Feedback")
+
+CE_Comparison <- gather_(CE_Comparison, keycol.1, valuecol.1, gathercols.1)
+
+CE_CompPlot <- 
+  ggplot(CE_Comparison, aes(x=Post_Round, y=CoopExp, group=Condition)) +
+  geom_point(aes(color=Condition)) + 
+  geom_line(aes(color=Condition)) + 
+  scale_color_manual(values = c("#A6CEE3","#1F78B4"), labels = c("Cooperative", "Competitive")) + 
+  ylim(-50, 50) + 
+  theme_classic() + 
+  labs(x = "Round", y = "Expectation of Cooperation in the Following Round", color = "Affective Feedback") 
+
+CE_CompPlot
+```
+]
+
+---
+## Results 
+
+.pull-left[.full-width[.content-box-yellow[**Hypothesis** <br> <br> <span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Levels of PPI-R Self-Centered Impulsivity and its subscales &#10140; <br> <br> <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span> Rate and expectation of cooperation in PD <br> <br> .orange[**Partially supported**]]]]
+
+.pull-right[
+![table3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table6.png)
+
+]
+
+---
+
+.center[
+![table3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table6.png)
+
+]
+
+---
+
+## Results 
+
+.pull-left[.full-width[.content-box-yellow[**Hypothesis** <br> <br> 
+Rate of cooperation: <br> <br> 
+.green[**Cooperative &times; Incongruent**] .bolder[<] .cblue[**Cooperative &times; Congruent**] <br> <br> 
+.coral[**Competitive &times; Incongruent**] .bolder[>] .pink[**Competitive &times; Congruent**] 
+<br> <br> .orange[**Partially Supported**]]]]
+
+.pull-right[
+```{r, echo = FALSE}
+ggbetweenstats(
+  combined_dat,
+  condition,
+  IPD_Score,
+  ylab = "Cooperation",
+  plot.type = "boxviolin",
+  type = "parametric", 
+  var.equal = TRUE)
+```
+]
+
+.small[
+.green[**Condition 1: Cooperative &times; Incongruent**] <br>
+.coral[**Condition 2: Competitive &times; Incongruent**] <br>
+.cblue[**Condition 3: Cooperative &times; Congruent**] <br>
+.pink[**Condition 4: Competitive &times; Congruent**] 
+]
+
+???
+
+Supporting Hypothesis 2a, Holms-Sidak post-hoc pairwise multiple comparisons revealed that (1) participants in Condition 1 (i.e., participants who received Stroop-incongruent and cooperative affective feedback) cooperated more and expected more cooperation by the opponent in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p < .05), and (2) participants in Condition 3 (i.e., participants who received Stroop-congruent and cooperative affective feedback) cooperated more and expected more cooperation by the opponent in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p < 0.001). As hypothesized, participants in Condition 2 (i.e., participants who received Stroop-incongruent and competitive affective feedback) cooperated more in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p = 0.04). However, the pairwise comparison for the expectation of cooperation was not statistically significant. 
+
+---
+
+.center[
+```{r, echo = FALSE}
+ggbetweenstats(
+  combined_dat,
+  condition,
+  IPD_Score,
+  ylab = "Cooperation",
+  plot.type = "boxviolin",
+  type = "parametric", 
+  var.equal = TRUE)
+```
+]
+
+.small[
+.green[**Condition 1: Cooperative &times; Incongruent**] <br>
+.coral[**Condition 2: Competitive &times; Incongruent**] <br>
+.cblue[**Condition 3: Cooperative &times; Congruent**] <br>
+.pink[**Condition 4: Competitive &times; Congruent**] 
+]
+
+---
+
+## Results 
+
+```{css, echo = F}
+.pink { color: Orchid; }
+
+.coral { color: Coral; }
+
+.cblue { color: CornflowerBlue; }
+```
+
+.pull-left[.full-width[.content-box-red[**Hypothesis** <br> <br> 
+Expectation of cooperation: <br> <br> 
+.green[**Cooperative &times; Incongruent**] .bolder[<] .cblue[**Cooperative &times; Congruent**] <br> <br> 
+.coral[**Competitive &times; Incongruent**] .bolder[>] .pink[**Competitive &times; Congruent**] <br> <br> .red[** Not Supported**]]]]
+
+.pull-right[
+```{r, echo = FALSE}
+ggbetweenstats(
+  combined_dat,
+  condition,
+  CoopExpect,
+  ylab = "Expectation of Cooperation",
+  plot.type = "boxviolin",
+  type = "parametric", 
+  var.equal = TRUE)
+```
+]
+
+.small[
+.green[**Condition 1: Cooperative &times; Incongruent**] <br>
+.coral[**Condition 2: Competitive &times; Incongruent**] <br>
+.cblue[**Condition 3: Cooperative &times; Congruent**] <br>
+.pink[**Condition 4: Competitive &times; Congruent**] 
+]
+
+???
+
+Supporting Hypothesis 2a, Holms-Sidak post-hoc pairwise multiple comparisons revealed that (1) participants in Condition 1 (i.e., participants who received Stroop-incongruent and cooperative affective feedback) cooperated more and expected more cooperation by the opponent in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p < .05), and (2) participants in Condition 3 (i.e., participants who received Stroop-congruent and cooperative affective feedback) cooperated more and expected more cooperation by the opponent in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p < 0.001). As hypothesized, participants in Condition 2 (i.e., participants who received Stroop-incongruent and competitive affective feedback) cooperated more in PD compared to participants in Condition 4 (i.e., participants who received Stroop-congruent and competitive affective feedback) (p = 0.04). However, the pairwise comparison for the expectation of cooperation was not statistically significant. 
+
+---
+
+.center[
+```{r, echo = FALSE}
+ggbetweenstats(
+  combined_dat,
+  condition,
+  CoopExpect,
+  ylab = "Expectation of Cooperation",
+  plot.type = "boxviolin",
+  type = "parametric", 
+  var.equal = TRUE)
+```
+]
+
+.small[
+.green[**Condition 1: Cooperative &times; Incongruent**] <br>
+.coral[**Condition 2: Competitive &times; Incongruent**] <br>
+.cblue[**Condition 3: Cooperative &times; Congruent**] <br>
+.pink[**Condition 4: Competitive &times; Congruent**] 
+]
+
+---
+
+## Results 
+
+.pull-left[.full-width[.content-box-yellow[**Hypothesis** <br> <br> 
+Three-way interaction between psychopathy, affective feedback congruence, and Stroop interference <br> <br> .orange[**Partially supported**]]]]
+
+.pull-right[ 
+```{r, echo = FALSE, fig.width=10}
+regint_sti_combined <- lm(scale(CoopExpect) ~ scale(PPIR_STI)*AffectiveFeedback*Stroop, data = combined_dat)
+
+plotint_sti_combined <- plot_model(regint_sti_combined, type = "pred", terms = c("PPIR_STI", "AffectiveFeedback", "Stroop"), 
+                                   title = "Predicted values of PD cooperation expectation", axis.title = c("PPI-R Stress Immunity", "Cooperation Expectation"), 
+                                   legend.title = "Affective Feedback")
+
+plotint_sti_combined
+```
+]
+
+???
+
+Finally, three-way interactions between affective feedback congruence, Stroop interference, and two PPI-R measures were detected in predicting the expectation of cooperation in PD: Stress Immunity (a subscale of Fearless Dominance) and Coldheartedness. Parallel trends emerged for the two three-way interactions between affective feedback congruence, Stroop interference, and the two PPI-R measures (Stress Immunity and Coldheartedness), with inverse trends emerging for the influence of affective feedback on cooperation in PD for higher levels of Stress Immunity and Coldheartedness depending on the presence or absence of Stroop interference (see Figure 9C and Figure 9K).  In the absence of Stroop interference, participants who received cooperative affective feedback showed increasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness, whereas participants who received competitive affective feedback showed decreasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness. With Stroop interference, participants who received cooperative affective feedback showed decreasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness, whereas participants who received competitive affective feedback showed increasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness.  
+
+---
+
+.center[ 
+```{r, echo = FALSE, fig.width=10}
+regint_sti_combined <- lm(scale(CoopExpect) ~ scale(PPIR_STI)*AffectiveFeedback*Stroop, data = combined_dat)
+
+plotint_sti_combined <- plot_model(regint_sti_combined, type = "pred", terms = c("PPIR_STI", "AffectiveFeedback", "Stroop"), 
+                                   title = "Predicted values of PD cooperation expectation", axis.title = c("PPI-R Stress Immunity", "Cooperation Expectation"), 
+                                   legend.title = "Affective Feedback")
+
+plotint_sti_combined
+```
+]
+
+---
+
+## Results 
+
+.pull-left[.full-width[.content-box-yellow[**Hypothesis** <br> <br> 
+Three-way interaction between psychopathy, affective feedback congruence, and Stroop interference <br> <br> .orange[**Partially supported**]]]]
+
+.pull-right[ 
+```{r, echo = FALSE, fig.width = 10}
+regint_c_combined <- lm(scale(CoopExpect) ~ scale(PPIR_C)*AffectiveFeedback*Stroop, data = combined_dat)
+
+plotint_c_combined <- plot_model(regint_c_combined, type = "pred", terms = c("PPIR_C", "AffectiveFeedback", "Stroop"), 
+                                 title = "Predicted values of PD cooperation expectation", axis.title = c("PPI-R Coldheartedness", "Cooperation Expectation"), 
+                                 legend.title = "Affective Feedback")
+
+plotint_c_combined
+```
+]
+
+???
+
+Finally, three-way interactions between affective feedback congruence, Stroop interference, and two PPI-R measures were detected in predicting the expectation of cooperation in PD: Stress Immunity (a subscale of Fearless Dominance) and Coldheartedness. Parallel trends emerged for the two three-way interactions between affective feedback congruence, Stroop interference, and the two PPI-R measures (Stress Immunity and Coldheartedness), with inverse trends emerging for the influence of affective feedback on cooperation in PD for higher levels of Stress Immunity and Coldheartedness depending on the presence or absence of Stroop interference (see Figure 9C and Figure 9K).  In the absence of Stroop interference, participants who received cooperative affective feedback showed increasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness, whereas participants who received competitive affective feedback showed decreasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness. With Stroop interference, participants who received cooperative affective feedback showed decreasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness, whereas participants who received competitive affective feedback showed increasing expectations of cooperation in PD at higher levels of Stress Immunity and Coldheartedness.  
+
+---
+
+.center[ 
+```{r, echo = FALSE, fig.width = 10}
+regint_c_combined <- lm(scale(CoopExpect) ~ scale(PPIR_C)*AffectiveFeedback*Stroop, data = combined_dat)
+
+plotint_c_combined <- plot_model(regint_c_combined, type = "pred", terms = c("PPIR_C", "AffectiveFeedback", "Stroop"), 
+                                 title = "Predicted values of PD cooperation expectation", axis.title = c("PPI-R Coldheartedness", "Cooperation Expectation"), 
+                                 legend.title = "Affective Feedback")
+
+plotint_c_combined
+```
+]
+
+---
+
+## Interdependence Theory 
+
+![interdependence](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/interdependence.png)
+
+.small[.left[.footnote[.gray[Kelley & Thibaut, 1978; Van Lange et al., 2013]]]]
+
+???
+
+interdependence theory, proposed by Van Lange and colleagues suggests that a complex interplay of structural influences (e.g., arrangement of the payoff matrix, length of the game, etc.), psychological characteristics (e.g., individual differences in personality, affect, motives, etc.),  and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.) contribute to decision-making in social dilemmas. To assess the interplay of such processes in interpersonal decision-making, researchers have begun to add modifications to the social dilemma paradigms, including the PD 
+
+---
+
+## Limitations & Future Directions
+
+.pull-left[.full-width[.content-box-purple[Insufficient power]]]
+
+.pull-right[.full-width[.content-box-green[Replicate the study with a larger sample size to have sufficient power (at least 80%)]]]
+
+.pull-left[.full-width[.content-box-purple[Deception may have had low credibility, affecting rate & expectation of cooperation]]]
+
+.pull-right[.full-width[.content-box-green[Replicate the study with a human opponent using z-Tree]]]
+
+.pull-left[.full-width[.content-box-purple[Low internal consistency for PPI-R Coldheartedness]]]
+
+.pull-right[.full-width[.content-box-green[Use a longer version of the PPI-R]]]
+
+.pull-left[.full-width[.content-box-purple[Assumed that participants would not be able to detect TFT]]]
+
+.pull-right[.full-width[.content-box-green[Examine Dunning-Kruger effect for emotion recognition ability after controlling for the participants’ age & gender]]]
+
+---
+class: partial-bg center, middle, inverse
+count: false
+
+# Questions
+
+```{r, echo = FALSE}
+question <- image_read("https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/questions.png")
+
+image_negate(question)
+```
+
+???
+
+Thank you so much for listening! If there are any questions about my presentation, I can answer them now. 
+
+---
+class: middle
+count: false 
+
+![ppi-r](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/ppir.png)
+
+---
+count: false
+class: middle 
+
+![S1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S1.png)
+
+---
+count: false
+class: middle 
+
+![S14](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S14.png)
+
+---
+count: false
+class: middle
+
+![S2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S2.png)
+
+---
+count: false
+class: middle
+
+![S3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S3.png)
+
+---
+count: false
+class: middle
+
+![S6](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/S6.png)
+
+---
+count: false
+class: middle 
+
+![Table1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table1.png)
+
+---
+count: false
+class: middle
+
+![Table2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table2.png)
+
+---
+count: false
+class: middle 
+
+![Table4-1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table4_1.png)
+
+---
+count: false
+class: middle
+
+![Table4-2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table4_2.png)
+
+---
+count: false
+class: middle
+
+![Table5](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table5.png)
+
+---
+count: false
+class: middle 
+
+![Table7](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table7.png)
+
+---
+count: false
+class: middle 
+
+![Table8](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/Table8.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
