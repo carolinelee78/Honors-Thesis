@@ -162,7 +162,7 @@ li:not(:last-child) {
 ```
 
 <ol>
-  <li>Introduction to psychopathy </li>
+  <li><strong>Introduction to psychopathy</strong> </li>
 
 ???
 
@@ -173,16 +173,16 @@ and go over my thesis project, how it adds to the existing research, methods, wh
 and I look forward to receiving your questions and feedback at the end of the presentation 
 --
 
-  <li>Cognitive and emotional processing in psychopathy </li>
+  <li><strong>Cognitive and emotional processing in psychopathy </strong></li>
 
 --
-  <li>Interactive and individual influence of psychopathy and associated cognitive & affective processes on interdependent decision making </li>
+  <li><strong>Interactive and individual influence of psychopathy and associated cognitive & affective processes on interdependent decision making </strong></li>
   
 --
-  <li>Current Study </li>
+  <li><strong>Current Study </strong></li>
   
 --
-  <li>Questions</li>
+  <li><strong>Questions</strong></li>
 </ol>
 
 ---
@@ -335,22 +335,21 @@ The Stroop effect is a well-validated attentional phenomenon measured by compari
 
 ---
 
-### Influence of psychopathy and associated cognitive & affective processes on interdependent decision making
+## Personality Disorders and Interpersonal Dysfunction 
 
+.center[
+```{r, echo = FALSE, out.width = "550px"}
+knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/interpersonal.png")
+```
+]
 
-.small[.left[.footnote[.gray[Emotions as Social Information Model]]]]
+.small[.left[.footnote[.gray[Mobbs, 2020, Pincus, 2018]]]]
 
 ???
 
-including decision-making behavior in the context of cooperation 
+Even in community samples, psychopathy is associated with maladaptive outcomes, including aggression and atypical social reward processing, and these maladaptive behavioral outcomes are largely tied to interpersonal dysfunction. 
 
-Specifically, the ability to recognize and infer intentions from social signals, such as facial emotional expressions, is critical to the formation and maintenance of interpersonal relations. So to better understand maladaptive behavioral outcomes associated with psychopathy, it is important to look at the relations between individual differences in emotion recognition and psychopathy in an interpersonal context. 
-
-And the Emotion as Social Information model, also known as the EASI model, 
-
-According to this model, observing someone else’s emotional expression in a social interaction can affect the observer’s behavior through two pathways: (1) the inferential pathway, in which the emotional expression of the other individual allows the observer to infer their mental states, like beliefs, desires, and intention, and (2) the affective pathway, where the emotional expression of the other individual elicits affective reactions in the observer. 
-
-And for this project I wanted to specifically look at the interaction of interpersonal and affetive processes in the context of interpersonal decision making, and more specifically, in decision-making for cooperation. 
+Significant impairment in interpersonal relations, is central to the conceptualization and maladaptive behavioral outcomes associated with personality disorders, including psychopathy, and it is closely tied to affective processing - especially recognition of emotion as social signals.  
 
 ---
 
@@ -402,6 +401,40 @@ The PD paradigm has served as a useful framework for exploring the relation betw
 
 ???
 The PD paradigm has served as a useful framework for exploring the relation between cooperation and individual differences in social preferences as well as attentional and emotional processing and have only grown in precision and usefulness as a growing body of research has incrementally proposed improvements. More specifically, the paradigm allows researchers to model social cooperation in a “social decision cascade” comprising three sequential phases in each round: (1) the decision phase, in which two players make a decision to cooperate or defect, (2) the anticipation phase, in which players wait to view the interdependent outcome, and (3) the feedback phase, in which the outcome is revealed. Structural influences of the paradigm (e.g., arrangement of the payoff matrix, length of the game, etc.) shape participants’ behavioral responses, but so do their psychological characteristics (e.g., individual differences in personality, affect, motives, etc.) and dynamic interaction processes (e.g., appraisal of the opponent’s strategy in relation to one’s own motives, etc.). 
+
+---
+
+## Reverse Appraisal 
+
+![reverse_appraisal](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/reverse_appraisal.png)
+
+---
+
+### Influence of psychopathy and associated cognitive & affective processes on interdependent decision making
+
+
+```{r, echo = FALSE, out.width = "800px"}
+knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/coop.png")
+```
+
+.small[.left[.footnote[.gray[Van Kleef, 2009]]]]
+
+???
+
+cogni- tion can affect subsequent emotional appraisal, and emotions can affect cognitive decisions 
+
+more hor- monal/emotional areas are activated when cooperating with familiar individuals (cf. emotionally mediated reciprocity (Schino, and Aureli, 2009); and/or attitudinal reciprocity (Brosnan & de Waal, 2000)), whereas more cortical areas involved in mentalizing are activated while cooperating with unfamiliar individuals (cf. calculated reciprocity (de Waal, and Luttrell, 1988). Thus, the employment of these different mechanisms should be seen as a dynamic process that flexibly adjusts to the specific context in which it is needed (West et al., 2011a, b), and where the different components are also not independent— i.e. cogni- tion can affect subsequent emotional appraisal, and emotions can affect cognitive decisions (cf. the componential view of emotions)
+ 
+ 
+including decision-making behavior in the context of cooperation 
+
+Specifically, the ability to recognize and infer intentions from social signals, such as facial emotional expressions, is critical to the formation and maintenance of interpersonal relations. So to better understand maladaptive behavioral outcomes associated with psychopathy, it is important to look at the relations between individual differences in emotion recognition and psychopathy in an interpersonal context. 
+
+And the Emotion as Social Information model, also known as the EASI model, 
+
+According to this model, observing someone else’s emotional expression in a social interaction can affect the observer’s behavior through two pathways: (1) the inferential pathway, in which the emotional expression of the other individual allows the observer to infer their mental states, like beliefs, desires, and intention, and (2) the affective pathway, where the emotional expression of the other individual elicits affective reactions in the observer. 
+
+And for this project I wanted to specifically look at the interaction of interpersonal and affetive processes in the context of interpersonal decision making, and more specifically, in decision-making for cooperation. 
 
 ---
 
@@ -4942,7 +4975,7 @@ CE_CompPlot
 ---
 
 .center[ 
-```{r, echo = FALSE}
+```{r, echo = FALSE, fig.width = 8}
 
 # IPD expectation of cooperation 
 
@@ -5273,6 +5306,23 @@ Thank you so much for listening! If there are any questions about my presentatio
 
 ---
 count: false
+
+.center[
+```{r, echo = FALSE, out.width = "700px"}
+knitr::include_graphics("https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/brain.png")
+```
+]
+
+.small[.left[.footnote[.gray[de Brito et al., 2020]]]]
+
+???
+
+Studies exploring neural correlates of psychopathy have supported these findings, with psychopathic traits showing associations with hypoactivity in areas implicated in interpersonal decision making, including but not limited to the orbitofrontal cortex (Yang & Raine, 2008), dorsolateral prefrontal cortex (Koenigs, 2014), and the amygdala (Blair, 2007). 
+
+---
+count: false
+
+
 ## Dunning-Kruger Effect 
 
 ![dunning-kruger](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/dunning-kruger.png)
@@ -5284,6 +5334,207 @@ count: false
 auxiliary analyses on the presence of a Dunning-Kruger effect (i.e., the general tendency for lowest performers to overestimate performance and for the highest performers to underestimate performance, showing a curvilinear trend of confidence in relation to ability; Kruger & Dunning, 1999) for emotion recognition ability independent of psychopathy, and assess whether psychopathy explains significant variance in the participant’s estimates of their emotion recognition ability. If psychopathy is associated with a global deficit in emotion recognition, and patterns consistent Dunning-Kruger effect emerge such that participants with greater deficits in emotion recognition ability and higher levels of psychopathy show significant overestimation of emotion recognition ability, this may influence the inference of intentions from assessing the congruence of affective feedback (i.e., engaging in reverse appraisal) for participants with higher levels of psychopathy in the iterated PD task. To date, few studies have examined the influence of of individual differences in personality on the Dunning-Kruger effect, and only one study looked at the influence of personality specifically on the Dunning-Kruger effect for emotion recognition ability. Therefore, these auxiliary analyses will be exploratory in nature.
 
 --- 
+count: false 
+
+## Hypotheses 
+
+.full-width[.content-box-grey[**Hypothesis 1a** <br> <br> Actual and estimated emotion recognition ability would be weakly correlated <br> <br> Consistency with Dunning-Kruger effect]]
+
+???
+
+I predicted that actual and estimated emotion recognition ability will be weakly correlated, but consistent with the Dunning-Kruger effect.  
+
+--
+
+.full-width[.content-box-grey[**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> 
+<span style="color: transparent;  text-shadow: 0 0 0 green; ">&#10133;</span> Psychopathy  &#10140; <span style="color: transparent;  text-shadow: 0 0 0 red; "> &#10134; </span>  Estimate of emotion recognition ability]]
+
+???
+
+Furthermore, I predicted that psychopathy will explain significant variance in the participant’s estimates of their emotion recognition ability. Specifically, higher levels of psychopathy will be associated with lower estimates of emotion recognition ability.
+
+---
+count: false
+## Results
+
+.pull-left[.full-width[.content-box-red[<font style="opacity:0"> asfdasdfasdf</font> <br> <br>  **Hypothesis 1a** <br> <br> Actual and estimated emotion recognition ability would be weakly correlated <br> <br>.red[**Not Supported**] <font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]
+
+.pull-right[
+```{r, echo = FALSE}
+ggscatterstats(data=combined_dat, 
+               x=FERT_Score_2, 
+               y=FERT_CorrectEstimate, 
+               xlab = "Actual FERT Score", 
+               ylab = "Estimated FERT Score", 
+               caption = "FERT = Facial Expression Recognition Task")
+```
+]
+
+???
+
+Overall, participants’ estimated and actual performance on the FERT as measured by the proportion of correct responses on the FERT were not significantly associated, t(235) = 1.53, p = 0.13, r = 0.10. This finding was in contrast to Hypothesis 1a, which predicted that a small correlation would be found. 
+
+As recent studies have shown that adults with typical facial expression recognition ability have only modest cognitive insight into their ability (see review by Palermo et al., 2017), it was hypothesized that facial emotion recognition ability as measured by the proportion of correct responses on the FERT would be weakly correlated with estimated measures of performance. The relation between measured and estimated emotion recognition ability has been debated; some studies have found small or non-significant associations (Bowles et al., 2009; Hall et al., 1999), whereas other studies have found robust associations that demonstrate increased cognitive awareness of emotion recognition ability in comparison to other cognitive abilities (Arizpe et al., 2019; Zell & Krizan, 2014). Consistent with previous research (e.g., Hall et al., 1999), the present study found a statistically insignificant relation between actual and estimated emotion recognition ability. 
+
+---
+count: false
+## Results 
+
+.pull-left[.full-width[.content-box-yellow[<font style="opacity:0"> asfdasdfasdf</font> <br> <br> **Hypothesis 1a** <br> <br> Consistent with the Dunning-Kruger effect <br> <br> .orange[**Partially supported**<font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]]
+
+.pull-right[ 
+```{r, echo = FALSE}
+vQuart = quantile(combined_dat$FERT_Score_2, c(0:4/4))
+
+# classify values
+combined_dat$quartile = with(combined_dat, 
+               cut(FERT_Score_2, 
+                   vQuart, 
+                   include.lowest = T, 
+                   labels = c("Bottom", "Second", "Third", "Top")))
+
+combined_dat$quartile <- as.factor(combined_dat$quartile)
+
+Quartile <- rep(c("Bottom", "Second", "Third", "Top"), 2)
+Prpt <- c(0.5844749, 0.6844262, 0.7352941, 0.8135684, 0.6252055, 0.6455738, 0.6698039, 0.6813462)
+Measure <- c(rep(c("Actual"), 4), rep(c("Estimate"), 4))
+
+dk.data.quart <- data.frame(Quartile, Prpt, Measure)
+
+dk.quart.bottom <- combined_dat[combined_dat$quartile=="Bottom", c("FERT_Score_2", "FERT_CorrectEstimate")]
+
+dk.quart.bottom <- gather(dk.quart.bottom, Group, Proportion, FERT_Score_2, FERT_CorrectEstimate)
+
+dk.quart.second <- combined_dat[combined_dat$quartile=="Second", c("FERT_Score_2", "FERT_CorrectEstimate")]
+
+dk.quart.second <- gather(dk.quart.second, Group, Proportion, FERT_Score_2, FERT_CorrectEstimate)
+
+dk.quart.third <- combined_dat[combined_dat$quartile=="Third", c("FERT_Score_2", "FERT_CorrectEstimate")]
+
+dk.quart.top <- combined_dat[combined_dat$quartile=="Top", c("FERT_Score_2", "FERT_CorrectEstimate")]
+
+quart_plot <- ggplot(data=dk.data.quart, aes(x=Quartile, y=Prpt, group=Measure)) +
+  geom_point(aes(color=Measure)) + 
+  geom_line(aes(color=Measure)) + 
+  scale_color_manual(values = c("#CAB2D6", "#6A3D9A"), labels = c("Actual", "Estimate")) + 
+  labs(y = "Average Proportion of Correct Responses")
+
+quart_plot
+```
+]
+
+???
+
+Pairwise comparisons for quartiles revealed similar patterns, with participants in the bottom quartile not showing statistically significant overestimation of their performance on the FERT (t(72) = 1.61, p = .111) and participants in the second quartile also not showing statistically significant underestimation of their performance on the FERT (t(60) = -1.79, p = 0.078). However, consistent with predictions for the Dunning-Kruger effect, participants in upper quartiles underestimated their performance (third quartile: t(50) = -3.32, p < 0.001; top quartile: t(51) = -6.01, p < 0.001). 
+
+---
+count: false
+## Results 
+
+.pull-left[.full-width[.content-box-yellow[<font style="opacity:0"> asfdasdfasdf</font> <br> <br> **Hypothesis 1a** <br> <br> Consistent with the Dunning-Kruger effect <br> <br> .orange[**Partially supported**<font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]]
+
+.pull-right[ 
+```{r, echo = FALSE}
+vTert = quantile(combined_dat$FERT_Score_2, c(0:3/3))
+
+# classify values
+combined_dat$tertile = with(combined_dat, 
+                             cut(FERT_Score_2, 
+                                 vTert, 
+                                 include.lowest = T, 
+                                 labels = c("Lower", "Middle", "Upper")))
+
+Tertile <- rep(c("Lower", "Middle", "Upper"), 2)
+Prpt <- c(0.6035088, 0.7058081, 0.7934942, 0.6386316, 0.6412121, 0.6792105)
+Measure <- c(rep(c("Actual"), 3), rep(c("Estimate"), 3))
+
+dk.data.tert <- data.frame(Tertile, Prpt, Measure)
+
+dk.tert.lower <- dk.data.tert[ c(1,4), ]
+
+dk.tert.middle <- dk.data.tert[ c(2,5), ]
+
+dk.tert.upper <- dk.data.tert[ c(3,6), ]
+
+tert_plot <- ggplot(data=dk.data.tert, aes(x=Tertile, y=Prpt, group=Measure)) +
+  geom_point(aes(color=Measure)) + 
+  geom_line(aes(color=Measure)) + 
+  scale_color_manual(values = c("#CAB2D6", "#6A3D9A"), labels = c("Actual", "Estimate")) + 
+  labs(y = "Average Proportion of Correct Responses", x = "Tercile")
+
+tert_plot
+```
+]
+
+???
+
+Before conducting paired t-tests, average proportions of correct responses for the FERT by tercile and quartile were computed. Pairwise comparisons for terciles revealed that participants in the lower tercile did not overestimate their performance on the FERT (t(94) = 1.73, p = 0.086), contrary to the predictions for the Dunning-Kruger effect. However, statistically significant overestimation was found in both middle and upper terciles (2nd tercile: t(65) = -0.06, p = 0.003; 3rd tercile: t(75) = -0.11, p < 0.001), consistent with trends of a Dunning-Kruger effect. 
+
+---
+count: false
+## Results
+
+.pull-left[.full-width[.content-box-yellow[<font style="opacity:0"> asfdasdfasdf</font> <br> <br> **Hypothesis 1a** <br> <br> Consistent with the Dunning-Kruger effect <br> <br> .orange[**Partially supported**<font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]]
+
+.pull-right[ 
+```{r, echo = FALSE}
+
+ggplot(combined_dat, aes(x=FERT_Score_2, y=FERT_CorrectEstimate)) + 
+  geom_point() +
+  geom_smooth(aes(colour="Linear"), method='lm', se=FALSE, formula=y~x) + 
+  geom_smooth(aes(colour="Quadratic"), method='lm', se=FALSE, formula=y~poly(x,2)) + 
+  geom_smooth(aes(colour="Cubic"), method='lm', se=FALSE, formula=y~poly(x,3)) +
+  labs(x = "Proportion of Correct FERT Responses", y = "FERT Self-Report Performance Estimate") + 
+  scale_colour_manual(name="Model", values=c("mediumslateblue", "mediumturquoise", "lightsalmon")) + 
+  guides(colour = guide_legend(override.aes = list(alpha = 0))) +
+  theme_classic() 
+```
+]
+
+???
+
+Mixed-model regression analyses were subsequently conducted to test for curvilinearity with linear, quadratic, and cubic components, as recommended by Sanchez & Dunning (2018). Standardized parameters were obtained by fitting the model on a standardized version of the dataset, and 95% Confidence Intervals (CIs) and p-values were computed using the Wald approximation. With the composite score calculated by the Bayesian 2PL procedure as the measure of participants’ performance on FERT, a cubic model produced the best fit (R^2 = .043). In this cubic model, the linear and cubic trends were both found to be statistically significant (linear: b = 0.35, 95% CI [0.13, 0.56], t(233) = 3.20, p = 0.002; β = 0.35, 95% CI [0.13, 0.56]; cubic: b = -0.08, 95% CI [-0.14, -0.02], t(233) = -2.76, p = 0.006; β = -0.31, 95% CI [-0.53, -0.09])).  
+
+---
+count: false
+## Results
+
+.pull-left[.full-width[.content-box-yellow[<font style="opacity:0"> asfdasdfasdf</font> <br> <br> **Hypothesis 1a** <br> <br> Consistent with the Dunning-Kruger effect <br> <br> .orange[**Partially supported**<font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]]]]
+
+.pull-right[ 
+```{r, echo = FALSE}
+ggplot(combined_dat, aes(x=FERT_Score, y=FERT_CorrectEstimate)) + 
+  geom_point() +
+  geom_smooth(aes(colour="Linear"), method='lm', se=FALSE, formula=y~x) + 
+  geom_smooth(aes(colour="Quadratic"), method='lm', se=FALSE, formula=y~poly(x,2)) + 
+  geom_smooth(aes(colour="Cubic"), method='lm', se=FALSE, formula=y~poly(x,3)) +
+  labs(x = "FERT Score", y = "FERT Self-Report Performance Estimate") + 
+  scale_colour_manual(name="Model", values=c("mediumslateblue", "mediumturquoise", "lightsalmon")) + 
+  guides(colour = guide_legend(override.aes = list(alpha = 0))) +
+  theme_classic() 
+```
+]
+
+???
+
+Mixed-model regression analyses were subsequently conducted to test for curvilinearity with linear, quadratic, and cubic components, as recommended by Sanchez & Dunning (2018). Standardized parameters were obtained by fitting the model on a standardized version of the dataset, and 95% Confidence Intervals (CIs) and p-values were computed using the Wald approximation. With the composite score calculated by the Bayesian 2PL procedure as the measure of participants’ performance on FERT, a cubic model produced the best fit (R^2 = .043). In this cubic model, the linear and cubic trends were both found to be statistically significant (linear: b = 0.35, 95% CI [0.13, 0.56], t(233) = 3.20, p = 0.002; β = 0.35, 95% CI [0.13, 0.56]; cubic: b = -0.08, 95% CI [-0.14, -0.02], t(233) = -2.76, p = 0.006; β = -0.31, 95% CI [-0.53, -0.09])).  
+
+---
+count: false
+## Results 
+
+.pull-left[.full-width[.content-box-red[<font style="opacity:0"> asfdasdfasdf</font> <br> <br>**Hypothesis 1b** <br> <br> Psychopathy explains significant variance in estimates of emotion recognition ability <br> <br> .red[**Not supported** <font style="opacity:0"> asfdasdfasdf</font> <br> <br><font style="opacity:0"> asfdasdfasdf</font> <br> <br>]
+]]]
+
+.pull-right[
+![S1-2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/s1-2.png)
+]
+
+???
+
+As the composite FERT score calculated with the Bayesian 2PL procedure was negatively related to PPI-R Machiavellian Egocentricity only (r = -0.18, p = .0097), fixed-effects ANOVAs were conducted to assess whether the level of Machiavellian Egocentricity significantly differ between the terciles and quartiles for emotion recognition ability. Results indicated that the level of Machiavellian Egocentricity did not vary significantly between terciles (F(2, 205) = 1.57, p = 0.211; η_p^2 = 0.02, 95% CI [0.00, 1.00]) or quartiles (F(3, 204) = 1.67, p = 0.174; η_p^2 = 0.02, 95% CI [0.00, 1.00]), not supporting Hypothesis 1b. Therefore, the relation between Machiavellian Egocentricity and the Dunning-Kruger effect for emotion recognition ability was not examined. 
+
+---
 
 class: middle
 count: false 
