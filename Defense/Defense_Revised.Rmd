@@ -221,26 +221,34 @@ and I look forward to receiving your questions and feedback at the end of the pr
 ## Psychopathy 
 
 ![k1](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/k1.png)
+.small[.left[.footnote[.gray[Associated Press, 1968; Chicago Tribune, 2021; Jenkins, 2022; ]]]]
+
 ???
 
 So I first want to start with a brief introduction to psychopathy. 
 
 Before I learned about research on psychopathy my freshman year, I would say that my understanding of psychopathy was pretty much based in popular and definitely really interesting depictions of what a "psychopath" might be from popular media including tv shows, movies, and stories about serial killers who you might also know including ted bundy, john wayne gacy aka pogo the clown who's very scary, and charles manson the famous cult leader.
+
 ---
 
 ## Psychopathy 
 
 ![k2](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/k2.png)
+.small[.left[.footnote[.gray[Associated Press, 1968; Chicago Tribune, 2021; Jenkins, 2022; ]]]]
+
 ???
 
 So I first want to start with a brief introduction to psychopathy. 
 
 Before I learned about research on psychopathy my freshman year, I would say that my understanding of psychopathy was pretty much based in popular and definitely really interesting depictions of what a "psychopath" might be from popular media including tv shows, movies, and stories about serial killers who you might also know including ted bundy, john wayne gacy aka pogo the clown who's very scary, and charles manson the famous cult leader.
+
 ---
 
 ## Psychopathy 
 
 ![k3](https://raw.githubusercontent.com/carolinelee78/Honors-Thesis/main/Defense/k3.png)
+
+.small[.left[.footnote[.gray[Associated Press, 1968; Chicago Tribune, 2021; Jenkins, 2022; ]]]]
 
 ???
 
@@ -261,8 +269,6 @@ And there are many misconceptions about psychopathy out there that I also had be
 Research shows that this is not the case, psychopathy is actually a dimensional construct, so it grades along a continuous spectrum and has multiple intercorrelated dimensions. 
 
 And in forensic and clinical samples with incarcerated offenders as participants, the dimensional measure that is used to study psychopathy is the Hare Psychopathy Checklist - Revised, also known as the PCL-R. 
-
----
 
 ---
 
@@ -371,6 +377,54 @@ The PD paradigm has served as a useful framework for exploring the relation betw
 ---
 
 ## Current Study 
+
+```{r, echo = F}
+dat1 <- data.frame(
+  group= c("Undergrad", "Prolific"),
+  value=c(148, 89)
+)
+
+# Basic piechart
+ggplot(dat1, aes(x="", y=value, fill=group)) +
+  geom_bar(stat="identity", width=1, color="white") +
+  coord_polar("y", start=0) +
+  theme(legend.title=element_blank()) + 
+  theme_void() # remove background, grid, numeric labels
+```
+
+---
+
+```{r, echo = F}
+dat2 <- data.frame(
+  group= c("Male", "Female", "Non-Binary, Gender Non-Conforming", "Did Not Respond"),
+  value=c(70, 162, 4, 1)
+)
+
+# Basic piechart
+ggplot(dat2, aes(x="", y=value, fill=group)) +
+  geom_bar(stat="identity", width=1, color="white") +
+  coord_polar("y", start=0) +
+  theme(legend.title=element_blank()) + 
+  theme_void() # remove background, grid, numeric labels
+```
+
+---
+
+## Current Study 
+
+```{r, echo = F}
+dat3 <- data.frame(
+  group= c("White", "Asian", "Hispanic", "Mixed", "Black or African American", "middle Eastern or North African", "Other", "Did Not Answer"),
+  value=c(91,61, 36, 25, 18, 2, 2, 2)
+)
+
+# Basic piechart
+ggplot(dat3, aes(x="", y=value, fill=group)) +
+  geom_bar(stat="identity", width=1, color="white") +
+  coord_polar("y", start=0) +
+  theme(legend.title=element_blank()) + 
+  theme_void() # remove background, grid, numeric labels
+```
 
 ---
 
@@ -563,7 +617,7 @@ cowplot::plot_grid(gg1_1, gg3_1, gg1_2, gg3_2, nrow=2, labels = "AUTO")
 ---
 
 .center[
-```{r, echo = FALSE, fig.width = 17}
+```{r, echo = FALSE, fig.width = 10, fig.height= 10}
 m1 <- lm(IPD_Score ~ Stroop * AffectiveFeedback, data = combined_dat)
 
 m2 <- lm(IPD_Score ~ Stroop + AffectiveFeedback, data = combined_dat)
